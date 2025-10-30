@@ -1,5 +1,5 @@
 ## 文档分析
-这个“统一蛋白质信息Schema设计（v2.0）”文档设计严谨：主表protein_master覆盖静态实体核心（uniprot_id PK、序列/功能/结构/PTM全TEXT+JSON），辅助表（aliases/features/pdb_structures/disease_variants）支持扩展/查询优化，原则对齐蛋白中心（异构体展开、血缘追溯），校验/索引/实施实用，示例TP53详实，差异对比突出1017缺陷修复。这匹配项目点位：完整原文无截断、多源整合（UniProt主+PDB/AlphaFold/HGNC/Ensembl）、时效（版本/日期追踪），总字段~40，主表行估~100k，支持KG节点导入（Neo4j/Pandas）。 然而，有优化空间：1) **源/动态不全**：仅UniProt/HGNC/Ensembl/PDB/AlphaFold，缺GO（功能补~10%空）、STRING/Reactome（动态交互边，超图起步，优先生命活动如免疫）、PhosphoSite（PTM专精补~20%）；需加edges辅助表预动态（protein-protein/pathway），矩阵推荐主源一致。2) **字段冗余/精确**：主表PTM/疾病/特征全TEXT+JSON好，但辅表已展开，可主表简flag+辅详（减主表臃肿）；序列FASTA raw无头（标准单字母）；血缘每字段元数据重，统一source_version列+辅表fetch_date；结构：加pLDDT阈值（>70高可信），resolution<3Å优；日期示例旧（sequence_modified=2023，更新2025）；枚举约束加外键（e.g., aliases.uniprot_id REFERENCES protein_master）。3) **一致性/扩展**：范围2025-11-01好，但校验缺空率<1%/唯一ID>99%；索引加全文（function_text GIN/FTS）；实施：加Pandas/SQLAlchemy to CSV/SQL脚本；存储优化GZIP序列~50%压缩；差异表加“动态支持”（v2.0无 vs v3.0 edges表）。4) **实用性**：校验规则覆盖好，但加audit日志（status=multi/missing）；下一步泛化，链接ETL（一周内跑免疫示例）；长度适中，但加引用（e.g., UniProt schema from官方）。这些优化确保“理想化”（全覆盖2025新实体、查缺补漏），避免基因混淆，支持AI检索（模糊别名/全文功能）。[1][3][4][5][6]
+这个“统一蛋白质信息Schema设计（v2.0）”文档设计严谨：主表protein_master覆盖静态实体核心（uniprot_id PK、序列/功能/结构/PTM全TEXT+JSON），辅助表（aliases/features/pdb_structures/disease_variants）支持扩展/查询优化，原则对齐蛋白中心（异构体展开、血缘追溯），校验/索引/实施实用，示例TP53详实，差异对比突出1017缺陷修复。这匹配项目点位：完整原文无截断、多源整合（UniProt主+PDB/AlphaFold/HGNC/Ensembl）、时效（版本/日期追踪），总字段40，主表行估100k，支持KG节点导入（Neo4j/Pandas）。 然而，有优化空间：1) **源/动态不全**：仅UniProt/HGNC/Ensembl/PDB/AlphaFold，缺GO（功能补10%空）、STRING/Reactome（动态交互边，超图起步，优先生命活动如免疫）、PhosphoSite（PTM专精补20%）；需加edges辅助表预动态（protein-protein/pathway），矩阵推荐主源一致。2) **字段冗余/精确**：主表PTM/疾病/特征全TEXT+JSON好，但辅表已展开，可主表简flag+辅详（减主表臃肿）；序列FASTA raw无头（标准单字母）；血缘每字段元数据重，统一source_version列+辅表fetch_date；结构：加pLDDT阈值（>70高可信），resolution<3Å优；日期示例旧（sequence_modified=2023，更新2025）；枚举约束加外键（e.g., aliases.uniprot_id REFERENCES protein_master）。3) **一致性/扩展**：范围2025-11-01好，但校验缺空率<1%/唯一ID>99%；索引加全文（function_text GIN/FTS）；实施：加Pandas/SQLAlchemy to CSV/SQL脚本；存储优化GZIP序列50%压缩；差异表加“动态支持”（v2.0无 vs v3.0 edges表）。4) **实用性**：校验规则覆盖好，但加audit日志（status=multi/missing）；下一步泛化，链接ETL（一周内跑免疫示例）；长度适中，但加引用（e.g., UniProt schema from官方）。这些优化确保“理想化”（全覆盖2025新实体、查缺补漏），避免基因混淆，支持AI检索（模糊别名/全文功能）。[1][3][4][5][6]
 
 ## 统一蛋白质信息Schema设计（v3.0）
 
@@ -10,7 +10,7 @@
 ### 1.1 核心原则
 - ✅ **以蛋白质为主体**：主键为 `uniprot_id`，展开所有异构体（isoforms），避免基因聚合丢失变体。
 - ✅ **保留完整信息**：文本字段统一 TEXT 类型，无长度截断，支持原文引用/特殊字符（UTF-8）。
-- ✅ **支持异构体**：每行一变体（~100k人类行），is_canonical 标记代表性。
+- ✅ **支持异构体**：每行一变体（100k人类行），is_canonical 标记代表性。
 - ✅ **数据血缘追溯**：统一 source_version 列追踪多源，辅以 fetch_date/audit 日志。
 - ✅ **多源整合**：优先 Swiss-Prot > TrEMBL；补 GO/STRING/PhosphoSite（功能/PTM/动态）；外键 on uniprot_id，outer join 补漏（空<1%）。
 - ✅ **动态预备**：主表静态实体，辅表 edges 起步超图交互（STRING score>0.7，Reactome 免疫通路）。
@@ -20,13 +20,13 @@
 - **数据截止日期**：2025-11-01（月增，cron 查新版）。
 - **优先级**：UniProt 主干；结构 PDB (resolution<3Å) > AlphaFold (pLDDT>70) > None；功能 UniProt > GO。
 - **完整率目标**：>99%（QA: 空字段 API 补，status=OK>95%）。
-- **存储估**：主表 ~100k 行，~200MB（序列 GZIP 压缩 50%）。
+- **存储估**：主表 100k 行，200MB（序列 GZIP 压缩 50%）。
 
 ***
 
 ## 2. 主表设计：`protein_master`
 
-主表静态实体底座（~20 核心字段），每行一蛋白变体，支持 KG 节点（属性 TEXT/JSON）。[3][4]
+主表静态实体底座（20 核心字段），每行一蛋白变体，支持 KG 节点（属性 TEXT/JSON）。[3][4]
 
 ### 2.1 基本标识字段
 
@@ -41,7 +41,7 @@
 | `is_canonical` | BOOLEAN | NOT NULL | 代表性异构体 | TRUE |
 | `isoform_name` | VARCHAR(100) | NULLABLE | 异构体名称 | Isoform 2 |
 
-**字段说明**：uniprot_id 唯一（explode UniProt isoforms array）；entry_type 优先 Swiss-Prot（~50k 高质）。[5][1]
+**字段说明**：uniprot_id 唯一（explode UniProt isoforms array）；entry_type 优先 Swiss-Prot（50k 高质）。[5][1]
 
 ### 2.2 基因关联字段
 
@@ -55,7 +55,7 @@
 | `ensembl_gene_id` | VARCHAR(20) | NULLABLE | Ensembl 基因 ID | ENSG00000141510 |
 | `ensembl_transcript_id` | VARCHAR(20) | NULLABLE | Ensembl 转录本 ID（异构体源） | ENST00000269305 |
 
-**字段说明**：一 uniprot_id 一基因，多基因 fallback Ensembl（不匹配 ~1% audit）；synonyms 优化检索。[4][3]
+**字段说明**：一 uniprot_id 一基因，多基因 fallback Ensembl（不匹配 1% audit）；synonyms 优化检索。[4][3]
 
 ### 2.3 序列信息字段
 
@@ -83,7 +83,7 @@
 | `pathway` | TEXT | NULLABLE | 通路原文（动态 hint） | UniProt (cc_pathway) + Reactome |
 | `interaction_partners` | TEXT | NULLABLE | 互作蛋白（JSON，预 edges） | UniProt (cc_interaction) + STRING |
 
-**重要提示**：TEXT 无限制，保留文献引用；空 function API 拉 GO definition (evidence=IDA) 补 ~10%。[6][4]
+**重要提示**：TEXT 无限制，保留文献引用；空 function API 拉 GO definition (evidence=IDA) 补 10%。[6][4]
 
 ### 2.5 亚细胞定位字段
 
@@ -212,7 +212,7 @@
 | `source` | VARCHAR(50) | NOT NULL | 来源 (STRING/Reactome) |
 | `fetch_date` | DATE | NOT NULL | 获取 |
 
-**说明**：起步 ~30k 免疫边（Reactome filter），支持超图（weight=score）。[6][3]
+**说明**：起步 30k 免疫边（Reactome filter），支持超图（weight=score）。[6][3]
 
 ***
 
@@ -334,14 +334,14 @@ CREATE INDEX idx_edge_source ON protein_edges(source_uniprot_id);
 ## 8. 实施建议
 
 ### 8.1 数据库选择
-- **PostgreSQL** (推荐)：JSONB/GIN 支持，TEXT TOAST 压缩长文；~100k 行高效。
+- **PostgreSQL** (推荐)：JSONB/GIN 支持，TEXT TOAST 压缩长文；100k 行高效。
 - **MySQL 8.0+**：JSON 类型，需 innodb_large_prefix。
 - **SQLite**：测试用，<10k 行。
 
 ### 8.2 存储优化
 - sequence：GZIP 压缩（PostgreSQL toast），减 50%。
 - function_text 等：全文索引 GIN，提升检索（e.g., KG 模糊）。
-- 总 ~200MB，备份 raw/processed。
+- 总 200MB，备份 raw/processed。
 
 ### 8.3 增量更新策略
 ```sql
@@ -364,7 +364,7 @@ Cron 月跑，API 分批 <25/秒。[4]
 3. ⏳ ETL 流程：notebooks/etl_protein.py (HGNC→UniProt→补漏→QA)。
 4. ⏳ 数据获取：API 批量 + raw 缓存 (data/raw/)。
 5. ⏳ 质控：QA_Checklist.md (空<1%, 版本一致, audit>95%)。
-6. ⏳ 动态扩展：edges 表起步免疫交互 (~30k 行)。
+6. ⏳ 动态扩展：edges 表起步免疫交互 (30k 行)。
 
 **文档版本**：v3.0  
 **创建时间**：2025-10-26  
