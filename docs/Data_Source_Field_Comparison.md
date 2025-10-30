@@ -1,6 +1,6 @@
 ## 文档分析
 这个“数据源字段对比与整合方案”文档整体优秀：字段拆解细致（UniProt/PDB/AlphaFold/HGNC/Ensembl，子字段+示例+完整性评分），对比矩阵清晰，整合策略实用（分层+Python点），缺失解决方案针对性强（e.g., pLDDT解读、功能补InterPro），时间戳元数据支持可复现。这与我们点位对齐：强调UniProt主干、多源补漏（结构/基因）、完整原文（function_text无截断）。 然而，有几处问题和优化空间：
-1) **源覆盖不全**：仅5源，缺GO（功能补~10%空）、STRING（交互动态，矩阵末尾提但未详解字段）、PhosphoSite（PTM专精，补UniProt~20%）、Reactome（通路边，优先生命活动）；需扩展到之前7+源（矫正文档核心8源），加Ensembl转录变体展开异构体（匹配蛋白主体）。
+1) **源覆盖不全**：仅5源，缺GO（功能补10%空）、STRING（交互动态，矩阵末尾提但未详解字段）、PhosphoSite（PTM专精，补UniProt20%）、Reactome（通路边，优先生命活动）；需扩展到之前7+源（矫正文档核心8源），加Ensembl转录变体展开异构体（匹配蛋白主体）。
 2) **时间/版本缺失**：无具体更新（e.g., UniProt 2025_04 10月、AlphaFold 2025版），违背时效原则（≤2025-10-31），需加source_version/release_date到每个源。
 3) **与点位不齐**：未明确uniprot_id主键/异构体展开（e.g., UniProt isoforms array explode）；整合未提outer join/audit（补漏机制，status=OK>95%）；功能/定位标“完整”好，但未强调TEXT类型无400字限；动态交互（STRING）置第四层弱，需提升为二轮超图起步；基因命名以HGNC权威好，但未fallback Ensembl不匹配~1%。
 4) **策略优化**：分层逻辑对，但加Pandas ETL细节（merge on uniprot_id）；时间戳JSON可融入Schema字段（e.g., function_source）；完整矩阵加GO/STRING行，推荐主源一致（UniProt序列/功能）。
