@@ -1,0 +1,63 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb
+
+# PyCharm
+.idea/
+
+# VS Code
+.vscode/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# 中间版本数据文件（不同步到仓库）
+data/processed/protein_master_v3*.tsv
+data/processed/protein_master_v4*.tsv
+data/processed/protein_master_v5*.tsv
+
+# 原始下载数据（如果太大）
+data/raw/*
+!data/raw/.gitkeep
+
+# 临时文件
+*.tmp
+*.bak
+*.swp
+*.log
+
+# 大文件缓存
+*.gz
+*.zip
+*.tar
+
+# 测试输出
+test_output/
+scratch/
