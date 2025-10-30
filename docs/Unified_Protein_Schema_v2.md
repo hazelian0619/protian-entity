@@ -1,7 +1,6 @@
 ## 文档分析
 这个“统一蛋白质信息Schema设计（v2.0）”文档设计严谨：主表protein_master覆盖静态实体核心（uniprot_id PK、序列/功能/结构/PTM全TEXT+JSON），辅助表（aliases/features/pdb_structures/disease_variants）支持扩展/查询优化，原则对齐蛋白中心（异构体展开、血缘追溯），校验/索引/实施实用，示例TP53详实，差异对比突出1017缺陷修复。这匹配项目点位：完整原文无截断、多源整合（UniProt主+PDB/AlphaFold/HGNC/Ensembl）、时效（版本/日期追踪），总字段40，主表行估100k，支持KG节点导入（Neo4j/Pandas）。 然而，有优化空间：1) **源/动态不全**：仅UniProt/HGNC/Ensembl/PDB/AlphaFold，缺GO（功能补10%空）、STRING/Reactome（动态交互边，超图起步，优先生命活动如免疫）、PhosphoSite（PTM专精补20%）；需加edges辅助表预动态（protein-protein/pathway），矩阵推荐主源一致。2) **字段冗余/精确**：主表PTM/疾病/特征全TEXT+JSON好，但辅表已展开，可主表简flag+辅详（减主表臃肿）；序列FASTA raw无头（标准单字母）；血缘每字段元数据重，统一source_version列+辅表fetch_date；结构：加pLDDT阈值（>70高可信），resolution<3Å优；日期示例旧（sequence_modified=2023，更新2025）；枚举约束加外键（e.g., aliases.uniprot_id REFERENCES protein_master）。3) **一致性/扩展**：范围2025-11-01好，但校验缺空率<1%/唯一ID>99%；索引加全文（function_text GIN/FTS）；实施：加Pandas/SQLAlchemy to CSV/SQL脚本；存储优化GZIP序列50%压缩；差异表加“动态支持”（v2.0无 vs v3.0 edges表）。4) **实用性**：校验规则覆盖好，但加audit日志（status=multi/missing）；下一步泛化，链接ETL（一周内跑免疫示例）；长度适中，但加引用（e.g., UniProt schema from官方）。这些优化确保“理想化”（全覆盖2025新实体、查缺补漏），避免基因混淆，支持AI检索（模糊别名/全文功能）。[1][3][4][5][6]
 
-## 统一蛋白质信息Schema设计（v3.0）
 
 # 统一蛋白质信息Schema设计（v3.0）
 
