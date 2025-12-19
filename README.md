@@ -103,6 +103,8 @@ data/processed/
 
 ## 🧬 RNA 实体（L1, v1）
 
+- 数据下载（GitHub Releases）：https://github.com/hazelian0619/protian-entity/releases/tag/rna-l1-v1
+
 RNA（miRNA + mRNA/transcript）清洗管线已集成到仓库：
 
 - 代码：`pipelines/rna/`

@@ -43,3 +43,7 @@ python3 tools/kg_make_manifest.py \
   --out pipelines/rna/reports/rna_master_v1.manifest.json \
   data/output/rna_master_v1.tsv
 ```
+
+## Data release
+
+- GitHub Releases (artifacts): https://github.com/hazelian0619/protian-entity/releases/tag/rna-l1-v1

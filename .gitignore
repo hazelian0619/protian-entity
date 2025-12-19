@@ -72,3 +72,12 @@ data/output/
 data/processed/rna/
 pipelines/**/reports/
 pipelines/**/.cache/
+
+
+# Pipeline outputs (do not commit)
+data/output/
+data/processed/rna/
+pipelines/**/reports/
+
+# Local release packaging
+/dist/
