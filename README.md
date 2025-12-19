@@ -98,3 +98,22 @@ data/processed/
 **数据源**：UniProt | AlphaFold | HGNC | STRING | GO | PDB  
 **时效性**：截止2025-10-26
 ```
+
+---
+
+## 🧬 RNA 实体（L1, v1）
+
+RNA（miRNA + mRNA/transcript）清洗管线已集成到仓库：
+
+- 代码：`pipelines/rna/`
+- 规范：`docs/rna/DATA_DICTIONARY_RNA.md`、`docs/rna/RNA_SOURCES_AND_VERSIONS.md`
+
+由于 RNA 输出文件体积很大（单文件 >100MB），不适合直接 commit 到 GitHub 仓库；
+统一通过 **GitHub Releases** 发布可下载的数据产物（并附带 `manifest.json` 与校验报告）。
+
+运行：
+
+```bash
+bash pipelines/rna/run.sh
+```
+
