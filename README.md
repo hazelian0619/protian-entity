@@ -1,13 +1,25 @@
-# 精简版 README.md
+# 人类知识图谱数据集（Protein + RNA）
 
+这个仓库按“工业级数据产品”的方式组织：
 
-# 人类蛋白质知识图谱
+- **代码 / 规范 / 质量报告**进入仓库（可审计、可复现）
+- **体积大的数据产物**通过 **GitHub Releases** 发布（可下载、可校验、可回滚）
 
-构建以蛋白质为中心的高质量数据集，整合UniProt、AlphaFold、HGNC、STRING等多源数据。
+## 快速入口（给同事看这一段就够）
+
+- **Protein（L1）数据集**：`data/processed/protein_master_v6_clean.tsv`（仓库内可直接下载）
+- **RNA（L1, v1）数据集**：Release `rna-l1-v1`（包含 `.tsv.gz` + `manifest.json` + QA 报告）
+  - Release: https://github.com/hazelian0619/protian-entity/releases/tag/rna-l1-v1
+  - RNA 使用说明：`pipelines/rna/README.md`
+  - RNA 规范：`docs/rna/README.md`
 
 ---
 
-## 📊 数据概览
+## 🧬 Protein 实体（L1）
+
+构建以蛋白质为中心的高质量数据集，整合 UniProt、AlphaFold、HGNC、STRING 等多源数据。
+
+### 📊 数据概览
 
 | 项目 | 数量/覆盖率 | 说明 |
 |------|------------|------|
@@ -19,82 +31,84 @@
 | **GO注释** | 82-94% | 三个维度 |
 | **PDB实验结构** | 44.3% | 实验解析结构 |
 
-**主数据文件**：`data/processed/protein_master_v6_clean.tsv` (60MB, 19,135行×33列)
+**主数据文件**：`data/processed/protein_master_v6_clean.tsv` (60MB, 19,135 行 × 33 列)
 
 ---
 
-## ✅ 核心字段（33列）
+### ✅ 核心字段（33列）
 
-### 基础信息
+#### 基础信息
 `uniprot_id` | `protein_name` | `gene_names` | `sequence` | `mass`
 
-### 功能注释  
+#### 功能注释
 `function` | `subcellular_location` | `diseases` | `ptms`
 
-### GO注释
+#### GO注释
 `go_biological_process` | `go_molecular_function` | `go_cellular_component`
 
-### 基因ID ⭐
+#### 基因ID
 `ncbi_gene_id` | `ensembl_gene_id` | `hgnc_id` | `symbol` | `gene_synonyms`
 
-### 结构信息 ⭐
+#### 结构信息
 `alphafold_id` | `alphafold_mean_plddt` | `pdb_ids` | `domains`
 
-### 交互数据
+#### 交互数据
 `string_ids` | `keywords`
 
 ---
 
-## 🚀 快速使用
+### 🚀 快速使用
 
-```
+```python
 import pandas as pd
 
-# 加载数据
 df = pd.read_csv('data/processed/protein_master_v6_clean.tsv', sep='\t')
 
-# 示例：查询TP53
 tp53 = df[df['gene_names'].str.contains('TP53', na=False)]
 print(tp53[['uniprot_id', 'ncbi_gene_id', 'alphafold_mean_plddt']])
 ```
 
 ---
 
-## 📁 辅助数据
+### 📁 辅助数据
 
 ```
 data/processed/
-├── alphafold_quality.tsv       # AlphaFold每残基质量
-├── protein_edges.tsv           # STRING交互网络（88万条）
-├── ptm_sites.tsv               # 翻译后修饰（23万条）
-└── pathway_members.tsv         # 通路成员（12万条）
+├── alphafold_quality.tsv       # AlphaFold 每残基质量
+├── protein_edges.tsv           # STRING 交互网络（约 88 万条）
+├── ptm_sites.tsv               # 翻译后修饰（约 23 万条）
+└── pathway_members.tsv         # 通路成员（约 12 万条）
 ```
 
 ---
 
-## 🎯 设计原则
+### 🎯 设计原则
 
 - ✅ **一级信息为主**：提取原始数据，不做推断
-- ✅ **以蛋白质为主体**：每个UniProt ID一行
-- ✅ **保留完整原文**：功能描述含证据代码和PubMed引用
-- ✅ **多源整合**：7个主要生物数据库
+- ✅ **以蛋白质为主体**：每个 UniProt ID 一行
+- ✅ **保留完整原文**：功能描述含证据代码和 PubMed 引用
+- ✅ **多源整合**：7 个主要生物数据库
 
 ---
 
-## 📋 项目状态
+### 📋 项目状态
 
-**阶段**：✅ 完成  
-**版本**：v6_clean  
-**更新**：2025-10-27  
-**评分**：⭐⭐⭐⭐⭐
+**阶段**：✅ 完成  \
+**版本**：v6_clean  \
+**更新**：2025-10-27
 
-**可选扩展**（按需）：
-- 异构体附表（展开isoforms → ~50k行）
-- PDB结构详情
-- DisGeNET疾病扩展
+**数据源**：UniProt | AlphaFold | HGNC | STRING | GO | PDB  \
+**时效性**：截止 2025-10-26
 
 ---
 
-**数据源**：UniProt | AlphaFold | HGNC | STRING | GO | PDB  
-**时效性**：截止2025-10-26
-```
+## 🧬 RNA 实体（L1, v1）
+
+RNA（miRNA + mRNA/transcript）属于 L1 实体表；输出体积较大（单文件 >100MB），所以：
+
+- 数据产物不直接 commit 进仓库（避免触发 GitHub 单文件限制、避免仓库膨胀）
+- 统一通过 **GitHub Releases** 发布，并附带可核验的 `manifest.json` 与 QA 报告
+
+- Release: https://github.com/hazelian0619/protian-entity/releases/tag/rna-l1-v1
+- 使用说明：`pipelines/rna/README.md`
+- 规范：`docs/rna/README.md`

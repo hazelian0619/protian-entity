@@ -61,3 +61,23 @@ data/raw/*
 # 测试输出
 test_output/
 scratch/
+
+# RNA pipeline outputs (do not commit)
+data/processed/rna/
+data/output/rna_*.tsv
+data/output/rna_master_*.tsv
+
+# Pipeline outputs (do not commit)
+data/output/
+data/processed/rna/
+pipelines/**/reports/
+pipelines/**/.cache/
+
+
+# Pipeline outputs (do not commit)
+data/output/
+data/processed/rna/
+pipelines/**/reports/
+
+# Local release packaging
+/dist/

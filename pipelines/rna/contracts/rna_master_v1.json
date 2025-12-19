@@ -1,0 +1,113 @@
+{
+  "name": "rna_master_v1",
+  "description": "RNA entity master table (miRNA + mRNA transcripts)",
+  "required_columns": [
+    "rna_id",
+    "rna_type",
+    "rna_name",
+    "sequence",
+    "sequence_len",
+    "taxon_id",
+    "symbol",
+    "source",
+    "fetch_date",
+    "source_version",
+    "hgnc_id",
+    "ensembl_gene_id",
+    "ncbi_gene_id",
+    "mirbase_id",
+    "ensembl_transcript_id",
+    "rfam_id",
+    "secondary_structure",
+    "pdb_ids"
+  ],
+  "rules": [
+    {
+      "id": "pk_non_empty",
+      "type": "non_empty_rate",
+      "column": "rna_id",
+      "min_rate": 1.0
+    },
+    {
+      "id": "pk_unique",
+      "type": "unique",
+      "column": "rna_id"
+    },
+    {
+      "id": "taxon_human",
+      "type": "equals_value_rate",
+      "column": "taxon_id",
+      "value": "9606",
+      "min_rate": 1.0
+    },
+    {
+      "id": "rna_type_enum",
+      "type": "allowed_values_rate",
+      "column": "rna_type",
+      "allowed": ["mirna", "mrna"],
+      "min_rate": 1.0
+    },
+    {
+      "id": "sequence_non_empty",
+      "type": "non_empty_rate",
+      "column": "sequence",
+      "min_rate": 1.0
+    },
+    {
+      "id": "sequence_charset",
+      "type": "sequence_charset_rate",
+      "column": "sequence",
+      "allowed_chars": ["A", "C", "G", "U", "N"],
+      "min_rate": 1.0
+    },
+    {
+      "id": "provenance_source",
+      "type": "non_empty_rate",
+      "column": "source",
+      "min_rate": 1.0
+    },
+    {
+      "id": "provenance_source_version",
+      "type": "non_empty_rate",
+      "column": "source_version",
+      "min_rate": 1.0
+    },
+    {
+      "id": "provenance_fetch_date",
+      "type": "non_empty_rate",
+      "column": "fetch_date",
+      "min_rate": 1.0
+    },
+
+    {
+      "id": "mirna_id_format",
+      "type": "regex_rate",
+      "where": {"column": "rna_type", "equals": "mirna"},
+      "column": "rna_id",
+      "pattern": "^URS[0-9A-Z]+_9606$",
+      "min_rate": 1.0
+    },
+    {
+      "id": "mrna_id_format",
+      "type": "regex_rate",
+      "where": {"column": "rna_type", "equals": "mrna"},
+      "column": "rna_id",
+      "pattern": "^ENST\\d+_9606$",
+      "min_rate": 1.0
+    },
+    {
+      "id": "mrna_gene_symbol_coverage",
+      "type": "non_empty_rate",
+      "where": {"column": "rna_type", "equals": "mrna"},
+      "column": "symbol",
+      "min_rate": 0.99
+    },
+    {
+      "id": "mrna_ensembl_gene_coverage",
+      "type": "non_empty_rate",
+      "where": {"column": "rna_type", "equals": "mrna"},
+      "column": "ensembl_gene_id",
+      "min_rate": 0.99
+    }
+  ]
+}
