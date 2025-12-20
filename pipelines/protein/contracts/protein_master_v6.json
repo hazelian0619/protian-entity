@@ -1,0 +1,123 @@
+{
+  "name": "protein_master_v6",
+  "description": "Protein entity master table (L1) - industrial QA contract for v6_clean",
+  "required_columns": [
+    "uniprot_id",
+    "sequence",
+    "fetch_date",
+    "source",
+    "alphafold_mean_plddt",
+    "ensembl_gene_id",
+    "ncbi_gene_id",
+    "hgnc_id",
+    "symbol",
+    "has_alphafold"
+  ],
+  "rules": [
+    {
+      "id": "pk_non_empty",
+      "type": "non_empty_rate",
+      "column": "uniprot_id",
+      "min_rate": 1.0
+    },
+    {
+      "id": "pk_unique",
+      "type": "unique",
+      "column": "uniprot_id"
+    },
+    {
+      "id": "sequence_non_empty",
+      "type": "non_empty_rate",
+      "column": "sequence",
+      "min_rate": 1.0
+    },
+    {
+      "id": "sequence_charset",
+      "type": "sequence_charset_rate",
+      "column": "sequence",
+      "allowed_chars": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J",
+        "K",
+        "L",
+        "M",
+        "N",
+        "O",
+        "P",
+        "Q",
+        "R",
+        "S",
+        "T",
+        "U",
+        "V",
+        "W",
+        "X",
+        "Y",
+        "Z"
+      ],
+      "min_rate": 1.0
+    },
+    {
+      "id": "provenance_source",
+      "type": "non_empty_rate",
+      "column": "source",
+      "min_rate": 1.0
+    },
+    {
+      "id": "provenance_fetch_date",
+      "type": "non_empty_rate",
+      "column": "fetch_date",
+      "min_rate": 1.0
+    },
+    {
+      "id": "fetch_date_format",
+      "type": "regex_rate",
+      "column": "fetch_date",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+      "min_rate": 1.0
+    },
+    {
+      "id": "hgnc_id_format",
+      "type": "regex_rate",
+      "column": "hgnc_id",
+      "pattern": "^HGNC:\\d+$",
+      "min_rate": 1.0
+    },
+    {
+      "id": "has_alphafold_enum",
+      "type": "allowed_values_rate",
+      "column": "has_alphafold",
+      "allowed": ["True", "False"],
+      "min_rate": 1.0
+    },
+    {
+      "id": "alphafold_mean_plddt_coverage",
+      "type": "non_empty_rate",
+      "column": "alphafold_mean_plddt",
+      "min_rate": 0.99
+    },
+    {
+      "id": "ensembl_gene_id_format",
+      "type": "regex_rate",
+      "column": "ensembl_gene_id",
+      "pattern": "^ENSG\\d+$",
+      "min_rate": 0.99
+    },
+    {
+      "id": "ncbi_gene_id_format",
+      "type": "regex_rate",
+      "column": "ncbi_gene_id",
+      "pattern": "^\\d+(?:\\.0+)?$",
+      "min_rate": 0.99
+    }
+  ]
+}
+

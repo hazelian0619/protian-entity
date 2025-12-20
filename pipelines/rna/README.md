@@ -57,3 +57,7 @@ python3 tools/kg_make_manifest.py \
   data/output/rna_master_mirna_v1.tsv \
   data/output/rna_master_mrna_v1.tsv
 ```
+
+## 复盘与决策记录（维护者/传承）
+
+- `pipelines/rna/POSTMORTEM_rna_master_v1.md`
