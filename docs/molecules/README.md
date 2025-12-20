@@ -6,8 +6,11 @@
 
 - 管线：`pipelines/molecules/README.md`
 
+溯源与许可：
+
+- `docs/molecules/SOURCES_AND_LICENSE.md`
+
 发布原则（与本仓库一致）：
 
 - 代码/规范/QA/manifest 进入 git（可审计、可复现）
 - 大体积数据产物通过 GitHub Releases 发布（可下载、可校验、可回滚）
-
