@@ -70,10 +70,8 @@ data/output/rna_master_*.tsv
 # Pipeline outputs (do not commit)
 data/output/
 data/processed/rna/
-pipelines/**/.cache/
-
-# Reports are usually generated outputs (ignore by default).
 pipelines/**/reports/
+pipelines/**/.cache/
 
 # Protein reports are small + reviewable; keep JSON in git for QA/regression.
 !pipelines/protein/reports/
