@@ -20,6 +20,8 @@ Release 里会包含：
 - manifest（JSON，sha256/大小/时间/commit）
 - postmortem（复盘）
 
+溯源与许可说明：`docs/molecules/SOURCES_AND_LICENSE.md`
+
 ## 本地重跑（开发者）
 
 ### 1) 准备输入数据（不入 git）
@@ -63,4 +65,3 @@ bash pipelines/molecules/run.sh
 zstd -d molecules_m1.sqlite.zst -o molecules_m1.sqlite
 zstd -d chembl_m3.sqlite.zst -o chembl_m3.sqlite
 ```
-
