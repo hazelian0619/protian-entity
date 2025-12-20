@@ -1,0 +1,46 @@
+{
+  "ok": true,
+  "m3_db": "data/output/molecules/chembl_m3.sqlite",
+  "tables": {
+    "required": [
+      "psi_evidence_v1",
+      "psi_edges_v1",
+      "target_uniprot_map_v1"
+    ],
+    "missing": []
+  },
+  "counts": {
+    "evidence_rows": 3113487,
+    "edges": 2360023
+  },
+  "rates": {
+    "inchikey_present_rate": 1.0,
+    "uniprot_present_rate": 1.0
+  },
+  "uniqueness": {
+    "activity_id_duplicates": 0,
+    "edge_id_duplicates": 0
+  },
+  "standard_type": {
+    "allowed": [
+      "IC50",
+      "Ki",
+      "Kd",
+      "EC50"
+    ],
+    "disallowed": []
+  },
+  "refs": {
+    "evidence_activity_id_min": 31863,
+    "evidence_activity_id_max": 29054633,
+    "edges_best_activity_id_min": 31863,
+    "edges_best_activity_id_max": 29054096,
+    "range_check_ok": true,
+    "sample_n": 1000,
+    "missing_best_activity_id_in_sample": 0
+  },
+  "join": {
+    "m1_db": "data/output/molecules/molecules_m1.sqlite",
+    "join_props_rate": 0.9582362155358285
+  }
+}

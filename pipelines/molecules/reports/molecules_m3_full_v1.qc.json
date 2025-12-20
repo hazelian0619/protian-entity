@@ -1,0 +1,185 @@
+{
+  "run_id": "m3_20251219T170848Z",
+  "started_at_utc": "2025-12-19T17:08:48Z",
+  "finished_at_utc": "2025-12-19T17:13:18Z",
+  "input": {
+    "chembl_db": "data/raw/molecules/chembl_36/chembl_36.db",
+    "sha256_head": "c5a2bff99b26b19d3088d519d6857879b9a9e7115aa064585b821035e0a6920b",
+    "types": [
+      "IC50",
+      "Ki",
+      "Kd",
+      "EC50"
+    ],
+    "min_confidence": 6,
+    "require_inchikey": true,
+    "require_uniprot": true,
+    "activity_id_bounds": {
+      "start": null,
+      "end": null
+    }
+  },
+  "output": {
+    "out_db": "data/output/molecules/chembl_m3.sqlite",
+    "outdir": "pipelines/molecules/reports/m3"
+  },
+  "counts": {
+    "evidence_rows": 3113487,
+    "edges": 2360023,
+    "target_map_rows": 16675,
+    "distinct_compounds_inchikey": 1231861,
+    "distinct_targets_uniprot": 8795,
+    "distinct_targets_chembl": 9210,
+    "missing_inchikey": 0,
+    "missing_uniprot": 0,
+    "missing_pchembl": 829727,
+    "missing_pchembl_eff": 9940
+  },
+  "distributions": {
+    "standard_type": [
+      [
+        "IC50",
+        1974366
+      ],
+      [
+        "Ki",
+        686639
+      ],
+      [
+        "EC50",
+        265732
+      ],
+      [
+        "Kd",
+        186750
+      ]
+    ],
+    "standard_units": [
+      [
+        "nM",
+        3104738
+      ],
+      [
+        "ug.mL-1",
+        6389
+      ],
+      [
+        "(NULL)",
+        539
+      ],
+      [
+        "10^2 uM",
+        162
+      ],
+      [
+        "%",
+        154
+      ],
+      [
+        "/s",
+        106
+      ],
+      [
+        "10'-3/s",
+        92
+      ],
+      [
+        "10'-1/s",
+        77
+      ],
+      [
+        "10'-2/s",
+        75
+      ],
+      [
+        "10^3nM",
+        58
+      ],
+      [
+        "ug ml-1",
+        52
+      ],
+      [
+        "mg kg-1",
+        52
+      ],
+      [
+        "ug nM-1",
+        46
+      ],
+      [
+        "mM/min",
+        45
+      ],
+      [
+        "ug",
+        35
+      ],
+      [
+        "10^-5 mol/L",
+        34
+      ],
+      [
+        "/uM",
+        33
+      ],
+      [
+        "min-1",
+        30
+      ],
+      [
+        "10^-9mol/L",
+        29
+      ],
+      [
+        "10^-1/s",
+        29
+      ]
+    ],
+    "assay_type": [
+      [
+        "B",
+        2631831
+      ],
+      [
+        "F",
+        421639
+      ],
+      [
+        "A",
+        56732
+      ],
+      [
+        "T",
+        3004
+      ],
+      [
+        "U",
+        281
+      ]
+    ],
+    "assay_confidence_score": [
+      [
+        "9",
+        2099203
+      ],
+      [
+        "8",
+        891003
+      ],
+      [
+        "7",
+        79229
+      ],
+      [
+        "6",
+        44052
+      ]
+    ]
+  },
+  "runtime": {
+    "seconds": 319.2,
+    "seen": 0,
+    "inserted": 0
+  }
+}

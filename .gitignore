@@ -73,9 +73,15 @@ data/processed/rna/
 pipelines/**/reports/
 pipelines/**/.cache/
 
-# Protein reports are small + reviewable; keep JSON in git for QA/regression.
+# Reports are small + reviewable; keep JSON in git for QA/regression.
 !pipelines/protein/reports/
 !pipelines/protein/reports/*.json
+
+!pipelines/rna/reports/
+!pipelines/rna/reports/*.json
+
+!pipelines/molecules/reports/
+!pipelines/molecules/reports/*.json
 
 # Local release packaging
 /dist/
