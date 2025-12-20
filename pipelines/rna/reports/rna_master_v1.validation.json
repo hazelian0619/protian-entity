@@ -1,0 +1,159 @@
+{
+  "table": "data/output/rna_master_v1.tsv",
+  "contract": "rna_master_v1",
+  "row_count": 292274,
+  "columns": [
+    "rna_id",
+    "rna_type",
+    "rna_name",
+    "sequence",
+    "sequence_len",
+    "taxon_id",
+    "symbol",
+    "source",
+    "fetch_date",
+    "source_version",
+    "hgnc_id",
+    "ensembl_gene_id",
+    "ncbi_gene_id",
+    "mirbase_id",
+    "ensembl_transcript_id",
+    "rfam_id",
+    "secondary_structure",
+    "pdb_ids"
+  ],
+  "schema": {
+    "required_columns": [
+      "rna_id",
+      "rna_type",
+      "rna_name",
+      "sequence",
+      "sequence_len",
+      "taxon_id",
+      "symbol",
+      "source",
+      "fetch_date",
+      "source_version",
+      "hgnc_id",
+      "ensembl_gene_id",
+      "ncbi_gene_id",
+      "mirbase_id",
+      "ensembl_transcript_id",
+      "rfam_id",
+      "secondary_structure",
+      "pdb_ids"
+    ],
+    "missing_required": [],
+    "passed": true
+  },
+  "rules": [
+    {
+      "id": "pk_non_empty",
+      "type": "non_empty_rate",
+      "passed": true,
+      "checked": 292274,
+      "passed_count": 292274,
+      "rate": 1.0
+    },
+    {
+      "id": "pk_unique",
+      "type": "unique",
+      "passed": true,
+      "checked": 292274,
+      "passed_count": 292274,
+      "rate": 1.0,
+      "detail": {
+        "duplicates": 0
+      }
+    },
+    {
+      "id": "taxon_human",
+      "type": "equals_value_rate",
+      "passed": true,
+      "checked": 292274,
+      "passed_count": 292274,
+      "rate": 1.0
+    },
+    {
+      "id": "rna_type_enum",
+      "type": "allowed_values_rate",
+      "passed": true,
+      "checked": 292274,
+      "passed_count": 292274,
+      "rate": 1.0
+    },
+    {
+      "id": "sequence_non_empty",
+      "type": "non_empty_rate",
+      "passed": true,
+      "checked": 292274,
+      "passed_count": 292274,
+      "rate": 1.0
+    },
+    {
+      "id": "sequence_charset",
+      "type": "sequence_charset_rate",
+      "passed": true,
+      "checked": 292274,
+      "passed_count": 292274,
+      "rate": 1.0
+    },
+    {
+      "id": "provenance_source",
+      "type": "non_empty_rate",
+      "passed": true,
+      "checked": 292274,
+      "passed_count": 292274,
+      "rate": 1.0
+    },
+    {
+      "id": "provenance_source_version",
+      "type": "non_empty_rate",
+      "passed": true,
+      "checked": 292274,
+      "passed_count": 292274,
+      "rate": 1.0
+    },
+    {
+      "id": "provenance_fetch_date",
+      "type": "non_empty_rate",
+      "passed": true,
+      "checked": 292274,
+      "passed_count": 292274,
+      "rate": 1.0
+    },
+    {
+      "id": "mirna_id_format",
+      "type": "regex_rate",
+      "passed": true,
+      "checked": 2632,
+      "passed_count": 2632,
+      "rate": 1.0
+    },
+    {
+      "id": "mrna_id_format",
+      "type": "regex_rate",
+      "passed": true,
+      "checked": 289642,
+      "passed_count": 289642,
+      "rate": 1.0
+    },
+    {
+      "id": "mrna_gene_symbol_coverage",
+      "type": "non_empty_rate",
+      "passed": true,
+      "checked": 289642,
+      "passed_count": 289642,
+      "rate": 1.0
+    },
+    {
+      "id": "mrna_ensembl_gene_coverage",
+      "type": "non_empty_rate",
+      "passed": true,
+      "checked": 289642,
+      "passed_count": 289642,
+      "rate": 1.0
+    }
+  ],
+  "passed": true
+}

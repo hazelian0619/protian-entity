@@ -75,9 +75,15 @@ pipelines/**/.cache/
 # Reports are usually generated outputs (ignore by default).
 pipelines/**/reports/
 
-# Protein reports are small + reviewable; keep JSON in git for QA/regression.
+# Reports are small + reviewable; keep JSON in git for QA/regression.
 !pipelines/protein/reports/
 !pipelines/protein/reports/*.json
+
+!pipelines/rna/reports/
+!pipelines/rna/reports/*.json
+
+!pipelines/molecules/reports/
+!pipelines/molecules/reports/*.json
 
 # Local release packaging
 /dist/

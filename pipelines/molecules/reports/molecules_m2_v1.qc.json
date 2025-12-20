@@ -1,0 +1,29 @@
+{
+  "run_id": "m2_20251219T140323Z",
+  "started_at_utc": "2025-12-19T14:03:23Z",
+  "finished_at_utc": "2025-12-19T14:03:27Z",
+  "input": {
+    "db": "data/output/molecules/molecules_m1.sqlite",
+    "source_table": "molecule_entity_strict_chembl36"
+  },
+  "output": {
+    "db": "data/output/molecules/molecules_m1.sqlite",
+    "table": "molecule_props_rdkit_v1",
+    "outdir": "pipelines/molecules/reports/m2"
+  },
+  "parameters": {
+    "limit": 0,
+    "batch_size": 10000,
+    "skip_existing": true
+  },
+  "counts": {
+    "existing_before": 2699403,
+    "selected": 0,
+    "ok": 0,
+    "fail": 0
+  },
+  "runtime": {
+    "seconds": 3.62,
+    "rows_per_second": 0.0
+  }
+}

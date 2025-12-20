@@ -113,3 +113,22 @@ RNA（miRNA + mRNA/transcript）属于 L1 实体表；输出体积较大（单�
 - Release: https://github.com/hazelian0619/protian-entity/releases/tag/rna-l1-v1
 - 使用说明：`pipelines/rna/README.md`
 - 规范：`docs/rna/README.md`
+
+---
+
+## 💊 小分子（Molecules）实体（L1）与 PSI（L2, v1）
+
+小分子按同样的“工业级数据产品”方式交付：
+
+- 代码/规范/QA/manifest 进仓库
+- 大体积数据（SQLite）通过 GitHub Releases 发布
+
+入口：
+
+- 使用说明：`pipelines/molecules/README.md`
+- 规范：`docs/molecules/README.md`
+
+Releases：
+
+- Molecules L1（M1+M2）：https://github.com/hazelian0619/protian-entity/releases/tag/molecules-l1-v1
+- Molecules PSI L2（M3）：https://github.com/hazelian0619/protian-entity/releases/tag/molecules-psi-l2-v1

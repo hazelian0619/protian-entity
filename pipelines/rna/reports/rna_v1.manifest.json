@@ -1,0 +1,25 @@
+{
+  "data_version": "kg-data-local",
+  "created_at": "2025-12-19T14:07:13.379221+00:00",
+  "git_commit": "864de54ce069737f834de784554dff2a7ebe6d3a",
+  "artifacts": [
+    {
+      "path": "data/output/rna_master_v1.tsv",
+      "size_bytes": 744099663,
+      "sha256": "02dd496132bc5b5a5e6ec92c1842b0c1c91b8c57bf4ca294e1e71f736de582a4",
+      "modified_time": "2025-12-19T14:05:28.014378+00:00"
+    },
+    {
+      "path": "data/output/rna_master_mirna_v1.tsv",
+      "size_bytes": 409059,
+      "sha256": "563fb3d46e1bcb934ebdb9805cc2dd90c632a88f9f8513fa9f272918ad3e1406",
+      "modified_time": "2025-12-19T14:05:24.013646+00:00"
+    },
+    {
+      "path": "data/output/rna_master_mrna_v1.tsv",
+      "size_bytes": 743690806,
+      "sha256": "6a36e4dc362b4a1efb199e4e9a9b6dd90a67d2b454f9f9c34f1d17b3ec859690",
+      "modified_time": "2025-12-19T12:02:40.715464+00:00"
+    }
+  ]
+}

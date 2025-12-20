@@ -1,0 +1,103 @@
+{
+  "run_id": "m3_20251219T160241Z",
+  "started_at_utc": "2025-12-19T16:02:41Z",
+  "finished_at_utc": "2025-12-19T16:05:18Z",
+  "input": {
+    "chembl_db": "data/raw/molecules/chembl_36/chembl_36.db",
+    "sha256_head": "c5a2bff99b26b19d3088d519d6857879b9a9e7115aa064585b821035e0a6920b",
+    "types": [
+      "IC50",
+      "Ki",
+      "Kd",
+      "EC50"
+    ],
+    "min_confidence": 6,
+    "require_inchikey": true,
+    "require_uniprot": false,
+    "activity_id_bounds": {
+      "start": null,
+      "end": null
+    }
+  },
+  "output": {
+    "out_db": "data/output/molecules/chembl_m3.sqlite",
+    "outdir": "pipelines/molecules/reports/m3"
+  },
+  "counts": {
+    "evidence_rows": 10000,
+    "edges": 9138,
+    "distinct_compounds_inchikey": 5083,
+    "distinct_targets_uniprot": 384,
+    "distinct_targets_chembl": 390,
+    "missing_inchikey": 0,
+    "missing_uniprot": 0,
+    "missing_pchembl": 1672
+  },
+  "distributions": {
+    "standard_type": [
+      [
+        "IC50",
+        5612
+      ],
+      [
+        "Ki",
+        3658
+      ],
+      [
+        "EC50",
+        542
+      ],
+      [
+        "Kd",
+        188
+      ]
+    ],
+    "standard_units": [
+      [
+        "nM",
+        9987
+      ],
+      [
+        "ug.mL-1",
+        13
+      ]
+    ],
+    "assay_type": [
+      [
+        "B",
+        8741
+      ],
+      [
+        "F",
+        1231
+      ],
+      [
+        "A",
+        28
+      ]
+    ],
+    "assay_confidence_score": [
+      [
+        "8",
+        7257
+      ],
+      [
+        "9",
+        2351
+      ],
+      [
+        "7",
+        211
+      ],
+      [
+        "6",
+        181
+      ]
+    ]
+  },
+  "runtime": {
+    "seconds": 157.01,
+    "seen": 10000,
+    "inserted": 10000
+  }
+}
