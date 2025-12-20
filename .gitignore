@@ -70,14 +70,14 @@ data/output/rna_master_*.tsv
 # Pipeline outputs (do not commit)
 data/output/
 data/processed/rna/
-pipelines/**/reports/
 pipelines/**/.cache/
 
-
-# Pipeline outputs (do not commit)
-data/output/
-data/processed/rna/
+# Reports are usually generated outputs (ignore by default).
 pipelines/**/reports/
+
+# Protein reports are small + reviewable; keep JSON in git for QA/regression.
+!pipelines/protein/reports/
+!pipelines/protein/reports/*.json
 
 # Local release packaging
 /dist/
