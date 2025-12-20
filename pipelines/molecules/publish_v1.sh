@@ -5,7 +5,7 @@ set -euo pipefail
 #
 # What it does:
 # 1) pushes branch `feat/molecules-v1`
-# 2) optionally opens a PR to main
+# 2) optionally opens a PR to main (and optionally auto-merges)
 # 3) packages release assets (large SQLite -> .zst)
 # 4) creates/updates GitHub Releases:
 #    - molecules-l1-v1
@@ -29,6 +29,16 @@ if ! command -v gh >/dev/null 2>&1; then
   exit 2
 fi
 
+if ! command -v sqlite3 >/dev/null 2>&1; then
+  echo "ERROR: sqlite3 not found." >&2
+  exit 2
+fi
+
+if ! command -v zstd >/dev/null 2>&1; then
+  echo "ERROR: zstd not found." >&2
+  exit 2
+fi
+
 echo "[INFO] gh auth status"
 gh auth status >/dev/null
 
@@ -49,6 +59,14 @@ if [[ "${SKIP_PR:-}" != "1" ]]; then
     gh pr create --base "$BASE_BRANCH" --head "$BRANCH" \
       --title "Add molecules (L1+PSI L2) pipeline + v1 release metadata" \
       --body "Adds small-molecule L1 (M1+M2) and PSI L2 (M3) industrialized pipeline, QA reports, and release packaging script."
+  fi
+
+  if [[ "${AUTO_MERGE:-}" == "1" ]]; then
+    echo "[INFO] auto-merging PR (squash)"
+    gh pr merge --squash --delete-branch --auto || gh pr merge --squash --delete-branch
+    echo "[INFO] checkout $BASE_BRANCH and update"
+    git checkout "$BASE_BRANCH"
+    git pull --ff-only
   fi
 fi
 
@@ -76,7 +94,7 @@ Assets
 - QC JSON + postmortems for auditability
 
 Source
-- Derived from ChEMBL 36 chemreps.
+- Derived from ChEMBL 36 chemreps. See `docs/molecules/SOURCES_AND_LICENSE.md`.
 EOF
 
 notes_m3="dist/molecules/RELEASE_NOTES_molecules_psi_l2_v1.md"
@@ -89,7 +107,7 @@ Assets
 - QC JSON + gates JSON + postmortem for auditability
 
 Source
-- Derived from ChEMBL 36 SQLite dump.
+- Derived from ChEMBL 36 SQLite dump. See `docs/molecules/SOURCES_AND_LICENSE.md`.
 EOF
 
 create_or_update_release() {
@@ -136,4 +154,3 @@ create_or_update_release \
 echo "[DONE] Published molecules releases."
 echo "- https://github.com/hazelian0619/protian-entity/releases/tag/molecules-l1-v1"
 echo "- https://github.com/hazelian0619/protian-entity/releases/tag/molecules-psi-l2-v1"
-
