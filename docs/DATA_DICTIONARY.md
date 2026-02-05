@@ -1,17 +1,21 @@
-# 数据字典（Data Dictionary）
+# Data Dictionary — `protein_master_v6_clean.tsv`
 
-## 概述
+This document describes the schema and field-level details for the primary protein entity table `protein_master_v6_clean.tsv` (v6 snapshot).
 
-本文档详细描述了protein_master_v6_clean.tsv主表的所有字段，包括数据类型、来源、说明和空值情况。
+Summary
+- Rows: 19,135
+- Columns: 33
+- Snapshot date: 2025-10-26
 
-**主表**：protein_master_v6_clean.tsv
-**行数**：19,135条
-**列数**：33列
-**更新日期**：2025-10-26
+Field categories
+- Core identifiers: `uniprot_id`, `entry_name`, `protein_name`, `symbol`, `hgnc_id`
+- Sequence: `sequence`, `sequence_len`, `mass`
+- Cross references and gene IDs: `ncbi_gene_id`, `ensembl_gene_id`, `ensembl_transcript_id`, `gene_synonyms`
+- Functional annotations: `function`, `go_biological_process`, `go_molecular_function`, `go_cellular_component`
+- Structural information: `pdb_ids`, `alphafold_pdb_url`, `alphafold_mean_plddt`
+- Localization and PTMs: `subcellular_location`, `ptms`, `diseases`, `domains`, `isoforms`
 
----
-
-## 字段详细说明
+For full, field-level descriptions and examples see the original Chinese doc preserved in `docs/DATA_DICTIONARY.cn.md`.
 
 ### 一、基础标识字段
 

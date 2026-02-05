@@ -1,0 +1,42 @@
+name: Data QA
+
+on:
+  pull_request:
+    paths:
+      - 'data/**'
+      - 'pipelines/**'
+      - 'tools/**'
+      - 'docs/**'
+  push:
+    branches: [ main ]
+    paths:
+      - 'data/**'
+      - 'pipelines/**'
+      - 'tools/**'
+      - 'docs/**'
+
+jobs:
+  validate-protein:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Run protein validation
+        id: validate
+        run: |
+          mkdir -p build/validate
+          python3 tools/kg_validate_table.py \
+            --contract pipelines/protein/contracts/protein_master_v6.json \
+            --table data/processed/protein_master_v6_clean.tsv \
+            --out build/validate/protein_master_v6_report.json
+
+      - name: Upload validation report
+        uses: actions/upload-artifact@v4
+        with:
+          name: protein_master_v6_report
+          path: build/validate/protein_master_v6_report.json

@@ -1,0 +1,5 @@
+# Code owners for repository
+# Format: <file pattern> <owner>
+/pipelines/ @hazelian0619
+/data/processed/ @hazelian0619
+/docs/ @hazelian0619

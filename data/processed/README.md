@@ -1,12 +1,11 @@
-# 1025 项目 - 处理后数据说明
+# Processed data — Protian Entity (Human Protein Knowledge Graph)
 
-## 概述
+This folder contains the final, curated data tables used as L1 entity products. Files are UTF-8 encoded TSVs and carry provenance information (source, fetch date, source_version).
 
-本目录包含人类蛋白质知识图谱的核心数据集，整合了多个权威生物信息学数据库的信息。
-
-**数据更新时间**：2025-10-26
-**数据版本**：v6
-**物种**：Homo sapiens (人类，Taxonomy ID: 9606)
+Summary
+- Data snapshot date: 2025-10-26
+- Version: v6
+- Species: Homo sapiens (Taxonomy ID: 9606)
 
 ---
 
