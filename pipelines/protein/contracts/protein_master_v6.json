@@ -1,0 +1,51 @@
+{
+  "name": "protein_master_v6",
+  "description": "Protein entity master table (v6)",
+  "required_columns": [
+    "uniprot_id",
+    "sequence",
+    "sequence_len",
+    "symbol",
+    "hgnc_id",
+    "source",
+    "fetch_date"
+  ],
+  "rules": [
+    {
+      "id": "pk_non_empty",
+      "type": "non_empty_rate",
+      "column": "uniprot_id",
+      "min_rate": 1.0
+    },
+    {
+      "id": "pk_unique",
+      "type": "unique",
+      "column": "uniprot_id"
+    },
+    {
+      "id": "sequence_non_empty",
+      "type": "non_empty_rate",
+      "column": "sequence",
+      "min_rate": 1.0
+    },
+    {
+      "id": "sequence_charset",
+      "type": "sequence_charset_rate",
+      "column": "sequence",
+      "allowed_chars": ["A","C","D","E","F","G","H","I","K","L","M","N","P","Q","R","S","T","V","W","Y","X","U","O","B","Z","J","-"],
+      "min_rate": 1.0
+    },
+    {
+      "id": "symbol_non_empty",
+      "type": "non_empty_rate",
+      "column": "symbol",
+      "min_rate": 0.99
+    },
+    {
+      "id": "alphafold_plddt_present",
+      "type": "non_empty_rate",
+      "column": "alphafold_mean_plddt",
+      "min_rate": 0.98
+    }
+  ]
+}
