@@ -1,0 +1,104 @@
+{
+  "table": "data/output/protein/protein_domains_interpro_v1.tsv",
+  "contract": "protein_domains_interpro_v1",
+  "row_count": 47430,
+  "columns": [
+    "uniprot_id",
+    "interpro_id",
+    "pfam_id",
+    "entry_name",
+    "start",
+    "end",
+    "source_version",
+    "fetch_date"
+  ],
+  "schema": {
+    "required_columns": [
+      "uniprot_id",
+      "interpro_id",
+      "pfam_id",
+      "entry_name",
+      "start",
+      "end",
+      "source_version",
+      "fetch_date"
+    ],
+    "missing_required": [],
+    "passed": true
+  },
+  "rules": [
+    {
+      "id": "uniprot_non_empty",
+      "type": "non_empty_rate",
+      "passed": true,
+      "checked": 47430,
+      "passed_count": 47430,
+      "rate": 1.0
+    },
+    {
+      "id": "uniprot_format",
+      "type": "regex_rate",
+      "passed": true,
+      "checked": 47430,
+      "passed_count": 47430,
+      "rate": 1.0
+    },
+    {
+      "id": "interpro_format_or_empty",
+      "type": "regex_rate",
+      "passed": true,
+      "checked": 47430,
+      "passed_count": 47430,
+      "rate": 1.0
+    },
+    {
+      "id": "pfam_format",
+      "type": "regex_rate",
+      "passed": true,
+      "checked": 47430,
+      "passed_count": 47430,
+      "rate": 1.0
+    },
+    {
+      "id": "entry_name_non_empty",
+      "type": "non_empty_rate",
+      "passed": true,
+      "checked": 47430,
+      "passed_count": 47430,
+      "rate": 1.0
+    },
+    {
+      "id": "start_positive_int",
+      "type": "regex_rate",
+      "passed": true,
+      "checked": 47430,
+      "passed_count": 47430,
+      "rate": 1.0
+    },
+    {
+      "id": "end_positive_int",
+      "type": "regex_rate",
+      "passed": true,
+      "checked": 47430,
+      "passed_count": 47430,
+      "rate": 1.0
+    },
+    {
+      "id": "source_version_non_empty",
+      "type": "non_empty_rate",
+      "passed": true,
+      "checked": 47430,
+      "passed_count": 47430,
+      "rate": 1.0
+    },
+    {
+      "id": "fetch_date_iso",
+      "type": "regex_rate",
+      "passed": true,
+      "checked": 47430,
+      "passed_count": 47430,
+      "rate": 1.0
+    }
+  ],
+  "passed": true
+}

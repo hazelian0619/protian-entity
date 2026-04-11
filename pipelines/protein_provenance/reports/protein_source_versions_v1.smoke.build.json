@@ -1,0 +1,276 @@
+{
+  "name": "protein_source_versions_v1",
+  "created_at": "2026-04-11T14:48:17.374039+00:00",
+  "output": "pipelines/protein_provenance/reports/protein_source_versions_v1.smoke.tsv",
+  "rows_written": 6,
+  "sampled_mode": true,
+  "max_rows_per_input": 2000,
+  "scan_profiles": {
+    "protein_master_v6_clean.tsv": {
+      "path": "/Users/pluviophile/graph/1218/data/processed/protein_master_v6_clean.tsv",
+      "rows_scanned": 2000,
+      "sampled": true,
+      "max_rows": 2000,
+      "columns": {
+        "source": {
+          "non_empty": 2000,
+          "unique_non_empty": 1,
+          "top_values": [
+            {
+              "value": "UniProtKB/Swiss-Prot",
+              "count": 2000
+            }
+          ],
+          "max_value": "UniProtKB/Swiss-Prot",
+          "min_value": "UniProtKB/Swiss-Prot"
+        },
+        "fetch_date": {
+          "non_empty": 2000,
+          "unique_non_empty": 1,
+          "top_values": [
+            {
+              "value": "2025-10-26",
+              "count": 2000
+            }
+          ],
+          "max_value": "2025-10-26",
+          "min_value": "2025-10-26"
+        },
+        "date_modified": {
+          "non_empty": 2000,
+          "unique_non_empty": 1,
+          "top_values": [
+            {
+              "value": "2025-06-18",
+              "count": 2000
+            }
+          ],
+          "max_value": "2025-06-18",
+          "min_value": "2025-06-18"
+        }
+      }
+    },
+    "protein_edges.tsv": {
+      "path": "/Users/pluviophile/graph/1218/data/processed/protein_edges.tsv",
+      "rows_scanned": 2000,
+      "sampled": true,
+      "max_rows": 2000,
+      "columns": {
+        "source": {
+          "non_empty": 2000,
+          "unique_non_empty": 1,
+          "top_values": [
+            {
+              "value": "STRING_v12.0",
+              "count": 2000
+            }
+          ],
+          "max_value": "STRING_v12.0",
+          "min_value": "STRING_v12.0"
+        },
+        "fetch_date": {
+          "non_empty": 2000,
+          "unique_non_empty": 1,
+          "top_values": [
+            {
+              "value": "2025-10-26",
+              "count": 2000
+            }
+          ],
+          "max_value": "2025-10-26",
+          "min_value": "2025-10-26"
+        }
+      }
+    },
+    "ptm_sites.tsv": {
+      "path": "/Users/pluviophile/graph/1218/data/processed/ptm_sites.tsv",
+      "rows_scanned": 2000,
+      "sampled": true,
+      "max_rows": 2000,
+      "columns": {
+        "source": {
+          "non_empty": 2000,
+          "unique_non_empty": 1,
+          "top_values": [
+            {
+              "value": "PhosphoSitePlus",
+              "count": 2000
+            }
+          ],
+          "max_value": "PhosphoSitePlus",
+          "min_value": "PhosphoSitePlus"
+        },
+        "fetch_date": {
+          "non_empty": 2000,
+          "unique_non_empty": 1,
+          "top_values": [
+            {
+              "value": "2025-10-26",
+              "count": 2000
+            }
+          ],
+          "max_value": "2025-10-26",
+          "min_value": "2025-10-26"
+        }
+      }
+    },
+    "pathway_members.tsv": {
+      "path": "/Users/pluviophile/graph/1218/data/processed/pathway_members.tsv",
+      "rows_scanned": 2000,
+      "sampled": true,
+      "max_rows": 2000,
+      "columns": {
+        "source": {
+          "non_empty": 2000,
+          "unique_non_empty": 1,
+          "top_values": [
+            {
+              "value": "Reactome",
+              "count": 2000
+            }
+          ],
+          "max_value": "Reactome",
+          "min_value": "Reactome"
+        },
+        "fetch_date": {
+          "non_empty": 2000,
+          "unique_non_empty": 1,
+          "top_values": [
+            {
+              "value": "2025-10-26",
+              "count": 2000
+            }
+          ],
+          "max_value": "2025-10-26",
+          "min_value": "2025-10-26"
+        }
+      }
+    },
+    "alphafold_quality.tsv": {
+      "path": "/Users/pluviophile/graph/1218/data/processed/alphafold_quality.tsv",
+      "rows_scanned": 2000,
+      "sampled": true,
+      "max_rows": 2000,
+      "columns": {
+        "alphafold_version": {
+          "non_empty": 2000,
+          "unique_non_empty": 1,
+          "top_values": [
+            {
+              "value": "v6",
+              "count": 2000
+            }
+          ],
+          "max_value": "v6",
+          "min_value": "v6"
+        }
+      }
+    },
+    "hgnc_core.tsv": {
+      "path": "/Users/pluviophile/graph/1218/data/processed/hgnc_core.tsv",
+      "rows_scanned": 2000,
+      "sampled": true,
+      "max_rows": 2000,
+      "columns": {
+        "date_modified": {
+          "non_empty": 2000,
+          "unique_non_empty": 125,
+          "top_values": [
+            {
+              "value": "2023-01-20",
+              "count": 1548
+            },
+            {
+              "value": "2023-03-15",
+              "count": 131
+            },
+            {
+              "value": "2024-09-16",
+              "count": 17
+            },
+            {
+              "value": "2023-10-26",
+              "count": 16
+            },
+            {
+              "value": "2025-10-02",
+              "count": 13
+            },
+            {
+              "value": "2023-07-21",
+              "count": 13
+            },
+            {
+              "value": "2024-03-11",
+              "count": 9
+            },
+            {
+              "value": "2023-07-07",
+              "count": 9
+            },
+            {
+              "value": "2024-01-15",
+              "count": 9
+            },
+            {
+              "value": "2023-08-17",
+              "count": 8
+            }
+          ],
+          "max_value": "2025-10-06",
+          "min_value": "2015-01-09"
+        }
+      }
+    }
+  },
+  "preview_rows": [
+    {
+      "dataset": "protein_master_v6_clean.tsv",
+      "primary_source": "UniProtKB (Swiss-Prot-centric, integrated)",
+      "source_version": "v6_clean|UniProt:max_date_modified=2025-06-18|AlphaFold:v6|STRING:STRING_v12.0|HGNC:snapshot_2025-10",
+      "fetch_date": "2025-10-26",
+      "evidence_field": "source,date_modified,fetch_date + alphafold_quality.alphafold_version + protein_edges.source + hgnc_core.date_modified",
+      "notes": "Composite anchor rule: one row aggregates component versions; keep source_version in sidecar table to avoid changing existing protein_master contracts/joins."
+    },
+    {
+      "dataset": "protein_edges.tsv",
+      "primary_source": "STRING",
+      "source_version": "STRING_v12.0",
+      "fetch_date": "2025-10-26",
+      "evidence_field": "source,fetch_date",
+      "notes": "Raw source already carries explicit version in source (e.g., STRING_v12.0)."
+    },
+    {
+      "dataset": "ptm_sites.tsv",
+      "primary_source": "PhosphoSitePlus",
+      "source_version": "snapshot@2025-10-26",
+      "fetch_date": "2025-10-26",
+      "evidence_field": "source,fetch_date",
+      "notes": "No explicit upstream release code in table; lock by fetch_date snapshot."
+    },
+    {
+      "dataset": "pathway_members.tsv",
+      "primary_source": "Reactome",
+      "source_version": "snapshot@2025-10-26",
+      "fetch_date": "2025-10-26",
+      "evidence_field": "source,fetch_date",
+      "notes": "No explicit release code in table; lock by fetch_date snapshot."
+    },
+    {
+      "dataset": "alphafold_quality.tsv",
+      "primary_source": "AlphaFold DB",
+      "source_version": "v6",
+      "fetch_date": "2025-10-26",
+      "evidence_field": "alphafold_version (+protein_master.fetch_date fallback)",
+      "notes": "alphafold_quality has explicit version but no fetch_date column; inherit fetch_date from protein_master_v6_clean.tsv."
+    },
+    {
+      "dataset": "hgnc_core.tsv",
+      "primary_source": "HGNC",
+      "source_version": "snapshot_2025-10(max_date_modified=2025-10-06)",
+      "fetch_date": "2025-10-26",
+      "evidence_field": "date_modified (+protein_master.fetch_date fallback)",
+      "notes": "HGNC file has per-gene date_modified, not a single release field; use latest observed date as snapshot anchor and inherit fetch_date."
+    }
+  ]
+}

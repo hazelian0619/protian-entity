@@ -1,0 +1,27 @@
+{
+  "pipeline": "protein_domains_interpro_v1",
+  "generated_at_utc": "2026-04-11T14:40:29.005155+00:00",
+  "input_uniprot_count": 30,
+  "output_uniprot_count": 28,
+  "status_counts": {
+    "200": 28,
+    "204": 2
+  },
+  "failed_count": 0,
+  "failed_uniprot_ids": [],
+  "missing_uniprot_count": 2,
+  "missing_uniprot_ids": [
+    "A0AVF1",
+    "A0MZ66"
+  ],
+  "non_joinable_uniprot_count": 0,
+  "non_joinable_uniprot_ids": [],
+  "manual_download_required": false,
+  "manual_download_reason": {
+    "failed_rate": 0.0,
+    "failed_rate_threshold": 0.05,
+    "throughput_uniprot_per_sec": 15.0,
+    "min_throughput": 5.0
+  },
+  "manual_download_plan": null
+}

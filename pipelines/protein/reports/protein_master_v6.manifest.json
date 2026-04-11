@@ -1,0 +1,13 @@
+{
+  "data_version": "kg-data-local",
+  "created_at": "2026-04-11T15:57:16.034250+00:00",
+  "git_commit": "c3208ad738d3a02e401ea5293c5abd4b9f5e22a3",
+  "artifacts": [
+    {
+      "path": "data/processed/protein_master_v6_clean.tsv",
+      "size_bytes": 60891674,
+      "sha256": "e2e7b29d22216f6d0b9111cfcbafde8f9ab33ff8ca5960759acb772a1f324217",
+      "modified_time": "2026-04-11T15:52:23.670024+00:00"
+    }
+  ]
+}

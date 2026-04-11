@@ -1,0 +1,31 @@
+{
+  "data_version": "kg-data-local",
+  "created_at": "2026-04-11T15:54:30.125105+00:00",
+  "git_commit": "e04b0b51285600ba87e16ced0fc2c5a885833b91",
+  "artifacts": [
+    {
+      "path": "data/output/protein/protein_source_versions_v1.tsv",
+      "size_bytes": 1453,
+      "sha256": "f6c2d375ce2f1c5f8fc5971c6df14e527af36228f5090327390da499005a560a",
+      "modified_time": "2026-04-11T14:48:21+00:00"
+    },
+    {
+      "path": "pipelines/protein_provenance/contracts/protein_source_versions_v1.json",
+      "size_bytes": 2986,
+      "sha256": "3a3b215b8e2a26f176c6be5b13a1c77215d89d6d489f6bf5eb6e30c903f97197",
+      "modified_time": "2026-04-11T13:57:40+00:00"
+    },
+    {
+      "path": "pipelines/protein_provenance/reports/protein_source_versions_v1.validation.json",
+      "size_bytes": 2893,
+      "sha256": "ae8e6c91946cb136128e5a50f59420de133e3ee2d71fb8072b593f74501ec3f2",
+      "modified_time": "2026-04-11T15:54:11.604633+00:00"
+    },
+    {
+      "path": "pipelines/protein_provenance/reports/protein_source_versions_v1.qa.json",
+      "size_bytes": 1373,
+      "sha256": "3e63e28dd65688a6bad7e673568ea8bff37db87795fe52d186fe03e25fa9c223",
+      "modified_time": "2026-04-11T14:48:21+00:00"
+    }
+  ]
+}

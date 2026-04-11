@@ -1,0 +1,74 @@
+{
+  "name": "pdb_structures_v1_api_audit",
+  "created_at": "2026-04-11T14:34:41.430466+00:00",
+  "input": "data/processed/protein_master_v6_clean.tsv",
+  "output": "data/output/protein/pdb_structures_v1.tsv",
+  "sample_mode": false,
+  "max_unique_pdb": null,
+  "selected_unique_pdb": 67594,
+  "selected_pairs": 109531,
+  "found_unique_pdb": 67585,
+  "missing_unique_pdb": 9,
+  "api_error_unique_pdb": 0,
+  "api_failure_rate": 0.0,
+  "fail_threshold": 0.05,
+  "stats": {
+    "batches_total": 7,
+    "batches_failed": 0,
+    "graphql_requests": 7,
+    "graphql_failures": 0,
+    "core_fallback_requests": 0,
+    "core_fallback_failures": 0
+  },
+  "missing_ids": [
+    "4Y3B",
+    "6KFT",
+    "6Y3E",
+    "7ZIK",
+    "8CM8",
+    "8R6Q",
+    "8UKA",
+    "8VOD",
+    "9DAM"
+  ],
+  "missing_details": [
+    {
+      "pdb_id": "4Y3B",
+      "reason": "not_found_in_graphql"
+    },
+    {
+      "pdb_id": "6KFT",
+      "reason": "not_found_in_graphql"
+    },
+    {
+      "pdb_id": "6Y3E",
+      "reason": "not_found_in_graphql"
+    },
+    {
+      "pdb_id": "7ZIK",
+      "reason": "not_found_in_graphql"
+    },
+    {
+      "pdb_id": "8CM8",
+      "reason": "not_found_in_graphql"
+    },
+    {
+      "pdb_id": "8R6Q",
+      "reason": "not_found_in_graphql"
+    },
+    {
+      "pdb_id": "8UKA",
+      "reason": "not_found_in_graphql"
+    },
+    {
+      "pdb_id": "8VOD",
+      "reason": "not_found_in_graphql"
+    },
+    {
+      "pdb_id": "9DAM",
+      "reason": "not_found_in_graphql"
+    }
+  ],
+  "api_error_ids": [],
+  "manual_download_required": false
+}

@@ -1,0 +1,61 @@
+{
+  "name": "pdb_structures_v1",
+  "description": "Structured PDB details expanded from protein_master_v6_clean.pdb_ids",
+  "required_columns": [
+    "pdb_id",
+    "uniprot_id",
+    "experimental_method",
+    "resolution",
+    "release_date",
+    "ligand_count",
+    "source",
+    "fetch_date"
+  ],
+  "rules": [
+    {
+      "id": "pdb_id_non_empty",
+      "type": "non_empty_rate",
+      "column": "pdb_id",
+      "min_rate": 1.0
+    },
+    {
+      "id": "pdb_id_format",
+      "type": "regex_rate",
+      "column": "pdb_id",
+      "pattern": "^[0-9A-Z]{4}$",
+      "min_rate": 1.0
+    },
+    {
+      "id": "uniprot_id_non_empty",
+      "type": "non_empty_rate",
+      "column": "uniprot_id",
+      "min_rate": 1.0
+    },
+    {
+      "id": "source_non_empty",
+      "type": "non_empty_rate",
+      "column": "source",
+      "min_rate": 1.0
+    },
+    {
+      "id": "source_allowed",
+      "type": "allowed_values_rate",
+      "column": "source",
+      "allowed": ["RCSB_DATA_API"],
+      "min_rate": 1.0
+    },
+    {
+      "id": "fetch_date_non_empty",
+      "type": "non_empty_rate",
+      "column": "fetch_date",
+      "min_rate": 1.0
+    },
+    {
+      "id": "fetch_date_format",
+      "type": "regex_rate",
+      "column": "fetch_date",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+      "min_rate": 1.0
+    }
+  ]
+}

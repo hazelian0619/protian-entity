@@ -1,0 +1,74 @@
+{
+  "name": "protein_physchem_v1",
+  "description": "Physicochemical properties recalculated from protein sequences in protein_master_v6_clean.tsv",
+  "required_columns": [
+    "uniprot_id",
+    "sequence_len",
+    "mass_recalc",
+    "isoelectric_point",
+    "gravy",
+    "aromaticity",
+    "instability_index"
+  ],
+  "rules": [
+    {
+      "id": "uniprot_id_non_empty",
+      "type": "non_empty_rate",
+      "column": "uniprot_id",
+      "min_rate": 1.0
+    },
+    {
+      "id": "uniprot_id_unique",
+      "type": "unique",
+      "column": "uniprot_id"
+    },
+    {
+      "id": "sequence_len_non_empty",
+      "type": "non_empty_rate",
+      "column": "sequence_len",
+      "min_rate": 1.0
+    },
+    {
+      "id": "sequence_len_numeric",
+      "type": "regex_rate",
+      "column": "sequence_len",
+      "pattern": "^[0-9]+$",
+      "min_rate": 1.0
+    },
+    {
+      "id": "mass_recalc_numeric",
+      "type": "regex_rate",
+      "column": "mass_recalc",
+      "pattern": "^-?[0-9]+(\\.[0-9]+)?$",
+      "min_rate": 1.0
+    },
+    {
+      "id": "isoelectric_point_numeric",
+      "type": "regex_rate",
+      "column": "isoelectric_point",
+      "pattern": "^-?[0-9]+(\\.[0-9]+)?$",
+      "min_rate": 1.0
+    },
+    {
+      "id": "gravy_numeric",
+      "type": "regex_rate",
+      "column": "gravy",
+      "pattern": "^-?[0-9]+(\\.[0-9]+)?$",
+      "min_rate": 1.0
+    },
+    {
+      "id": "aromaticity_numeric",
+      "type": "regex_rate",
+      "column": "aromaticity",
+      "pattern": "^-?[0-9]+(\\.[0-9]+)?$",
+      "min_rate": 1.0
+    },
+    {
+      "id": "instability_index_numeric",
+      "type": "regex_rate",
+      "column": "instability_index",
+      "pattern": "^-?[0-9]+(\\.[0-9]+)?$",
+      "min_rate": 1.0
+    }
+  ]
+}

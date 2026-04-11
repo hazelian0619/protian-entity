@@ -1,0 +1,75 @@
+{
+  "name": "pdb_structures_v1_qa",
+  "created_at": "2026-04-11T14:34:41.024569+00:00",
+  "inputs": {
+    "master": "data/processed/protein_master_v6_clean.tsv",
+    "table": "pipelines/protein_pdb/.cache/pdb_structures_v1.smoke.tsv",
+    "build_report": "pipelines/protein_pdb/reports/pdb_structures_v1.smoke.build.json"
+  },
+  "metrics": {
+    "master_rows": 19135,
+    "master_pairs": 109531,
+    "expected_pairs": 1281,
+    "sample_mode": true,
+    "output_rows": 1281,
+    "output_unique_pairs": 1281,
+    "missing_pairs": 108250,
+    "orphan_pairs": 0,
+    "duplicate_pairs": 0,
+    "resolution_non_empty_rows": 1268
+  },
+  "gates": [
+    {
+      "id": "row_count_matches_expected_pairs",
+      "passed": true,
+      "detail": {
+        "output_rows": 1281,
+        "expected_pairs": 1281,
+        "sample_mode": true,
+        "master_pairs": 109531,
+        "missing_pairs_vs_master": 108250
+      }
+    },
+    {
+      "id": "pair_traceability_to_master",
+      "passed": true,
+      "detail": {
+        "orphans": 0,
+        "orphan_examples": []
+      }
+    },
+    {
+      "id": "pair_unique",
+      "passed": true,
+      "detail": {
+        "duplicate_pairs": 0
+      }
+    },
+    {
+      "id": "resolution_legal_range",
+      "passed": true,
+      "detail": {
+        "non_empty_resolution_rows": 1268,
+        "bad_format": 0,
+        "bad_range": 0,
+        "bad_range_non_em": 0,
+        "bad_range_em": 0,
+        "allowed_min": 0.1,
+        "allowed_max_non_em": 25.0,
+        "allowed_max_em": 60.0,
+        "observed_min": 1.2,
+        "observed_max": 12.0,
+        "examples": []
+      }
+    },
+    {
+      "id": "api_failure_rate_below_threshold",
+      "passed": true,
+      "detail": {
+        "api_failure_rate": 0.0,
+        "threshold": 0.05
+      }
+    }
+  ],
+  "passed": true
+}

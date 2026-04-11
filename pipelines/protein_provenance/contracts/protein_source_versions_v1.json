@@ -1,0 +1,130 @@
+{
+  "name": "protein_source_versions_v1",
+  "description": "Protein provenance sidecar table with one version anchor row per upstream dataset",
+  "required_columns": [
+    "dataset",
+    "primary_source",
+    "source_version",
+    "fetch_date",
+    "evidence_field",
+    "notes"
+  ],
+  "rules": [
+    {
+      "id": "dataset_non_empty",
+      "type": "non_empty_rate",
+      "column": "dataset",
+      "min_rate": 1.0
+    },
+    {
+      "id": "dataset_unique",
+      "type": "unique",
+      "column": "dataset"
+    },
+    {
+      "id": "dataset_allowed_values",
+      "type": "allowed_values_rate",
+      "column": "dataset",
+      "allowed": [
+        "protein_master_v6_clean.tsv",
+        "protein_edges.tsv",
+        "ptm_sites.tsv",
+        "pathway_members.tsv",
+        "alphafold_quality.tsv",
+        "hgnc_core.tsv"
+      ],
+      "min_rate": 1.0
+    },
+    {
+      "id": "has_protein_master_row",
+      "type": "non_empty_rate",
+      "column": "source_version",
+      "where": {
+        "column": "dataset",
+        "equals": "protein_master_v6_clean.tsv"
+      },
+      "min_rate": 1.0
+    },
+    {
+      "id": "has_protein_edges_row",
+      "type": "non_empty_rate",
+      "column": "source_version",
+      "where": {
+        "column": "dataset",
+        "equals": "protein_edges.tsv"
+      },
+      "min_rate": 1.0
+    },
+    {
+      "id": "has_ptm_sites_row",
+      "type": "non_empty_rate",
+      "column": "source_version",
+      "where": {
+        "column": "dataset",
+        "equals": "ptm_sites.tsv"
+      },
+      "min_rate": 1.0
+    },
+    {
+      "id": "has_pathway_members_row",
+      "type": "non_empty_rate",
+      "column": "source_version",
+      "where": {
+        "column": "dataset",
+        "equals": "pathway_members.tsv"
+      },
+      "min_rate": 1.0
+    },
+    {
+      "id": "has_alphafold_quality_row",
+      "type": "non_empty_rate",
+      "column": "source_version",
+      "where": {
+        "column": "dataset",
+        "equals": "alphafold_quality.tsv"
+      },
+      "min_rate": 1.0
+    },
+    {
+      "id": "has_hgnc_core_row",
+      "type": "non_empty_rate",
+      "column": "source_version",
+      "where": {
+        "column": "dataset",
+        "equals": "hgnc_core.tsv"
+      },
+      "min_rate": 1.0
+    },
+    {
+      "id": "primary_source_non_empty",
+      "type": "non_empty_rate",
+      "column": "primary_source",
+      "min_rate": 1.0
+    },
+    {
+      "id": "source_version_non_empty",
+      "type": "non_empty_rate",
+      "column": "source_version",
+      "min_rate": 1.0
+    },
+    {
+      "id": "fetch_date_non_empty",
+      "type": "non_empty_rate",
+      "column": "fetch_date",
+      "min_rate": 1.0
+    },
+    {
+      "id": "fetch_date_format",
+      "type": "regex_rate",
+      "column": "fetch_date",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+      "min_rate": 1.0
+    },
+    {
+      "id": "evidence_field_non_empty",
+      "type": "non_empty_rate",
+      "column": "evidence_field",
+      "min_rate": 1.0
+    }
+  ]
+}

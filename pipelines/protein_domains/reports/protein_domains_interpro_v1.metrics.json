@@ -1,0 +1,102 @@
+{
+  "pipeline": "protein_domains_interpro_v1",
+  "sample_mode": false,
+  "generated_at_utc": "2026-04-11T14:56:58.693420+00:00",
+  "row_count": {
+    "input_uniprot_ids": 19135,
+    "output_rows": 47430,
+    "output_uniprot_ids": 18415
+  },
+  "api": {
+    "status_counts": {
+      "200": 18415,
+      "204": 720
+    },
+    "failed_count": 0,
+    "failed_uniprot_ids_top50": [],
+    "source_versions": [
+      "108.0"
+    ],
+    "elapsed_seconds": 945.9094948768616,
+    "throughput_uniprot_per_sec": 20.24867724867725
+  },
+  "coverage": {
+    "join_pass_rate": 1.0,
+    "master_coverage_rate": 0.9623726156258166,
+    "domain_text_input_count": 8234,
+    "domain_text_covered_count": 8095,
+    "domain_text_coverage_rate": 0.983118775807627
+  },
+  "format_validation": {
+    "pfam_valid_rows": 47430,
+    "pfam_total_rows": 47430,
+    "pfam_valid_rate": 1.0,
+    "interpro_present_rows": 45353,
+    "interpro_valid_rows": 45353,
+    "interpro_valid_rate": 1.0,
+    "start_end_valid_rows": 47430,
+    "start_end_valid_rate": 1.0
+  },
+  "missing_analysis": {
+    "missing_uniprot_count": 720,
+    "missing_uniprot_ids_top50": [
+      "A0A087WWA1",
+      "A0A096LP01",
+      "A0A096LP49",
+      "A0A0D9SF12",
+      "A0A0J9YXV3",
+      "A0A0U1RQF7",
+      "A0A0U1RQS6",
+      "A0A0U1RR37",
+      "A0A0U1RRA0",
+      "A0A0U1RRL7",
+      "A0A0U1RRN3",
+      "A0A1B0GTC6",
+      "A0A1B0GTI1",
+      "A0A1B0GTI8",
+      "A0A1B0GTJ6",
+      "A0A1B0GTK4",
+      "A0A1B0GTK5",
+      "A0A1B0GTL2",
+      "A0A1B0GTR0",
+      "A0A1B0GTR4",
+      "A0A1B0GTY4",
+      "A0A1B0GTZ2",
+      "A0A1B0GU29",
+      "A0A1B0GU33",
+      "A0A1B0GUA5",
+      "A0A1B0GUA6",
+      "A0A1B0GUA7",
+      "A0A1B0GUC4",
+      "A0A1B0GUI7",
+      "A0A1B0GUQ0",
+      "A0A1B0GUS0",
+      "A0A1B0GUT2",
+      "A0A1B0GUV1",
+      "A0A1B0GUV7",
+      "A0A1B0GUW6",
+      "A0A1B0GUW7",
+      "A0A1B0GUY1",
+      "A0A1B0GV22",
+      "A0A1B0GV96",
+      "A0A1B0GVB3",
+      "A0A1B0GVG4",
+      "A0A1B0GVG6",
+      "A0A1B0GVH6",
+      "A0A1B0GVH7",
+      "A0A1B0GVM5",
+      "A0A1B0GVM6",
+      "A0A1B0GVN3",
+      "A0A1B0GVQ3",
+      "A0A1B0GVT2",
+      "A0A1B0GVV1"
+    ],
+    "non_joinable_uniprot_count": 0,
+    "non_joinable_uniprot_ids_top50": []
+  },
+  "acceptance": {
+    "join_pass_rate_gte_0_99": true,
+    "pfam_format_pass": true,
+    "interpro_format_pass": true
+  }
+}
