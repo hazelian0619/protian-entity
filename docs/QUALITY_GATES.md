@@ -29,6 +29,7 @@ Applied to `data/output/rna_master_v1.tsv`:
 Applied to `data/processed/protein_master_v6_clean.tsv`:
 
 - `uniprot_id` unique and non-empty.
+- `taxon_id` must be `9606` for v1 (human-only release).
 - `sequence` non-empty; AA alphabet validity.
 - `alphafold_id` coverage target (project-defined; current README claims ~99.7%).
 

@@ -1,0 +1,58 @@
+{
+  "name": "protein_source_versions_v1.qa",
+  "created_at": "2026-04-11T14:48:21.577297+00:00",
+  "input_table": "data/output/protein/protein_source_versions_v1.tsv",
+  "metrics": {
+    "rows": 6,
+    "source_version_non_empty_rate": 1.0,
+    "fetch_date_valid_rate": 1.0,
+    "expected_dataset_count": 6,
+    "actual_dataset_count": 6
+  },
+  "gates": [
+    {
+      "id": "source_version_non_empty_100pct",
+      "passed": true,
+      "detail": {
+        "rate": 1.0,
+        "non_empty": 6,
+        "total_rows": 6
+      }
+    },
+    {
+      "id": "fetch_date_iso_yyyy_mm_dd_100pct",
+      "passed": true,
+      "detail": {
+        "rate": 1.0,
+        "valid_rows": 6,
+        "total_rows": 6
+      }
+    },
+    {
+      "id": "each_dataset_exactly_one_row",
+      "passed": true,
+      "detail": {
+        "missing_expected": [],
+        "duplicated": {},
+        "unexpected": [],
+        "dataset_counter": {
+          "protein_master_v6_clean.tsv": 1,
+          "protein_edges.tsv": 1,
+          "ptm_sites.tsv": 1,
+          "pathway_members.tsv": 1,
+          "alphafold_quality.tsv": 1,
+          "hgnc_core.tsv": 1
+        }
+      }
+    },
+    {
+      "id": "protein_master_multi_source_rule_documented",
+      "passed": true,
+      "detail": {
+        "dataset": "protein_master_v6_clean.tsv",
+        "rule_detected": true
+      }
+    }
+  ],
+  "passed": true
+}

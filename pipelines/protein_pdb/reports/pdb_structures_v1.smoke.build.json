@@ -1,0 +1,32 @@
+{
+  "name": "pdb_structures_v1_build",
+  "created_at": "2026-04-11T14:34:36.096987+00:00",
+  "status": "ok",
+  "input": "data/processed/protein_master_v6_clean.tsv",
+  "output": "pipelines/protein_pdb/.cache/pdb_structures_v1.smoke.tsv",
+  "sample_mode": true,
+  "max_unique_pdb": 200,
+  "source_metrics": {
+    "master_rows": 19135,
+    "rows_with_pdb": 8469,
+    "pairs_raw": 109531,
+    "pairs_deduped": 109531,
+    "pairs_dropped_duplicate": 0
+  },
+  "selected_pairs": 1281,
+  "selected_unique_pdb": 200,
+  "output_rows": 1281,
+  "found_unique_pdb": 200,
+  "missing_unique_pdb": 0,
+  "api_error_unique_pdb": 0,
+  "api_failure_rate": 0.0,
+  "fail_threshold": 0.05,
+  "stats": {
+    "batches_total": 1,
+    "batches_failed": 0,
+    "graphql_requests": 1,
+    "graphql_failures": 0,
+    "core_fallback_requests": 0,
+    "core_fallback_failures": 0
+  }
+}

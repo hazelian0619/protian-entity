@@ -1,0 +1,168 @@
+{
+  "table": "data/processed/protein_master_v6_clean.tsv",
+  "contract": "protein_master_v6",
+  "row_count": 19135,
+  "columns": [
+    "uniprot_id",
+    "entry_name",
+    "protein_name",
+    "gene_names",
+    "taxon_id",
+    "sequence",
+    "sequence_len",
+    "mass",
+    "subcellular_location",
+    "ptms",
+    "diseases",
+    "isoforms",
+    "domains",
+    "pdb_ids",
+    "string_ids",
+    "keywords",
+    "date_modified",
+    "source",
+    "fetch_date",
+    "hgnc_id",
+    "symbol",
+    "has_alphafold",
+    "alphafold_id",
+    "alphafold_entry_url",
+    "alphafold_pdb_url",
+    "alphafold_mean_plddt",
+    "ncbi_gene_id",
+    "ensembl_gene_id",
+    "ensembl_transcript_id",
+    "gene_synonyms",
+    "function",
+    "go_biological_process",
+    "go_molecular_function",
+    "go_cellular_component"
+  ],
+  "schema": {
+    "required_columns": [
+      "uniprot_id",
+      "taxon_id",
+      "sequence",
+      "fetch_date",
+      "source",
+      "alphafold_mean_plddt",
+      "ensembl_gene_id",
+      "ncbi_gene_id",
+      "hgnc_id",
+      "symbol",
+      "has_alphafold"
+    ],
+    "missing_required": [],
+    "passed": true
+  },
+  "rules": [
+    {
+      "id": "pk_non_empty",
+      "type": "non_empty_rate",
+      "passed": true,
+      "checked": 19135,
+      "passed_count": 19135,
+      "rate": 1.0
+    },
+    {
+      "id": "pk_unique",
+      "type": "unique",
+      "passed": true,
+      "checked": 19135,
+      "passed_count": 19135,
+      "rate": 1.0,
+      "detail": {
+        "duplicates": 0
+      }
+    },
+    {
+      "id": "taxon_human_only",
+      "type": "equals_value_rate",
+      "passed": true,
+      "checked": 19135,
+      "passed_count": 19135,
+      "rate": 1.0
+    },
+    {
+      "id": "sequence_non_empty",
+      "type": "non_empty_rate",
+      "passed": true,
+      "checked": 19135,
+      "passed_count": 19135,
+      "rate": 1.0
+    },
+    {
+      "id": "sequence_charset",
+      "type": "sequence_charset_rate",
+      "passed": true,
+      "checked": 19135,
+      "passed_count": 19135,
+      "rate": 1.0
+    },
+    {
+      "id": "provenance_source",
+      "type": "non_empty_rate",
+      "passed": true,
+      "checked": 19135,
+      "passed_count": 19135,
+      "rate": 1.0
+    },
+    {
+      "id": "provenance_fetch_date",
+      "type": "non_empty_rate",
+      "passed": true,
+      "checked": 19135,
+      "passed_count": 19135,
+      "rate": 1.0
+    },
+    {
+      "id": "fetch_date_format",
+      "type": "regex_rate",
+      "passed": true,
+      "checked": 19135,
+      "passed_count": 19135,
+      "rate": 1.0
+    },
+    {
+      "id": "hgnc_id_format",
+      "type": "regex_rate",
+      "passed": true,
+      "checked": 19135,
+      "passed_count": 19135,
+      "rate": 1.0
+    },
+    {
+      "id": "has_alphafold_enum",
+      "type": "allowed_values_rate",
+      "passed": true,
+      "checked": 19135,
+      "passed_count": 19135,
+      "rate": 1.0
+    },
+    {
+      "id": "alphafold_mean_plddt_coverage",
+      "type": "non_empty_rate",
+      "passed": true,
+      "checked": 19135,
+      "passed_count": 19069,
+      "rate": 0.9965508230990332
+    },
+    {
+      "id": "ensembl_gene_id_format",
+      "type": "regex_rate",
+      "passed": true,
+      "checked": 19135,
+      "passed_count": 19025,
+      "rate": 0.994251371831722
+    },
+    {
+      "id": "ncbi_gene_id_format",
+      "type": "regex_rate",
+      "passed": true,
+      "checked": 19135,
+      "passed_count": 19054,
+      "rate": 0.9957669192579044
+    }
+  ],
+  "passed": true
+}

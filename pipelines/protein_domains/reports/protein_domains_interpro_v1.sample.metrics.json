@@ -1,0 +1,54 @@
+{
+  "pipeline": "protein_domains_interpro_v1",
+  "sample_mode": true,
+  "generated_at_utc": "2026-04-11T14:40:29.004929+00:00",
+  "row_count": {
+    "input_uniprot_ids": 30,
+    "output_rows": 63,
+    "output_uniprot_ids": 28
+  },
+  "api": {
+    "status_counts": {
+      "200": 28,
+      "204": 2
+    },
+    "failed_count": 0,
+    "failed_uniprot_ids_top50": [],
+    "source_versions": [
+      "108.0"
+    ],
+    "elapsed_seconds": 2.932382106781006,
+    "throughput_uniprot_per_sec": 15.0
+  },
+  "coverage": {
+    "join_pass_rate": 1.0,
+    "master_coverage_rate": 0.9333333333333333,
+    "domain_text_input_count": 8,
+    "domain_text_covered_count": 8,
+    "domain_text_coverage_rate": 1.0
+  },
+  "format_validation": {
+    "pfam_valid_rows": 63,
+    "pfam_total_rows": 63,
+    "pfam_valid_rate": 1.0,
+    "interpro_present_rows": 61,
+    "interpro_valid_rows": 61,
+    "interpro_valid_rate": 1.0,
+    "start_end_valid_rows": 63,
+    "start_end_valid_rate": 1.0
+  },
+  "missing_analysis": {
+    "missing_uniprot_count": 2,
+    "missing_uniprot_ids_top50": [
+      "A0AVF1",
+      "A0MZ66"
+    ],
+    "non_joinable_uniprot_count": 0,
+    "non_joinable_uniprot_ids_top50": []
+  },
+  "acceptance": {
+    "join_pass_rate_gte_0_99": true,
+    "pfam_format_pass": true,
+    "interpro_format_pass": true
+  }
+}

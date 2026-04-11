@@ -4,11 +4,12 @@ This document describes the schema and field-level details for the primary prote
 
 Summary
 - Rows: 19,135
-- Columns: 33
+- Columns: 34
 - Snapshot date: 2025-10-26
 
 Field categories
 - Core identifiers: `uniprot_id`, `entry_name`, `protein_name`, `symbol`, `hgnc_id`
+- Taxonomy: `taxon_id` (v1 fixed to human 9606)
 - Sequence: `sequence`, `sequence_len`, `mass`
 - Cross references and gene IDs: `ncbi_gene_id`, `ensembl_gene_id`, `ensembl_transcript_id`, `gene_synonyms`
 - Functional annotations: `function`, `go_biological_process`, `go_molecular_function`, `go_cellular_component`
@@ -25,6 +26,7 @@ For full, field-level descriptions and examples see the original Chinese doc pre
 | **entry_name** | VARCHAR(50) | UniProt Entry Name，格式为{PROTEIN}_{ORGANISM} | UniProt | 0% | TP53_HUMAN |
 | **protein_name** | VARCHAR(500) | 推荐蛋白质名称（全称） | UniProt | 0% | Cellular tumor antigen p53 |
 | **gene_names** | TEXT | 基因名称（可能包含多个别名，空格分隔） | UniProt | 0% | TP53 P53 |
+| **taxon_id** | VARCHAR(10) | 物种分类ID（v1 固定人类） | NCBI Taxonomy | 0% | 9606 |
 | **symbol** | VARCHAR(50) | HGNC官方基因符号（权威命名） | HGNC | 0% | TP53 |
 | **hgnc_id** | VARCHAR(20) | HGNC ID（格式：HGNC:数字） | HGNC | 0% | HGNC:11998 |
 

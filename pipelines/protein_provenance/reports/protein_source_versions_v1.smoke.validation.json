@@ -1,0 +1,145 @@
+{
+  "table": "pipelines/protein_provenance/reports/protein_source_versions_v1.smoke.tsv",
+  "contract": "protein_source_versions_v1",
+  "row_count": 6,
+  "max_rows": null,
+  "sampled": false,
+  "columns": [
+    "dataset",
+    "primary_source",
+    "source_version",
+    "fetch_date",
+    "evidence_field",
+    "notes"
+  ],
+  "schema": {
+    "required_columns": [
+      "dataset",
+      "primary_source",
+      "source_version",
+      "fetch_date",
+      "evidence_field",
+      "notes"
+    ],
+    "missing_required": [],
+    "passed": true
+  },
+  "rules": [
+    {
+      "id": "dataset_non_empty",
+      "type": "non_empty_rate",
+      "passed": true,
+      "checked": 6,
+      "passed_count": 6,
+      "rate": 1.0
+    },
+    {
+      "id": "dataset_unique",
+      "type": "unique",
+      "passed": true,
+      "checked": 6,
+      "passed_count": 6,
+      "rate": 1.0,
+      "detail": {
+        "duplicates": 0
+      }
+    },
+    {
+      "id": "dataset_allowed_values",
+      "type": "allowed_values_rate",
+      "passed": true,
+      "checked": 6,
+      "passed_count": 6,
+      "rate": 1.0
+    },
+    {
+      "id": "has_protein_master_row",
+      "type": "non_empty_rate",
+      "passed": true,
+      "checked": 1,
+      "passed_count": 1,
+      "rate": 1.0
+    },
+    {
+      "id": "has_protein_edges_row",
+      "type": "non_empty_rate",
+      "passed": true,
+      "checked": 1,
+      "passed_count": 1,
+      "rate": 1.0
+    },
+    {
+      "id": "has_ptm_sites_row",
+      "type": "non_empty_rate",
+      "passed": true,
+      "checked": 1,
+      "passed_count": 1,
+      "rate": 1.0
+    },
+    {
+      "id": "has_pathway_members_row",
+      "type": "non_empty_rate",
+      "passed": true,
+      "checked": 1,
+      "passed_count": 1,
+      "rate": 1.0
+    },
+    {
+      "id": "has_alphafold_quality_row",
+      "type": "non_empty_rate",
+      "passed": true,
+      "checked": 1,
+      "passed_count": 1,
+      "rate": 1.0
+    },
+    {
+      "id": "has_hgnc_core_row",
+      "type": "non_empty_rate",
+      "passed": true,
+      "checked": 1,
+      "passed_count": 1,
+      "rate": 1.0
+    },
+    {
+      "id": "primary_source_non_empty",
+      "type": "non_empty_rate",
+      "passed": true,
+      "checked": 6,
+      "passed_count": 6,
+      "rate": 1.0
+    },
+    {
+      "id": "source_version_non_empty",
+      "type": "non_empty_rate",
+      "passed": true,
+      "checked": 6,
+      "passed_count": 6,
+      "rate": 1.0
+    },
+    {
+      "id": "fetch_date_non_empty",
+      "type": "non_empty_rate",
+      "passed": true,
+      "checked": 6,
+      "passed_count": 6,
+      "rate": 1.0
+    },
+    {
+      "id": "fetch_date_format",
+      "type": "regex_rate",
+      "passed": true,
+      "checked": 6,
+      "passed_count": 6,
+      "rate": 1.0
+    },
+    {
+      "id": "evidence_field_non_empty",
+      "type": "non_empty_rate",
+      "passed": true,
+      "checked": 6,
+      "passed_count": 6,
+      "rate": 1.0
+    }
+  ],
+  "passed": true
+}

@@ -1,0 +1,50 @@
+{
+  "pipeline": "protein_physchem_v1",
+  "generated_at_utc": "2026-04-11T13:58:50.688472+00:00",
+  "input": "data/processed/protein_master_v6_clean.tsv",
+  "output": "data/output/protein/protein_physchem_v1.tsv",
+  "row_count": {
+    "input": 19135,
+    "output": 19135
+  },
+  "coverage": {
+    "expected_uniprot_ids": 19135,
+    "covered_uniprot_ids": 19135,
+    "coverage_rate": 1.0,
+    "missing_uniprot_ids_top20": []
+  },
+  "numeric_parse_rates": {
+    "sequence_len": 1.0,
+    "mass_recalc": 1.0,
+    "isoelectric_point": 1.0,
+    "gravy": 1.0,
+    "aromaticity": 1.0,
+    "instability_index": 1.0
+  },
+  "sequence_len_diff": {
+    "compared_rows": 19135,
+    "mismatch_rows": 0,
+    "mismatch_rate": 0.0,
+    "explanation": "No sequence_len difference found. sequence_len was recalculated as len(sequence) and fully matches protein_master_v6_clean.tsv.",
+    "samples_top20": []
+  },
+  "special_residue_substitution": {
+    "mapping": {
+      "U": "C",
+      "O": "K"
+    },
+    "counts": {
+      "U->C": 36
+    },
+    "note": "U/O are substituted before ProtParam calculation to keep 100% parseability."
+  },
+  "errors": {
+    "error_count": 0,
+    "samples_top20": []
+  },
+  "acceptance": {
+    "uniprot_id_coverage_100": true,
+    "numeric_parse_100": true,
+    "sequence_len_diff_reported": true
+  }
+}

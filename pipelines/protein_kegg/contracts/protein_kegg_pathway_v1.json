@@ -1,0 +1,65 @@
+{
+  "name": "protein_kegg_pathway_v1",
+  "description": "KEGG pathway mapping table for protein master (coexists with Reactome pathway_members.tsv)",
+  "required_columns": [
+    "uniprot_id",
+    "kegg_gene_id",
+    "kegg_pathway_id",
+    "pathway_name",
+    "source_version",
+    "fetch_date"
+  ],
+  "rules": [
+    {
+      "id": "uniprot_id_non_empty",
+      "type": "non_empty_rate",
+      "column": "uniprot_id",
+      "min_rate": 1.0
+    },
+    {
+      "id": "kegg_gene_id_non_empty",
+      "type": "non_empty_rate",
+      "column": "kegg_gene_id",
+      "min_rate": 1.0
+    },
+    {
+      "id": "kegg_gene_id_format",
+      "type": "regex_rate",
+      "column": "kegg_gene_id",
+      "pattern": "^hsa:\\d+$",
+      "min_rate": 1.0
+    },
+    {
+      "id": "kegg_pathway_id_non_empty",
+      "type": "non_empty_rate",
+      "column": "kegg_pathway_id",
+      "min_rate": 1.0
+    },
+    {
+      "id": "kegg_pathway_id_format",
+      "type": "regex_rate",
+      "column": "kegg_pathway_id",
+      "pattern": "^hsa\\d{5}$",
+      "min_rate": 1.0
+    },
+    {
+      "id": "pathway_name_non_empty",
+      "type": "non_empty_rate",
+      "column": "pathway_name",
+      "min_rate": 1.0
+    },
+    {
+      "id": "source_version_non_empty",
+      "type": "non_empty_rate",
+      "column": "source_version",
+      "min_rate": 1.0
+    },
+    {
+      "id": "fetch_date_format",
+      "type": "regex_rate",
+      "column": "fetch_date",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+      "min_rate": 1.0
+    }
+  ]
+}

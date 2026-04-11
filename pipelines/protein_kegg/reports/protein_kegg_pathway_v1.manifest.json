@@ -1,0 +1,37 @@
+{
+  "data_version": "kg-data-local",
+  "created_at": "2026-04-11T15:54:30.426370+00:00",
+  "git_commit": "e04b0b51285600ba87e16ced0fc2c5a885833b91",
+  "artifacts": [
+    {
+      "path": "data/output/protein/protein_kegg_pathway_v1.tsv",
+      "size_bytes": 4465812,
+      "sha256": "c723224ac15c77bea5aca622cd99d3500d6919257532509df25269f9c6b485d5",
+      "modified_time": "2026-04-11T14:00:02+00:00"
+    },
+    {
+      "path": "pipelines/protein_kegg/contracts/protein_kegg_pathway_v1.json",
+      "size_bytes": 1506,
+      "sha256": "477c00790e32a513fdbd5196223a75d76de29d60fff63dfe3bf228ae70a4d889",
+      "modified_time": "2026-04-11T13:56:29+00:00"
+    },
+    {
+      "path": "pipelines/protein_kegg/reports/protein_kegg_pathway_v1.validation.json",
+      "size_bytes": 1925,
+      "sha256": "37f2d0345318b17ca68dd3881745837b69c1c84c1a02a9d77a61cf5832529331",
+      "modified_time": "2026-04-11T15:54:13.421952+00:00"
+    },
+    {
+      "path": "pipelines/protein_kegg/reports/protein_kegg_pathway_v1.qa.json",
+      "size_bytes": 1470,
+      "sha256": "b938fc49d527795d92b4659e3ed74d404ab3372a4bc774c78889a9124d25d64a",
+      "modified_time": "2026-04-11T14:00:03+00:00"
+    },
+    {
+      "path": "pipelines/protein_kegg/reports/protein_kegg_pathway_v1.build.json",
+      "size_bytes": 1255,
+      "sha256": "8e0cfbdc88c2ac7b0db4fec0fab9d107c5754787ac03a671ead54e1dcc403673",
+      "modified_time": "2026-04-11T14:00:02+00:00"
+    }
+  ]
+}

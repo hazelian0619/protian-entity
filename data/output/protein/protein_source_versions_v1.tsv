@@ -1,0 +1,7 @@
+dataset	primary_source	source_version	fetch_date	evidence_field	notes
+protein_master_v6_clean.tsv	UniProtKB (Swiss-Prot-centric, integrated)	v6_clean|UniProt:max_date_modified=2025-06-18|AlphaFold:v6|STRING:STRING_v12.0|HGNC:snapshot_2025-10	2025-10-26	source,date_modified,fetch_date + alphafold_quality.alphafold_version + protein_edges.source + hgnc_core.date_modified	Composite anchor rule: one row aggregates component versions; keep source_version in sidecar table to avoid changing existing protein_master contracts/joins.
+protein_edges.tsv	STRING	STRING_v12.0	2025-10-26	source,fetch_date	Raw source already carries explicit version in source (e.g., STRING_v12.0).
+ptm_sites.tsv	PhosphoSitePlus	snapshot@2025-10-26	2025-10-26	source,fetch_date	No explicit upstream release code in table; lock by fetch_date snapshot.
+pathway_members.tsv	Reactome	snapshot@2025-10-26	2025-10-26	source,fetch_date	No explicit release code in table; lock by fetch_date snapshot.
+alphafold_quality.tsv	AlphaFold DB	v6	2025-10-26	alphafold_version (+protein_master.fetch_date fallback)	alphafold_quality has explicit version but no fetch_date column; inherit fetch_date from protein_master_v6_clean.tsv.
+hgnc_core.tsv	HGNC	snapshot_2025-10(max_date_modified=2025-10-06)	2025-10-26	date_modified (+protein_master.fetch_date fallback)	HGNC file has per-gene date_modified, not a single release field; use latest observed date as snapshot anchor and inherit fetch_date.

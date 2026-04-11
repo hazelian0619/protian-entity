@@ -1,0 +1,92 @@
+{
+  "table": "data/output/protein/protein_kegg_pathway_v1.tsv",
+  "contract": "protein_kegg_pathway_v1",
+  "row_count": 37409,
+  "columns": [
+    "uniprot_id",
+    "kegg_gene_id",
+    "kegg_pathway_id",
+    "pathway_name",
+    "source_version",
+    "fetch_date"
+  ],
+  "schema": {
+    "required_columns": [
+      "uniprot_id",
+      "kegg_gene_id",
+      "kegg_pathway_id",
+      "pathway_name",
+      "source_version",
+      "fetch_date"
+    ],
+    "missing_required": [],
+    "passed": true
+  },
+  "rules": [
+    {
+      "id": "uniprot_id_non_empty",
+      "type": "non_empty_rate",
+      "passed": true,
+      "checked": 37409,
+      "passed_count": 37409,
+      "rate": 1.0
+    },
+    {
+      "id": "kegg_gene_id_non_empty",
+      "type": "non_empty_rate",
+      "passed": true,
+      "checked": 37409,
+      "passed_count": 37409,
+      "rate": 1.0
+    },
+    {
+      "id": "kegg_gene_id_format",
+      "type": "regex_rate",
+      "passed": true,
+      "checked": 37409,
+      "passed_count": 37409,
+      "rate": 1.0
+    },
+    {
+      "id": "kegg_pathway_id_non_empty",
+      "type": "non_empty_rate",
+      "passed": true,
+      "checked": 37409,
+      "passed_count": 37409,
+      "rate": 1.0
+    },
+    {
+      "id": "kegg_pathway_id_format",
+      "type": "regex_rate",
+      "passed": true,
+      "checked": 37409,
+      "passed_count": 37409,
+      "rate": 1.0
+    },
+    {
+      "id": "pathway_name_non_empty",
+      "type": "non_empty_rate",
+      "passed": true,
+      "checked": 37409,
+      "passed_count": 37409,
+      "rate": 1.0
+    },
+    {
+      "id": "source_version_non_empty",
+      "type": "non_empty_rate",
+      "passed": true,
+      "checked": 37409,
+      "passed_count": 37409,
+      "rate": 1.0
+    },
+    {
+      "id": "fetch_date_format",
+      "type": "regex_rate",
+      "passed": true,
+      "checked": 37409,
+      "passed_count": 37409,
+      "rate": 1.0
+    }
+  ],
+  "passed": true
+}

@@ -1,0 +1,105 @@
+{
+  "table": "data/output/protein/protein_physchem_v1.tsv",
+  "contract": "protein_physchem_v1",
+  "row_count": 19135,
+  "columns": [
+    "uniprot_id",
+    "sequence_len",
+    "mass_recalc",
+    "isoelectric_point",
+    "gravy",
+    "aromaticity",
+    "instability_index"
+  ],
+  "schema": {
+    "required_columns": [
+      "uniprot_id",
+      "sequence_len",
+      "mass_recalc",
+      "isoelectric_point",
+      "gravy",
+      "aromaticity",
+      "instability_index"
+    ],
+    "missing_required": [],
+    "passed": true
+  },
+  "rules": [
+    {
+      "id": "uniprot_id_non_empty",
+      "type": "non_empty_rate",
+      "passed": true,
+      "checked": 19135,
+      "passed_count": 19135,
+      "rate": 1.0
+    },
+    {
+      "id": "uniprot_id_unique",
+      "type": "unique",
+      "passed": true,
+      "checked": 19135,
+      "passed_count": 19135,
+      "rate": 1.0,
+      "detail": {
+        "duplicates": 0
+      }
+    },
+    {
+      "id": "sequence_len_non_empty",
+      "type": "non_empty_rate",
+      "passed": true,
+      "checked": 19135,
+      "passed_count": 19135,
+      "rate": 1.0
+    },
+    {
+      "id": "sequence_len_numeric",
+      "type": "regex_rate",
+      "passed": true,
+      "checked": 19135,
+      "passed_count": 19135,
+      "rate": 1.0
+    },
+    {
+      "id": "mass_recalc_numeric",
+      "type": "regex_rate",
+      "passed": true,
+      "checked": 19135,
+      "passed_count": 19135,
+      "rate": 1.0
+    },
+    {
+      "id": "isoelectric_point_numeric",
+      "type": "regex_rate",
+      "passed": true,
+      "checked": 19135,
+      "passed_count": 19135,
+      "rate": 1.0
+    },
+    {
+      "id": "gravy_numeric",
+      "type": "regex_rate",
+      "passed": true,
+      "checked": 19135,
+      "passed_count": 19135,
+      "rate": 1.0
+    },
+    {
+      "id": "aromaticity_numeric",
+      "type": "regex_rate",
+      "passed": true,
+      "checked": 19135,
+      "passed_count": 19135,
+      "rate": 1.0
+    },
+    {
+      "id": "instability_index_numeric",
+      "type": "regex_rate",
+      "passed": true,
+      "checked": 19135,
+      "passed_count": 19135,
+      "rate": 1.0
+    }
+  ],
+  "passed": true
+}

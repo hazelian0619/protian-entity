@@ -1,0 +1,27 @@
+{
+  "name": "pdb_structures_v1_api_audit",
+  "created_at": "2026-04-11T14:34:36.096987+00:00",
+  "input": "data/processed/protein_master_v6_clean.tsv",
+  "output": "pipelines/protein_pdb/.cache/pdb_structures_v1.smoke.tsv",
+  "sample_mode": true,
+  "max_unique_pdb": 200,
+  "selected_unique_pdb": 200,
+  "selected_pairs": 1281,
+  "found_unique_pdb": 200,
+  "missing_unique_pdb": 0,
+  "api_error_unique_pdb": 0,
+  "api_failure_rate": 0.0,
+  "fail_threshold": 0.05,
+  "stats": {
+    "batches_total": 1,
+    "batches_failed": 0,
+    "graphql_requests": 1,
+    "graphql_failures": 0,
+    "core_fallback_requests": 0,
+    "core_fallback_failures": 0
+  },
+  "missing_ids": [],
+  "missing_details": [],
+  "api_error_ids": [],
+  "manual_download_required": false
+}
