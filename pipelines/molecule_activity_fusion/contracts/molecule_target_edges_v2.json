@@ -1,0 +1,122 @@
+{
+  "name": "molecule_target_edges_v2",
+  "description": "Aggregated molecule-target activity edges from fused activity evidence",
+  "required_columns": [
+    "edge_id",
+    "compound_inchikey",
+    "target_uniprot_accession",
+    "standard_type",
+    "best_normalized_nM",
+    "mean_normalized_nM",
+    "max_normalized_nM",
+    "best_confidence",
+    "best_confidence_score",
+    "evidence_count",
+    "doc_count",
+    "source_count",
+    "source_dbs",
+    "source_version",
+    "fetch_date"
+  ],
+  "rules": [
+    {
+      "id": "edge_id_non_empty",
+      "type": "non_empty_rate",
+      "column": "edge_id",
+      "min_rate": 1.0
+    },
+    {
+      "id": "edge_id_unique",
+      "type": "unique",
+      "column": "edge_id"
+    },
+    {
+      "id": "compound_inchikey_format",
+      "type": "regex_rate",
+      "column": "compound_inchikey",
+      "pattern": "^[A-Z]{14}-[A-Z]{10}-[A-Z]$",
+      "min_rate": 1.0
+    },
+    {
+      "id": "target_uniprot_non_empty",
+      "type": "non_empty_rate",
+      "column": "target_uniprot_accession",
+      "min_rate": 1.0
+    },
+    {
+      "id": "standard_type_allowed",
+      "type": "allowed_values_rate",
+      "column": "standard_type",
+      "allowed": ["IC50", "Ki", "Kd", "EC50"],
+      "min_rate": 1.0
+    },
+    {
+      "id": "best_normalized_nM_numeric",
+      "type": "regex_rate",
+      "column": "best_normalized_nM",
+      "pattern": "^-?[0-9]+(\\.[0-9]+)?([eE][+-]?[0-9]+)?$",
+      "min_rate": 1.0
+    },
+    {
+      "id": "mean_normalized_nM_numeric",
+      "type": "regex_rate",
+      "column": "mean_normalized_nM",
+      "pattern": "^-?[0-9]+(\\.[0-9]+)?([eE][+-]?[0-9]+)?$",
+      "min_rate": 1.0
+    },
+    {
+      "id": "max_normalized_nM_numeric",
+      "type": "regex_rate",
+      "column": "max_normalized_nM",
+      "pattern": "^-?[0-9]+(\\.[0-9]+)?([eE][+-]?[0-9]+)?$",
+      "min_rate": 1.0
+    },
+    {
+      "id": "best_confidence_allowed",
+      "type": "allowed_values_rate",
+      "column": "best_confidence",
+      "allowed": ["high", "medium", "low"],
+      "min_rate": 1.0
+    },
+    {
+      "id": "best_confidence_score_numeric",
+      "type": "regex_rate",
+      "column": "best_confidence_score",
+      "pattern": "^-?[0-9]+(\\.[0-9]+)?$",
+      "min_rate": 1.0
+    },
+    {
+      "id": "evidence_count_numeric",
+      "type": "regex_rate",
+      "column": "evidence_count",
+      "pattern": "^[0-9]+$",
+      "min_rate": 1.0
+    },
+    {
+      "id": "source_count_numeric",
+      "type": "regex_rate",
+      "column": "source_count",
+      "pattern": "^[0-9]+$",
+      "min_rate": 1.0
+    },
+    {
+      "id": "source_dbs_non_empty",
+      "type": "non_empty_rate",
+      "column": "source_dbs",
+      "min_rate": 1.0
+    },
+    {
+      "id": "source_version_non_empty",
+      "type": "non_empty_rate",
+      "column": "source_version",
+      "min_rate": 1.0
+    },
+    {
+      "id": "fetch_date_format",
+      "type": "regex_rate",
+      "column": "fetch_date",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+      "min_rate": 1.0
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "name": "molecule_semantic_tags_v1",
+  "description": "Semantic tagging layer for small molecules (ChEBI ontology + ATC + DrugBank groups + optional ZINC labels)",
+  "required_columns": [
+    "inchikey",
+    "chebi_id",
+    "chebi_name",
+    "chebi_ancestor_ids",
+    "chebi_paths",
+    "atc_code",
+    "atc_level1_code",
+    "atc_level1_description",
+    "atc_level2_code",
+    "atc_level2_description",
+    "drugbank_group",
+    "zinc_id",
+    "zinc_label",
+    "semantic_tags",
+    "chebi_source",
+    "atc_source",
+    "drugbank_source",
+    "zinc_source",
+    "fetch_date",
+    "source_version"
+  ],
+  "rules": [
+    {
+      "id": "inchikey_non_empty",
+      "type": "non_empty_rate",
+      "column": "inchikey",
+      "min_rate": 1.0
+    },
+    {
+      "id": "inchikey_format",
+      "type": "regex_rate",
+      "column": "inchikey",
+      "pattern": "^[A-Z]{14}-[A-Z]{10}-[A-Z]$",
+      "min_rate": 1.0
+    },
+    {
+      "id": "inchikey_unique",
+      "type": "unique",
+      "column": "inchikey"
+    },
+    {
+      "id": "semantic_tags_non_empty",
+      "type": "non_empty_rate",
+      "column": "semantic_tags",
+      "min_rate": 1.0
+    },
+    {
+      "id": "chebi_source_non_empty",
+      "type": "non_empty_rate",
+      "column": "chebi_source",
+      "min_rate": 1.0
+    },
+    {
+      "id": "atc_source_non_empty",
+      "type": "non_empty_rate",
+      "column": "atc_source",
+      "min_rate": 1.0
+    },
+    {
+      "id": "drugbank_source_non_empty",
+      "type": "non_empty_rate",
+      "column": "drugbank_source",
+      "min_rate": 1.0
+    },
+    {
+      "id": "zinc_source_non_empty",
+      "type": "non_empty_rate",
+      "column": "zinc_source",
+      "min_rate": 1.0
+    },
+    {
+      "id": "fetch_date_format",
+      "type": "regex_rate",
+      "column": "fetch_date",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+      "min_rate": 1.0
+    },
+    {
+      "id": "source_version_non_empty",
+      "type": "non_empty_rate",
+      "column": "source_version",
+      "min_rate": 1.0
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "name": "molecule_xref_core_v2",
+  "description": "Auditable small-molecule core xref table with two-stage DrugBank InChIKey backfill and unified ChEMBL/PubChem enrichment",
+  "required_columns": [
+    "inchikey",
+    "chembl_id",
+    "drugbank_id",
+    "pubchem_cid",
+    "match_strategy",
+    "confidence",
+    "xref_source",
+    "fetch_date",
+    "source_version"
+  ],
+  "rules": [
+    {
+      "id": "inchikey_non_empty",
+      "type": "non_empty_rate",
+      "column": "inchikey",
+      "min_rate": 1.0
+    },
+    {
+      "id": "inchikey_format",
+      "type": "regex_rate",
+      "column": "inchikey",
+      "pattern": "^[A-Z]{14}-[A-Z]{10}-[A-Z]$",
+      "min_rate": 1.0
+    },
+    {
+      "id": "inchikey_unique",
+      "type": "unique",
+      "column": "inchikey"
+    },
+    {
+      "id": "drugbank_id_non_empty",
+      "type": "non_empty_rate",
+      "column": "drugbank_id",
+      "min_rate": 1.0
+    },
+    {
+      "id": "match_strategy_non_empty",
+      "type": "non_empty_rate",
+      "column": "match_strategy",
+      "min_rate": 1.0
+    },
+    {
+      "id": "confidence_allowed",
+      "type": "allowed_values_rate",
+      "column": "confidence",
+      "allowed": ["high", "medium", "low"],
+      "min_rate": 1.0
+    },
+    {
+      "id": "xref_source_non_empty",
+      "type": "non_empty_rate",
+      "column": "xref_source",
+      "min_rate": 1.0
+    },
+    {
+      "id": "fetch_date_format",
+      "type": "regex_rate",
+      "column": "fetch_date",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+      "min_rate": 1.0
+    },
+    {
+      "id": "source_version_non_empty",
+      "type": "non_empty_rate",
+      "column": "source_version",
+      "min_rate": 1.0
+    }
+  ]
+}
