@@ -1,0 +1,42 @@
+{
+  "name": "rna_trna_features_v1",
+  "description": "Human tRNA/Mt_tRNA feature table with anticodon annotations",
+  "required_columns": [
+    "rna_id",
+    "urs_id",
+    "taxon_id",
+    "trna_label",
+    "amino_acid",
+    "anticodon",
+    "anticodon_rna",
+    "anticodon_source",
+    "seq_accession",
+    "locus_start",
+    "locus_end",
+    "locus_type",
+    "evidence_dbs",
+    "source",
+    "source_version",
+    "fetch_date"
+  ],
+  "rules": [
+    {"id": "rna_id_non_empty", "type": "non_empty_rate", "column": "rna_id", "min_rate": 1.0},
+    {"id": "rna_id_format", "type": "regex_rate", "column": "rna_id", "pattern": "^URS[0-9A-Z]+_9606$", "min_rate": 1.0},
+    {"id": "urs_id_non_empty", "type": "non_empty_rate", "column": "urs_id", "min_rate": 1.0},
+    {"id": "urs_id_format", "type": "regex_rate", "column": "urs_id", "pattern": "^URS[0-9A-Z]+_9606$", "min_rate": 1.0},
+    {"id": "taxon_human", "type": "equals_value_rate", "column": "taxon_id", "value": "9606", "min_rate": 1.0},
+    {"id": "trna_label_non_empty", "type": "non_empty_rate", "column": "trna_label", "min_rate": 1.0},
+    {"id": "amino_acid_format_or_empty", "type": "regex_rate", "column": "amino_acid", "pattern": "^(|[A-Za-z]{1,12})$", "min_rate": 1.0},
+    {"id": "anticodon_format_or_empty", "type": "regex_rate", "column": "anticodon", "pattern": "^(|[ACGTU]{3})$", "min_rate": 1.0},
+    {"id": "anticodon_rna_format_or_empty", "type": "regex_rate", "column": "anticodon_rna", "pattern": "^(|[ACGU]{3})$", "min_rate": 1.0},
+    {"id": "anticodon_source_enum", "type": "regex_rate", "column": "anticodon_source", "pattern": "^(gtrnadb|symbol_inference|none)$", "min_rate": 1.0},
+    {"id": "locus_start_numeric_or_empty", "type": "regex_rate", "column": "locus_start", "pattern": "^(|[0-9]+)$", "min_rate": 1.0},
+    {"id": "locus_end_numeric_or_empty", "type": "regex_rate", "column": "locus_end", "pattern": "^(|[0-9]+)$", "min_rate": 1.0},
+    {"id": "locus_type_enum", "type": "regex_rate", "column": "locus_type", "pattern": "^(tRNA|Mt_tRNA)$", "min_rate": 1.0},
+    {"id": "evidence_dbs_non_empty", "type": "non_empty_rate", "column": "evidence_dbs", "min_rate": 1.0},
+    {"id": "source_non_empty", "type": "non_empty_rate", "column": "source", "min_rate": 1.0},
+    {"id": "source_version_non_empty", "type": "non_empty_rate", "column": "source_version", "min_rate": 1.0},
+    {"id": "fetch_date_iso", "type": "regex_rate", "column": "fetch_date", "pattern": "^\\d{4}-\\d{2}-\\d{2}$", "min_rate": 1.0},
+    {"id": "rna_id_unique", "type": "unique", "column": "rna_id"}
+  ]
+}

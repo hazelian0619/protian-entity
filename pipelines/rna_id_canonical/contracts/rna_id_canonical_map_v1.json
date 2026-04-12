@@ -1,0 +1,112 @@
+{
+  "name": "rna_id_canonical_map_v1",
+  "description": "RNA canonical ID bridge table that keeps legacy IDs while mapping to canonical IDs.",
+  "required_columns": [
+    "legacy_rna_id",
+    "canonical_rna_id",
+    "canonical_system",
+    "rna_type",
+    "taxon_id",
+    "confidence",
+    "evidence",
+    "source",
+    "fetch_date",
+    "source_version"
+  ],
+  "rules": [
+    {
+      "id": "legacy_rna_id_non_empty",
+      "type": "non_empty_rate",
+      "column": "legacy_rna_id",
+      "min_rate": 1.0
+    },
+    {
+      "id": "legacy_rna_id_unique",
+      "type": "unique",
+      "column": "legacy_rna_id"
+    },
+    {
+      "id": "canonical_rna_id_non_empty",
+      "type": "non_empty_rate",
+      "column": "canonical_rna_id",
+      "min_rate": 1.0
+    },
+    {
+      "id": "canonical_rna_id_format",
+      "type": "regex_rate",
+      "column": "canonical_rna_id",
+      "pattern": "^(ENST\\d+_\\d+|URS[0-9A-F]+_\\d+)$",
+      "min_rate": 1.0
+    },
+    {
+      "id": "canonical_system_allowed",
+      "type": "allowed_values_rate",
+      "column": "canonical_system",
+      "allowed": [
+        "RNAcentral",
+        "EnsemblTranscript",
+        "LegacyID"
+      ],
+      "min_rate": 1.0
+    },
+    {
+      "id": "rna_type_allowed",
+      "type": "allowed_values_rate",
+      "column": "rna_type",
+      "allowed": [
+        "mrna",
+        "mirna"
+      ],
+      "min_rate": 1.0
+    },
+    {
+      "id": "taxon_id_non_empty",
+      "type": "non_empty_rate",
+      "column": "taxon_id",
+      "min_rate": 1.0
+    },
+    {
+      "id": "taxon_id_numeric",
+      "type": "regex_rate",
+      "column": "taxon_id",
+      "pattern": "^\\d+$",
+      "min_rate": 1.0
+    },
+    {
+      "id": "confidence_allowed",
+      "type": "allowed_values_rate",
+      "column": "confidence",
+      "allowed": [
+        "high",
+        "medium",
+        "low"
+      ],
+      "min_rate": 1.0
+    },
+    {
+      "id": "evidence_non_empty",
+      "type": "non_empty_rate",
+      "column": "evidence",
+      "min_rate": 1.0
+    },
+    {
+      "id": "source_non_empty",
+      "type": "non_empty_rate",
+      "column": "source",
+      "min_rate": 1.0
+    },
+    {
+      "id": "fetch_date_format",
+      "type": "regex_rate",
+      "column": "fetch_date",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+      "min_rate": 1.0
+    },
+    {
+      "id": "source_version_non_empty",
+      "type": "non_empty_rate",
+      "column": "source_version",
+      "min_rate": 1.0
+    }
+  ]
+}

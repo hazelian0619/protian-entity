@@ -1,0 +1,34 @@
+{
+  "name": "rna_rbp_sites_v1",
+  "description": "RNA RBP binding-site summary table from ENCODE eCLIP",
+  "required_columns": [
+    "rna_id",
+    "rbp_symbol",
+    "biosample_cell_type",
+    "assay",
+    "peak_count",
+    "score",
+    "evalue",
+    "sample_id",
+    "experiment_id",
+    "source_dataset",
+    "source_file",
+    "evidence_level",
+    "source",
+    "source_version",
+    "fetch_date"
+  ],
+  "rules": [
+    {"id": "rna_id_non_empty", "type": "non_empty_rate", "column": "rna_id", "min_rate": 1.0},
+    {"id": "rbp_symbol_non_empty", "type": "non_empty_rate", "column": "rbp_symbol", "min_rate": 1.0},
+    {"id": "biosample_cell_type_non_empty", "type": "non_empty_rate", "column": "biosample_cell_type", "min_rate": 1.0},
+    {"id": "assay_non_empty", "type": "non_empty_rate", "column": "assay", "min_rate": 1.0},
+    {"id": "peak_count_numeric_or_empty", "type": "regex_rate", "column": "peak_count", "pattern": "^(|[0-9]+)$", "min_rate": 1.0},
+    {"id": "score_numeric_or_empty", "type": "regex_rate", "column": "score", "pattern": "^(|-?[0-9]+(\\.[0-9]+)?)$", "min_rate": 1.0},
+    {"id": "evalue_numeric_or_empty", "type": "regex_rate", "column": "evalue", "pattern": "^(|-?[0-9]+(\\.[0-9]+)?([eE]-?[0-9]+)?)$", "min_rate": 1.0},
+    {"id": "evidence_level_enum", "type": "regex_rate", "column": "evidence_level", "pattern": "^(high|medium|low)$", "min_rate": 1.0},
+    {"id": "source_non_empty", "type": "non_empty_rate", "column": "source", "min_rate": 1.0},
+    {"id": "source_version_non_empty", "type": "non_empty_rate", "column": "source_version", "min_rate": 1.0},
+    {"id": "fetch_date_iso", "type": "regex_rate", "column": "fetch_date", "pattern": "^\\d{4}-\\d{2}-\\d{2}$", "min_rate": 1.0}
+  ]
+}

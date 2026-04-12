@@ -1,0 +1,108 @@
+{
+  "name": "rna_xref_mrna_enst_urs_v2",
+  "description": "mRNA ENST to RNAcentral URS cross-reference table with explicit match strategy.",
+  "required_columns": [
+    "rna_id",
+    "rna_type",
+    "taxon_id",
+    "xref_db",
+    "xref_id",
+    "xref_level",
+    "match_strategy",
+    "source",
+    "fetch_date",
+    "source_version"
+  ],
+  "rules": [
+    {
+      "id": "rna_id_non_empty",
+      "type": "non_empty_rate",
+      "column": "rna_id",
+      "min_rate": 1.0
+    },
+    {
+      "id": "rna_id_format",
+      "type": "regex_rate",
+      "column": "rna_id",
+      "pattern": "^ENST\\d+_9606$",
+      "min_rate": 1.0
+    },
+    {
+      "id": "rna_id_unique",
+      "type": "unique",
+      "column": "rna_id"
+    },
+    {
+      "id": "rna_type_is_mrna",
+      "type": "equals_value_rate",
+      "column": "rna_type",
+      "value": "mrna",
+      "min_rate": 1.0
+    },
+    {
+      "id": "taxon_id_is_9606",
+      "type": "equals_value_rate",
+      "column": "taxon_id",
+      "value": "9606",
+      "min_rate": 1.0
+    },
+    {
+      "id": "xref_db_is_rnacentral",
+      "type": "equals_value_rate",
+      "column": "xref_db",
+      "value": "RNAcentral",
+      "min_rate": 1.0
+    },
+    {
+      "id": "xref_id_non_empty",
+      "type": "non_empty_rate",
+      "column": "xref_id",
+      "min_rate": 1.0
+    },
+    {
+      "id": "xref_id_format",
+      "type": "regex_rate",
+      "column": "xref_id",
+      "pattern": "^URS[0-9A-F]+_9606$",
+      "min_rate": 1.0
+    },
+    {
+      "id": "xref_level_is_urs_id",
+      "type": "equals_value_rate",
+      "column": "xref_level",
+      "value": "urs_id",
+      "min_rate": 1.0
+    },
+    {
+      "id": "match_strategy_allowed",
+      "type": "allowed_values_rate",
+      "column": "match_strategy",
+      "allowed": [
+        "exact_rna_id_base",
+        "fallback_ensembl_transcript_version",
+        "fallback_ensembl_transcript_base",
+        "fallback_rna_name_base"
+      ],
+      "min_rate": 1.0
+    },
+    {
+      "id": "source_non_empty",
+      "type": "non_empty_rate",
+      "column": "source",
+      "min_rate": 1.0
+    },
+    {
+      "id": "fetch_date_format",
+      "type": "regex_rate",
+      "column": "fetch_date",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+      "min_rate": 1.0
+    },
+    {
+      "id": "source_version_non_empty",
+      "type": "non_empty_rate",
+      "column": "source_version",
+      "min_rate": 1.0
+    }
+  ]
+}

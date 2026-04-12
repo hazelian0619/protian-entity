@@ -1,0 +1,86 @@
+{
+  "name": "rna_external_xref_v1",
+  "description": "RNA external cross-reference pack (RNAcentral/Ensembl/RefSeq/miRBase) for rna_master_v1 universe.",
+  "required_columns": [
+    "rna_id",
+    "xref_db",
+    "xref_id",
+    "xref_type",
+    "source",
+    "source_version",
+    "fetch_date"
+  ],
+  "rules": [
+    {
+      "id": "rna_id_non_empty",
+      "type": "non_empty_rate",
+      "column": "rna_id",
+      "min_rate": 1.0
+    },
+    {
+      "id": "rna_id_format",
+      "type": "regex_rate",
+      "column": "rna_id",
+      "pattern": "^(ENST\\d+|URS[0-9A-F]+)_9606$",
+      "min_rate": 1.0
+    },
+    {
+      "id": "xref_db_non_empty",
+      "type": "non_empty_rate",
+      "column": "xref_db",
+      "min_rate": 1.0
+    },
+    {
+      "id": "xref_db_allowed",
+      "type": "allowed_values_rate",
+      "column": "xref_db",
+      "allowed": [
+        "ENSEMBL",
+        "ENSEMBL_GENCODE",
+        "GENCODE",
+        "REFSEQ",
+        "MIRBASE",
+        "RNACENTRAL"
+      ],
+      "min_rate": 1.0
+    },
+    {
+      "id": "xref_id_non_empty",
+      "type": "non_empty_rate",
+      "column": "xref_id",
+      "min_rate": 1.0
+    },
+    {
+      "id": "xref_type_allowed",
+      "type": "allowed_values_rate",
+      "column": "xref_type",
+      "allowed": [
+        "urs_id",
+        "transcript_id",
+        "refseq_accession",
+        "mirbase_id",
+        "accession"
+      ],
+      "min_rate": 1.0
+    },
+    {
+      "id": "source_non_empty",
+      "type": "non_empty_rate",
+      "column": "source",
+      "min_rate": 1.0
+    },
+    {
+      "id": "source_version_non_empty",
+      "type": "non_empty_rate",
+      "column": "source_version",
+      "min_rate": 1.0
+    },
+    {
+      "id": "fetch_date_format",
+      "type": "regex_rate",
+      "column": "fetch_date",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+      "min_rate": 1.0
+    }
+  ]
+}

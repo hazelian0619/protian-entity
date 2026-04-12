@@ -1,0 +1,62 @@
+{
+  "name": "rna_structure_rfam_v1",
+  "description": "RNA to Rfam structure mapping table (rfam_id + secondary_structure)",
+  "required_columns": [
+    "rna_id",
+    "rfam_id",
+    "rfam_desc",
+    "secondary_structure",
+    "structure_source",
+    "score",
+    "evalue",
+    "source_version",
+    "fetch_date"
+  ],
+  "rules": [
+    {
+      "id": "rna_id_non_empty",
+      "type": "non_empty_rate",
+      "column": "rna_id",
+      "min_rate": 1.0
+    },
+    {
+      "id": "rfam_id_non_empty",
+      "type": "non_empty_rate",
+      "column": "rfam_id",
+      "min_rate": 1.0
+    },
+    {
+      "id": "rfam_id_format",
+      "type": "regex_rate",
+      "column": "rfam_id",
+      "pattern": "^RF\\d{5}$",
+      "min_rate": 1.0
+    },
+    {
+      "id": "secondary_structure_dotbracket_basic",
+      "type": "regex_rate",
+      "column": "secondary_structure",
+      "pattern": "^[\\.\\(\\)\\[\\]\\{\\}<>\\,\\-_:~]*$",
+      "min_rate": 1.0
+    },
+    {
+      "id": "structure_source_non_empty",
+      "type": "non_empty_rate",
+      "column": "structure_source",
+      "min_rate": 1.0
+    },
+    {
+      "id": "source_version_non_empty",
+      "type": "non_empty_rate",
+      "column": "source_version",
+      "min_rate": 1.0
+    },
+    {
+      "id": "fetch_date_iso",
+      "type": "regex_rate",
+      "column": "fetch_date",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+      "min_rate": 1.0
+    }
+  ]
+}

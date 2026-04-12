@@ -1,0 +1,31 @@
+{
+  "name": "rna_expression_evidence_v1",
+  "description": "RNA expression evidence summary table from ENCODE",
+  "required_columns": [
+    "rna_id",
+    "biosample_tissue",
+    "biosample_cell_type",
+    "expression_value",
+    "expression_unit",
+    "assay",
+    "sample_id",
+    "experiment_id",
+    "source_dataset",
+    "source_file",
+    "evidence_level",
+    "source",
+    "source_version",
+    "fetch_date"
+  ],
+  "rules": [
+    {"id": "rna_id_non_empty", "type": "non_empty_rate", "column": "rna_id", "min_rate": 1.0},
+    {"id": "biosample_tissue_non_empty", "type": "non_empty_rate", "column": "biosample_tissue", "min_rate": 1.0},
+    {"id": "biosample_cell_type_non_empty", "type": "non_empty_rate", "column": "biosample_cell_type", "min_rate": 1.0},
+    {"id": "expression_value_numeric_or_empty", "type": "regex_rate", "column": "expression_value", "pattern": "^(|-?[0-9]+(\\.[0-9]+)?)$", "min_rate": 1.0},
+    {"id": "assay_non_empty", "type": "non_empty_rate", "column": "assay", "min_rate": 1.0},
+    {"id": "evidence_level_enum", "type": "regex_rate", "column": "evidence_level", "pattern": "^(high|medium|low)$", "min_rate": 1.0},
+    {"id": "source_non_empty", "type": "non_empty_rate", "column": "source", "min_rate": 1.0},
+    {"id": "source_version_non_empty", "type": "non_empty_rate", "column": "source_version", "min_rate": 1.0},
+    {"id": "fetch_date_iso", "type": "regex_rate", "column": "fetch_date", "pattern": "^\\d{4}-\\d{2}-\\d{2}$", "min_rate": 1.0}
+  ]
+}
