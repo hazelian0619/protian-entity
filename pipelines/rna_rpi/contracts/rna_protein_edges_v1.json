@@ -1,0 +1,31 @@
+{
+  "name": "rna_protein_edges_v1",
+  "description": "RNA-Protein interaction edges (L2 minimum viable)",
+  "required_columns": [
+    "edge_id",
+    "src_type",
+    "src_id",
+    "dst_type",
+    "dst_id",
+    "predicate",
+    "directed",
+    "best_score",
+    "source",
+    "source_version",
+    "fetch_date"
+  ],
+  "rules": [
+    {"id": "edge_id_non_empty", "type": "non_empty_rate", "column": "edge_id", "min_rate": 1.0},
+    {"id": "edge_id_unique", "type": "unique", "column": "edge_id"},
+    {"id": "src_type_is_rna", "type": "equals_value_rate", "column": "src_type", "value": "RNA", "min_rate": 1.0},
+    {"id": "src_id_non_empty", "type": "non_empty_rate", "column": "src_id", "min_rate": 1.0},
+    {"id": "dst_type_is_protein", "type": "equals_value_rate", "column": "dst_type", "value": "Protein", "min_rate": 1.0},
+    {"id": "dst_id_non_empty", "type": "non_empty_rate", "column": "dst_id", "min_rate": 1.0},
+    {"id": "predicate_non_empty", "type": "non_empty_rate", "column": "predicate", "min_rate": 1.0},
+    {"id": "directed_bool", "type": "regex_rate", "column": "directed", "pattern": "^(true|false)$", "min_rate": 1.0},
+    {"id": "best_score_numeric_or_empty", "type": "regex_rate", "column": "best_score", "pattern": "^(|-?[0-9]+(\\.[0-9]+)?)$", "min_rate": 1.0},
+    {"id": "source_non_empty", "type": "non_empty_rate", "column": "source", "min_rate": 1.0},
+    {"id": "source_version_non_empty", "type": "non_empty_rate", "column": "source_version", "min_rate": 1.0},
+    {"id": "fetch_date_iso", "type": "regex_rate", "column": "fetch_date", "pattern": "^\\d{4}-\\d{2}-\\d{2}$", "min_rate": 1.0}
+  ]
+}

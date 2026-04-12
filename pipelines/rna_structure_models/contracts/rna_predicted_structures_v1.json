@@ -1,0 +1,65 @@
+{
+  "name": "rna_predicted_structures_v1",
+  "description": "Predicted RNA structure register table",
+  "required_columns": [
+    "rna_id",
+    "model_tool",
+    "structure_file",
+    "confidence",
+    "energy",
+    "source_version",
+    "fetch_date"
+  ],
+  "rules": [
+    {
+      "id": "rna_id_non_empty",
+      "type": "non_empty_rate",
+      "column": "rna_id",
+      "min_rate": 1.0
+    },
+    {
+      "id": "model_tool_non_empty",
+      "type": "non_empty_rate",
+      "column": "model_tool",
+      "min_rate": 1.0
+    },
+    {
+      "id": "structure_file_non_empty",
+      "type": "non_empty_rate",
+      "column": "structure_file",
+      "min_rate": 1.0
+    },
+    {
+      "id": "structure_file_unique",
+      "type": "unique",
+      "column": "structure_file"
+    },
+    {
+      "id": "confidence_numeric_or_empty",
+      "type": "regex_rate",
+      "column": "confidence",
+      "pattern": "^$|^-?\\d+(\\.\\d+)?$",
+      "min_rate": 1.0
+    },
+    {
+      "id": "energy_numeric_or_empty",
+      "type": "regex_rate",
+      "column": "energy",
+      "pattern": "^$|^-?\\d+(\\.\\d+)?$",
+      "min_rate": 1.0
+    },
+    {
+      "id": "source_version_non_empty",
+      "type": "non_empty_rate",
+      "column": "source_version",
+      "min_rate": 1.0
+    },
+    {
+      "id": "fetch_date_iso",
+      "type": "regex_rate",
+      "column": "fetch_date",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+      "min_rate": 1.0
+    }
+  ]
+}

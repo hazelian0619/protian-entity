@@ -1,0 +1,57 @@
+{
+  "name": "rna_covariance_models_index_v1",
+  "description": "Rfam covariance model index table",
+  "required_columns": [
+    "rfam_id",
+    "cm_file",
+    "ga_threshold",
+    "source_version",
+    "fetch_date"
+  ],
+  "rules": [
+    {
+      "id": "rfam_id_non_empty",
+      "type": "non_empty_rate",
+      "column": "rfam_id",
+      "min_rate": 1.0
+    },
+    {
+      "id": "rfam_id_format",
+      "type": "regex_rate",
+      "column": "rfam_id",
+      "pattern": "^RF\\d{5}$",
+      "min_rate": 1.0
+    },
+    {
+      "id": "rfam_id_unique",
+      "type": "unique",
+      "column": "rfam_id"
+    },
+    {
+      "id": "cm_file_non_empty",
+      "type": "non_empty_rate",
+      "column": "cm_file",
+      "min_rate": 1.0
+    },
+    {
+      "id": "ga_threshold_numeric",
+      "type": "regex_rate",
+      "column": "ga_threshold",
+      "pattern": "^-?\\d+(\\.\\d+)?$",
+      "min_rate": 0.99
+    },
+    {
+      "id": "source_version_non_empty",
+      "type": "non_empty_rate",
+      "column": "source_version",
+      "min_rate": 1.0
+    },
+    {
+      "id": "fetch_date_iso",
+      "type": "regex_rate",
+      "column": "fetch_date",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+      "min_rate": 1.0
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "name": "rna_protein_evidence_v1",
+  "description": "Evidence rows backing RNA-Protein interaction edges",
+  "required_columns": [
+    "evidence_id",
+    "edge_id",
+    "evidence_type",
+    "method",
+    "score",
+    "reference",
+    "source",
+    "source_version",
+    "fetch_date"
+  ],
+  "rules": [
+    {"id": "evidence_id_non_empty", "type": "non_empty_rate", "column": "evidence_id", "min_rate": 1.0},
+    {"id": "evidence_id_unique", "type": "unique", "column": "evidence_id"},
+    {"id": "edge_id_non_empty", "type": "non_empty_rate", "column": "edge_id", "min_rate": 1.0},
+    {"id": "evidence_type_non_empty", "type": "non_empty_rate", "column": "evidence_type", "min_rate": 1.0},
+    {"id": "method_non_empty", "type": "non_empty_rate", "column": "method", "min_rate": 1.0},
+    {"id": "score_numeric_or_empty", "type": "regex_rate", "column": "score", "pattern": "^(|-?[0-9]+(\\.[0-9]+)?([eE]-?[0-9]+)?)$", "min_rate": 1.0},
+    {"id": "source_non_empty", "type": "non_empty_rate", "column": "source", "min_rate": 1.0},
+    {"id": "source_version_non_empty", "type": "non_empty_rate", "column": "source_version", "min_rate": 1.0},
+    {"id": "fetch_date_iso", "type": "regex_rate", "column": "fetch_date", "pattern": "^\\d{4}-\\d{2}-\\d{2}$", "min_rate": 1.0}
+  ]
+}
