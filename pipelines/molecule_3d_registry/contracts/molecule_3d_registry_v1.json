@@ -1,0 +1,101 @@
+{
+  "name": "molecule_3d_registry_v1",
+  "description": "Molecule 3D structure registry (PubChem 3D + ZINC metadata), registry-only without structural remodelling",
+  "required_columns": [
+    "inchikey",
+    "xref_version",
+    "pubchem_cid",
+    "pubchem_3d_available",
+    "pubchem_conformer_count",
+    "pubchem_formats",
+    "pubchem_download_url",
+    "pubchem_source",
+    "pubchem_source_type",
+    "zinc_id",
+    "zinc_3d_available",
+    "zinc_conformer_count",
+    "zinc_formats",
+    "zinc_download_url",
+    "zinc_source",
+    "zinc_source_type",
+    "source_providers",
+    "structure_formats",
+    "availability_status",
+    "source_types",
+    "fetch_date",
+    "source_version"
+  ],
+  "rules": [
+    {
+      "id": "inchikey_non_empty",
+      "type": "non_empty_rate",
+      "column": "inchikey",
+      "min_rate": 1.0
+    },
+    {
+      "id": "inchikey_format",
+      "type": "regex_rate",
+      "column": "inchikey",
+      "pattern": "^[A-Z]{14}-[A-Z]{10}-[A-Z]$",
+      "min_rate": 1.0
+    },
+    {
+      "id": "inchikey_unique",
+      "type": "unique",
+      "column": "inchikey"
+    },
+    {
+      "id": "pubchem_3d_available_binary",
+      "type": "allowed_values_rate",
+      "column": "pubchem_3d_available",
+      "allowed": ["0", "1"],
+      "min_rate": 1.0
+    },
+    {
+      "id": "zinc_3d_available_binary",
+      "type": "allowed_values_rate",
+      "column": "zinc_3d_available",
+      "allowed": ["0", "1"],
+      "min_rate": 1.0
+    },
+    {
+      "id": "source_providers_non_empty",
+      "type": "non_empty_rate",
+      "column": "source_providers",
+      "min_rate": 0.99
+    },
+    {
+      "id": "structure_formats_non_empty",
+      "type": "non_empty_rate",
+      "column": "structure_formats",
+      "min_rate": 0.99
+    },
+    {
+      "id": "availability_status_allowed",
+      "type": "allowed_values_rate",
+      "column": "availability_status",
+      "allowed": ["available", "unavailable"],
+      "min_rate": 1.0
+    },
+    {
+      "id": "source_types_allowed",
+      "type": "allowed_values_rate",
+      "column": "source_types",
+      "allowed": ["computational", "experimental", "mixed", "unknown"],
+      "min_rate": 1.0
+    },
+    {
+      "id": "fetch_date_format",
+      "type": "regex_rate",
+      "column": "fetch_date",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+      "min_rate": 1.0
+    },
+    {
+      "id": "source_version_non_empty",
+      "type": "non_empty_rate",
+      "column": "source_version",
+      "min_rate": 1.0
+    }
+  ]
+}
