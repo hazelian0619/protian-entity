@@ -10,10 +10,23 @@
 - `data/raw/rna/ensembl/Homo_sapiens.GRCh38.115.chr.gtf.gz`
 - `data/raw/rna/rnacentral/id_mapping.tsv.gz`
 
-## Run
+## Run (v1 full pack)
 
 ```bash
 bash pipelines/rna_type_features/run.sh
+```
+
+## tRNA anticodon optimization v2 (balanced)
+
+新增不覆盖 v1 的优化流程：
+- 输出：`data/output/rna_trna_features_v2.tsv`
+- 冲突审计：`pipelines/rna_type_features/reports/rna_trna_anticodon_conflicts_v2.tsv`
+- 指标：`pipelines/rna_type_features/reports/rna_trna_features_v2.metrics.json`
+
+运行：
+
+```bash
+bash pipelines/rna_type_features/run_trna_v2.sh
 ```
 
 ## Reports
