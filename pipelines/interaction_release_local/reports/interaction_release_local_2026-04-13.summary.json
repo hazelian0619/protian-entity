@@ -1,0 +1,142 @@
+{
+  "pipeline": "interaction_release_local",
+  "release_tag": "2026-04-13",
+  "generated_at_utc": "2026-04-13T02:06:00.523903+00:00",
+  "status": "PASS",
+  "checks": {
+    "required_tables_present": true,
+    "all_qa_reports_present": true,
+    "all_qa_pass": true
+  },
+  "missing_tables": [],
+  "missing_qa_reports": [],
+  "tables": {
+    "PPI_edges_v1": {
+      "path": "data/output/edges/edges_ppi_v1.tsv",
+      "exists": true,
+      "rows": 884555,
+      "sha256": "2c31fc4455d7b0d8da6bee56619946784dd44b89671a682eb72513d455d1f3ee"
+    },
+    "PPI_evidence_v1": {
+      "path": "data/output/evidence/ppi_evidence_v1.tsv",
+      "exists": true,
+      "rows": 884555,
+      "sha256": "d781ac12b93c66abf85171200defed1693aca2476f24dd13c9f288a9901357a9"
+    },
+    "PPI_method_context_v2": {
+      "path": "data/output/evidence/ppi_method_context_v2.tsv",
+      "exists": true,
+      "rows": 884555,
+      "sha256": "8f79b417dfa5e89d082a589472283c70e649de1961413dfae3bb7dc00d2d53bf"
+    },
+    "PPI_function_context_v2": {
+      "path": "data/output/evidence/ppi_function_context_v2.tsv",
+      "exists": true,
+      "rows": 884555,
+      "sha256": "c61613565444573ee950f05a84140f5ff0f499fe6ad6df4a3a7a43249e2a9c30"
+    },
+    "PSI_edges_v1": {
+      "path": "data/output/edges/drug_target_edges_v1.tsv",
+      "exists": true,
+      "rows": 32122,
+      "sha256": "0535e07c3f0d9140af375209d962313023325aafa0727dbade95a6ba5b5ac0f1"
+    },
+    "PSI_evidence_v1": {
+      "path": "data/output/evidence/drug_target_evidence_v1.tsv",
+      "exists": true,
+      "rows": 32963,
+      "sha256": "cf16051e37945ddcc3aff1a2fca37cbd22bc6e42fc2a9a979399bcf647d1897e"
+    },
+    "PSI_activity_context_v2": {
+      "path": "data/output/evidence/psi_activity_context_v2.tsv",
+      "exists": true,
+      "rows": 2360023,
+      "sha256": "cfeff2f73139dc1f50773f38de13fb64e521d05f1acb970bdb7f8c0c54739dbd"
+    },
+    "PSI_structure_evidence_v2": {
+      "path": "data/output/evidence/psi_structure_evidence_v2.tsv",
+      "exists": true,
+      "rows": 1808985,
+      "sha256": "0a2d45cd76ed2570595df1af1c61c0edfa7e54f4ce79fd5d7a4f19489eff59db"
+    },
+    "RPI_edges_v1": {
+      "path": "data/output/edges/rna_protein_edges_v1.tsv",
+      "exists": true,
+      "rows": 16489,
+      "sha256": "5cf6704cc4df7613179aae009753c47954cce9425814f5c45b7aca8da04efdcd"
+    },
+    "RPI_evidence_v1": {
+      "path": "data/output/evidence/rna_protein_evidence_v1.tsv",
+      "exists": true,
+      "rows": 100255,
+      "sha256": "e221a282c2d6563556b58db7adf71e3f1132fa3fca7ea62b4027fe61fc206674"
+    },
+    "RPI_site_context_v2": {
+      "path": "data/output/evidence/rpi_site_context_v2.tsv",
+      "exists": true,
+      "rows": 100255,
+      "sha256": "5dea6d071bccab70982178a3029f200d43c1f7c66ea5e54eb4130d5233b64bb4"
+    },
+    "RPI_domain_context_v2": {
+      "path": "data/output/evidence/rpi_domain_context_v2.tsv",
+      "exists": true,
+      "rows": 30919,
+      "sha256": "90847a50832c2649cbd19c838521e2294a2c4d70775f53ad31c0856e552b34b9"
+    },
+    "RPI_function_context_v2": {
+      "path": "data/output/evidence/rpi_function_context_v2.tsv",
+      "exists": true,
+      "rows": 39254,
+      "sha256": "b8cb92c0e0df64279d978ca80e109f07925bf3b59e29692d33b96ca2af633acc"
+    },
+    "interaction_cross_validation_v2": {
+      "path": "data/output/evidence/interaction_cross_validation_v2.tsv",
+      "exists": true,
+      "rows": 3293189,
+      "sha256": "ca4b90fe516b39c8c016a540e334567472eb43120ea789c21aaf94944a74ddae"
+    },
+    "interaction_aggregate_score_v2": {
+      "path": "data/output/evidence/interaction_aggregate_score_v2.tsv",
+      "exists": true,
+      "rows": 3293189,
+      "sha256": "b355a67be4b5efa736aafaed36c39c653c1f3d361474fde6fbe2d26cfddc7966"
+    },
+    "interaction_ontology_mapping_v2": {
+      "path": "data/output/evidence/interaction_ontology_mapping_v2.tsv",
+      "exists": true,
+      "rows": 1905589,
+      "sha256": "7d77bd0b8bc17662906bfe38d6d146ee6d4cc38fa488d4c12bc6b7471e66d9bc"
+    }
+  },
+  "qa_reports": {
+    "A_ppi_semantic": {
+      "path": "pipelines/ppi_semantic_enrichment/reports/ppi_semantic_enrichment_v2.qa.json",
+      "exists": true,
+      "passed": true
+    },
+    "B_psi_activity_structure": {
+      "path": "pipelines/psi_activity_structure_enrichment/reports/psi_activity_structure_enrichment_v2.qa.json",
+      "exists": true,
+      "passed": true
+    },
+    "C_rpi_site_domain": {
+      "path": "pipelines/rpi_site_domain_enrichment/reports/rpi_site_domain_enrichment_v2.gates.json",
+      "exists": true,
+      "passed": true
+    },
+    "D_interaction_cross_validation": {
+      "path": "pipelines/interaction_cross_validation/reports/interaction_cross_validation_v2.qa.json",
+      "exists": true,
+      "passed": true
+    },
+    "E_interaction_ontology": {
+      "path": "pipelines/interaction_ontology_mapping/reports/interaction_ontology_mapping_v2.gates.json",
+      "exists": true,
+      "passed": true
+    }
+  },
+  "known_boundaries": [
+    "本次提审聚焦已实现数据集，未覆盖新增研发缺口（如复合物成员/taxonomy 扩展）。",
+    "跨仓依赖已收敛到 1218 本地产物路径。"
+  ]
+}

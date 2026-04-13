@@ -1,0 +1,73 @@
+{
+  "name": "interaction_cross_validation_v2.qa",
+  "created_at": "2026-04-13T01:42:35.895100+00:00",
+  "inputs": {
+    "cross": "pipelines/interaction_cross_validation/.cache/interaction_cross_validation_v2.smoke.tsv",
+    "aggregate": "pipelines/interaction_cross_validation/.cache/interaction_aggregate_score_v2.smoke.tsv",
+    "build_report": "pipelines/interaction_cross_validation/reports/interaction_cross_validation_v2.smoke.build.json",
+    "cross_validation": "pipelines/interaction_cross_validation/reports/interaction_cross_validation_v2.smoke.validation.json",
+    "aggregate_validation": "pipelines/interaction_cross_validation/reports/interaction_aggregate_score_v2.smoke.validation.json"
+  },
+  "metrics": {
+    "cross_rows": 15000,
+    "aggregate_rows": 15000,
+    "types_in_cross": [
+      "PPI",
+      "PSI",
+      "RPI"
+    ],
+    "cross_aggregate_join_rate": 1.0,
+    "aggregate_score": {
+      "min": 0.011097,
+      "p10": 0.231097,
+      "p90": 0.667252,
+      "max": 0.719695
+    },
+    "score_bucket": {
+      "high": 0,
+      "medium": 7517,
+      "low": 7483
+    },
+    "build_summary": {
+      "min": 0.011097434023009806,
+      "p10": 0.2310974340230098,
+      "mean": 0.4550289588691092,
+      "p90": 0.667252019140771,
+      "max": 0.7196948680460197
+    },
+    "psi_b_update_integration": {
+      "psi_edges_with_activity_context": 0,
+      "psi_edges_with_structure_context": 0,
+      "psi_edges_with_both": 0,
+      "activity_context_file": "data/output/evidence/psi_activity_context_v2.tsv",
+      "structure_evidence_file": "data/output/evidence/psi_structure_evidence_v2.tsv"
+    }
+  },
+  "gates": [
+    {
+      "id": "all_three_interaction_types_present",
+      "passed": true
+    },
+    {
+      "id": "aggregate_score_not_all_zero_or_one",
+      "passed": true
+    },
+    {
+      "id": "aggregate_score_not_constant",
+      "passed": true
+    },
+    {
+      "id": "cross_aggregate_join_rate_ge_0_99",
+      "passed": true
+    },
+    {
+      "id": "contract_cross_pass",
+      "passed": true
+    },
+    {
+      "id": "contract_aggregate_pass",
+      "passed": true
+    }
+  ],
+  "passed": true
+}

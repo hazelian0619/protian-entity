@@ -1,0 +1,61 @@
+{
+  "data_version": "kg-interaction-release-local-2026-04-13",
+  "created_at": "2026-04-13T02:06:00.719269+00:00",
+  "git_commit": "9abd73a0288baa6434e95192d059a85d7d81540b",
+  "artifacts": [
+    {
+      "path": "pipelines/interaction_release_local/reports/interaction_release_local_2026-04-13.summary.json",
+      "size_bytes": 5167,
+      "sha256": "be4a5f6f86ed1f6871ed2a04b8093d1b1e0fcfa12b22781d1ac7f6a985d044e3",
+      "modified_time": "2026-04-13T02:06:00.525464+00:00"
+    },
+    {
+      "path": "pipelines/interaction_release_local/reports/interaction_release_local_2026-04-13.gates.json",
+      "size_bytes": 316,
+      "sha256": "672a32af2278ac881cd13cc4a921d319aac9fa826422d889d77259cb51c79821",
+      "modified_time": "2026-04-13T02:06:00.525627+00:00"
+    },
+    {
+      "path": "pipelines/interaction_release_local/reports/interaction_release_local_2026-04-13.validation.json",
+      "size_bytes": 1784,
+      "sha256": "0cb1a7a2846c018204f443301e8f942c703635ecb92964db9777e78fec8ee9bb",
+      "modified_time": "2026-04-13T02:06:00.645638+00:00"
+    },
+    {
+      "path": "../_coord/互作补洗_本地收口Checklist_2026-04-13.md",
+      "size_bytes": 2440,
+      "sha256": "c251e09efb367b25e1b7e6fcd1d123b7800d1dc0375b2ef71868b112195019d7",
+      "modified_time": "2026-04-13T02:06:00.525803+00:00"
+    },
+    {
+      "path": "pipelines/ppi_semantic_enrichment/reports/ppi_semantic_enrichment_v2.qa.json",
+      "size_bytes": 1858,
+      "sha256": "a735a2261e18d855f6b22873a0105e7a52bdd7c5ae1e4ae1ec704378eb3199d4",
+      "modified_time": "2026-04-12T13:28:59.391967+00:00"
+    },
+    {
+      "path": "pipelines/psi_activity_structure_enrichment/reports/psi_activity_structure_enrichment_v2.qa.json",
+      "size_bytes": 2213,
+      "sha256": "d6deaf7b82506d9b6e2238b50b66d02627ff5bc207ec92008b56f83189158d7b",
+      "modified_time": "2026-04-12T11:06:36.719971+00:00"
+    },
+    {
+      "path": "pipelines/rpi_site_domain_enrichment/reports/rpi_site_domain_enrichment_v2.gates.json",
+      "size_bytes": 922,
+      "sha256": "a79d9f9547320c020eb847ff0837a91252fe821c1c8417dd38ce92f207a10e5b",
+      "modified_time": "2026-04-13T01:33:49.418814+00:00"
+    },
+    {
+      "path": "pipelines/interaction_cross_validation/reports/interaction_cross_validation_v2.qa.json",
+      "size_bytes": 2060,
+      "sha256": "843ab20d41e5c0d53b985da479f4f377543e3a54ac9e8f87adfdb0bce339e7b6",
+      "modified_time": "2026-04-13T01:50:12.285229+00:00"
+    },
+    {
+      "path": "pipelines/interaction_ontology_mapping/reports/interaction_ontology_mapping_v2.gates.json",
+      "size_bytes": 985,
+      "sha256": "cfaf242426d5d258cd18118cc2af7db372fa6b690078f0e58a16eabae3612003",
+      "modified_time": "2026-04-13T01:40:00.346249+00:00"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "pipeline": "rpi_site_domain_enrichment_v2",
+  "generated_at_utc": "2026-04-13T01:33:43.513500+00:00",
+  "input": {
+    "edges": "data/output/edges/rna_protein_edges_v1.tsv",
+    "evidence": "data/output/evidence/rna_protein_evidence_v1.tsv",
+    "protein_domains": "data/output/protein/protein_domains_interpro_v1.tsv",
+    "protein_master": "data/processed/protein_master_v6_clean.tsv",
+    "raw_rpi_dir": "data/raw/rpi"
+  },
+  "sample_mode": false,
+  "status": "inputs_ready",
+  "snapshot_detected": [],
+  "message": "输入检查通过。"
+}

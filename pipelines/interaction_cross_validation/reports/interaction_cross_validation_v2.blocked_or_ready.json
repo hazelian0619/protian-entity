@@ -1,0 +1,41 @@
+{
+  "pipeline": "interaction_cross_validation_v2",
+  "generated_at_utc": "2026-04-13T01:41:16.182563+00:00",
+  "status": "inputs_ready",
+  "required_inputs": {
+    "ppi_edges": "data/output/edges/edges_ppi_v1.tsv",
+    "ppi_evidence": "data/output/evidence/ppi_evidence_v1.tsv",
+    "psi_edges": "data/output/edges/drug_target_edges_v1.tsv",
+    "psi_evidence": "data/output/evidence/drug_target_evidence_v1.tsv",
+    "psi_activity_context": "data/output/evidence/psi_activity_context_v2.tsv",
+    "psi_structure_evidence": "data/output/evidence/psi_structure_evidence_v2.tsv",
+    "rpi_edges": "data/output/edges/rna_protein_edges_v1.tsv",
+    "rpi_evidence": "data/output/evidence/rna_protein_evidence_v1.tsv",
+    "molecule_xref": "data/output/molecules/molecule_xref_core_v1.tsv"
+  },
+  "optional_inputs": {
+    "ppi_method_context": "data/output/evidence/ppi_method_context_v2.tsv",
+    "ppi_function_context": "data/output/evidence/ppi_function_context_v2.tsv",
+    "rpi_site_context": "data/output/evidence/rpi_site_context_v2.tsv",
+    "rpi_domain_context": "data/output/evidence/rpi_domain_context_v2.tsv",
+    "rpi_function_context": "data/output/evidence/rpi_function_context_v2.tsv"
+  },
+  "missing_required": [],
+  "download_checklist_if_blocked": [
+    {
+      "name": "PSI activity context (任务B增强)",
+      "target_path": "data/output/evidence/psi_activity_context_v2.tsv",
+      "sha256_cmd": "shasum -a 256 data/output/evidence/psi_activity_context_v2.tsv"
+    },
+    {
+      "name": "PSI structure evidence (任务B增强)",
+      "target_path": "data/output/evidence/psi_structure_evidence_v2.tsv",
+      "sha256_cmd": "shasum -a 256 data/output/evidence/psi_structure_evidence_v2.tsv"
+    },
+    {
+      "name": "RPI edges/evidence（任务C产物）",
+      "target_path": "data/output/edges/rna_protein_edges_v1.tsv + data/output/evidence/rna_protein_evidence_v1.tsv",
+      "sha256_cmd": "shasum -a 256 data/output/edges/rna_protein_edges_v1.tsv && shasum -a 256 data/output/evidence/rna_protein_evidence_v1.tsv"
+    }
+  ]
+}

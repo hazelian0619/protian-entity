@@ -1,0 +1,25 @@
+{
+  "name": "rpi_function_context_v2",
+  "description": "RPI functional relation context inferred from protein annotation",
+  "required_columns": [
+    "context_id",
+    "edge_id",
+    "protein_id",
+    "function_relation",
+    "inference_basis",
+    "evidence_snippet",
+    "source",
+    "source_version",
+    "fetch_date"
+  ],
+  "rules": [
+    {"id": "context_id_non_empty", "type": "non_empty_rate", "column": "context_id", "min_rate": 1.0},
+    {"id": "edge_id_non_empty", "type": "non_empty_rate", "column": "edge_id", "min_rate": 1.0},
+    {"id": "protein_id_non_empty", "type": "non_empty_rate", "column": "protein_id", "min_rate": 1.0},
+    {"id": "function_relation_non_empty", "type": "non_empty_rate", "column": "function_relation", "min_rate": 1.0},
+    {"id": "function_relation_allowed", "type": "allowed_values_rate", "column": "function_relation", "allowed": ["transcription_regulation", "translation_regulation", "splicing_regulation", "post_transcriptional_regulation"], "min_rate": 1.0},
+    {"id": "source_non_empty", "type": "non_empty_rate", "column": "source", "min_rate": 1.0},
+    {"id": "source_version_non_empty", "type": "non_empty_rate", "column": "source_version", "min_rate": 1.0},
+    {"id": "fetch_date_iso", "type": "regex_rate", "column": "fetch_date", "pattern": "^\\d{4}-\\d{2}-\\d{2}$", "min_rate": 1.0}
+  ]
+}

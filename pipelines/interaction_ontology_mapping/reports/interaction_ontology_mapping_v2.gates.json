@@ -1,0 +1,32 @@
+{
+  "pipeline": "interaction_ontology_mapping_v2",
+  "generated_at_utc": "2026-04-13T01:40:00.345661+00:00",
+  "status": "PASS",
+  "checks": {
+    "mappable_record_ratio_ge_0_85": true,
+    "ontology_uri_valid_rate_ge_0_99": true,
+    "three_interaction_types_present": true,
+    "contract_validation_pass": true
+  },
+  "coverage": {
+    "mappable_record_ratio": 1.0,
+    "ontology_uri_valid_rate": 1.0
+  },
+  "row_count": {
+    "total_mapping_rows": 1905589,
+    "edge_rows_processed_by_type": {
+      "PPI": 884555,
+      "PSI": 32122,
+      "RPI": 16489
+    },
+    "scope_rows": {
+      "psi_mi_method": 933166,
+      "predicate_standardization": 933166,
+      "source_support": 3,
+      "go_term": 39254
+    },
+    "go_mapped_rows": 39254
+  },
+  "metrics_report": "pipelines/interaction_ontology_mapping/reports/interaction_ontology_mapping_v2.metrics.json",
+  "validation_report": "pipelines/interaction_ontology_mapping/reports/interaction_ontology_mapping_v2.validation.json"
+}

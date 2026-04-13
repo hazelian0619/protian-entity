@@ -1,0 +1,13 @@
+{
+  "pipeline": "interaction_release_local",
+  "release_tag": "2026-04-13",
+  "generated_at_utc": "2026-04-13T02:06:00.524812+00:00",
+  "status": "PASS",
+  "checks": {
+    "required_tables_present": true,
+    "all_qa_reports_present": true,
+    "all_qa_pass": true
+  },
+  "table_count": 16,
+  "qa_report_count": 5
+}

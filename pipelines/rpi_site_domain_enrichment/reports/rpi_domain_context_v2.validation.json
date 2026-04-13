@@ -1,0 +1,138 @@
+{
+  "table": "data/output/evidence/rpi_domain_context_v2.tsv",
+  "contract": "rpi_domain_context_v2",
+  "row_count": 30919,
+  "max_rows": null,
+  "sampled": false,
+  "columns": [
+    "context_id",
+    "edge_id",
+    "protein_id",
+    "domain_class",
+    "interpro_id",
+    "pfam_id",
+    "domain_name",
+    "domain_start",
+    "domain_end",
+    "source",
+    "source_version",
+    "fetch_date"
+  ],
+  "schema": {
+    "required_columns": [
+      "context_id",
+      "edge_id",
+      "protein_id",
+      "domain_class",
+      "interpro_id",
+      "pfam_id",
+      "domain_name",
+      "domain_start",
+      "domain_end",
+      "source",
+      "source_version",
+      "fetch_date"
+    ],
+    "missing_required": [],
+    "passed": true
+  },
+  "rules": [
+    {
+      "id": "context_id_non_empty",
+      "type": "non_empty_rate",
+      "passed": true,
+      "checked": 30919,
+      "passed_count": 30919,
+      "rate": 1.0
+    },
+    {
+      "id": "edge_id_non_empty",
+      "type": "non_empty_rate",
+      "passed": true,
+      "checked": 30919,
+      "passed_count": 30919,
+      "rate": 1.0
+    },
+    {
+      "id": "protein_id_non_empty",
+      "type": "non_empty_rate",
+      "passed": true,
+      "checked": 30919,
+      "passed_count": 30919,
+      "rate": 1.0
+    },
+    {
+      "id": "domain_class_non_empty",
+      "type": "non_empty_rate",
+      "passed": true,
+      "checked": 30919,
+      "passed_count": 30919,
+      "rate": 1.0
+    },
+    {
+      "id": "domain_class_allowed",
+      "type": "allowed_values_rate",
+      "passed": true,
+      "checked": 30919,
+      "passed_count": 30919,
+      "rate": 1.0
+    },
+    {
+      "id": "interpro_format_or_empty",
+      "type": "regex_rate",
+      "passed": true,
+      "checked": 30919,
+      "passed_count": 30919,
+      "rate": 1.0
+    },
+    {
+      "id": "pfam_format_or_empty",
+      "type": "regex_rate",
+      "passed": true,
+      "checked": 30919,
+      "passed_count": 30919,
+      "rate": 1.0
+    },
+    {
+      "id": "domain_start_numeric_or_empty",
+      "type": "regex_rate",
+      "passed": true,
+      "checked": 30919,
+      "passed_count": 30919,
+      "rate": 1.0
+    },
+    {
+      "id": "domain_end_numeric_or_empty",
+      "type": "regex_rate",
+      "passed": true,
+      "checked": 30919,
+      "passed_count": 30919,
+      "rate": 1.0
+    },
+    {
+      "id": "source_non_empty",
+      "type": "non_empty_rate",
+      "passed": true,
+      "checked": 30919,
+      "passed_count": 30919,
+      "rate": 1.0
+    },
+    {
+      "id": "source_version_non_empty",
+      "type": "non_empty_rate",
+      "passed": true,
+      "checked": 30919,
+      "passed_count": 30919,
+      "rate": 1.0
+    },
+    {
+      "id": "fetch_date_iso",
+      "type": "regex_rate",
+      "passed": true,
+      "checked": 30919,
+      "passed_count": 30919,
+      "rate": 1.0
+    }
+  ],
+  "passed": true
+}

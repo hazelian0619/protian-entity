@@ -1,0 +1,234 @@
+{
+  "pipeline": "interaction_cross_validation_v2",
+  "generated_at_utc": "2026-04-13T01:42:32.047419+00:00",
+  "sample_mode": true,
+  "inputs": {
+    "ppi_edges": "data/output/edges/edges_ppi_v1.tsv",
+    "ppi_evidence": "data/output/evidence/ppi_evidence_v1.tsv",
+    "psi_edges": "data/output/edges/drug_target_edges_v1.tsv",
+    "psi_evidence": "data/output/evidence/drug_target_evidence_v1.tsv",
+    "psi_activity_context": "data/output/evidence/psi_activity_context_v2.tsv",
+    "psi_structure_evidence": "data/output/evidence/psi_structure_evidence_v2.tsv",
+    "rpi_edges": "data/output/edges/rna_protein_edges_v1.tsv",
+    "rpi_evidence": "data/output/evidence/rna_protein_evidence_v1.tsv",
+    "molecule_xref": "data/output/molecules/molecule_xref_core_v1.tsv",
+    "ppi_method_context": "data/output/evidence/ppi_method_context_v2.tsv",
+    "ppi_function_context": "data/output/evidence/ppi_function_context_v2.tsv",
+    "rpi_site_context": "data/output/evidence/rpi_site_context_v2.tsv",
+    "rpi_domain_context": "data/output/evidence/rpi_domain_context_v2.tsv",
+    "rpi_function_context": "data/output/evidence/rpi_function_context_v2.tsv"
+  },
+  "row_count": {
+    "cross_validation": 15000,
+    "aggregate_score": 15000,
+    "edge_count_by_type": {
+      "PPI": 5000,
+      "PSI": 5000,
+      "RPI": 5000
+    },
+    "created_from_context_by_type": {}
+  },
+  "distribution": {
+    "consistent_across_n": {
+      "1": 5000,
+      "2": 4154,
+      "3": 5425,
+      "4": 421
+    },
+    "conflict_flag": {
+      "true": 645,
+      "false": 14355
+    },
+    "aggregate_score": {
+      "min": 0.011097434023009806,
+      "p10": 0.2310974340230098,
+      "mean": 0.4550289588691092,
+      "p90": 0.667252019140771,
+      "max": 0.7196948680460197
+    },
+    "aggregate_score_by_type": {
+      "PPI": {
+        "min": 0.4650106030356676,
+        "mean": 0.5233421040708643,
+        "max": 0.7196948680460197
+      },
+      "PSI": {
+        "min": 0.011097434023009806,
+        "mean": 0.203052641261966,
+        "max": 0.28219486804601956
+      },
+      "RPI": {
+        "min": 0.5943481070699335,
+        "mean": 0.6386921312744972,
+        "max": 0.705
+      }
+    }
+  },
+  "psi_b_update_integration": {
+    "psi_edges_with_activity_context": 0,
+    "psi_edges_with_structure_context": 0,
+    "psi_edges_with_both": 0,
+    "activity_context_file": "data/output/evidence/psi_activity_context_v2.tsv",
+    "structure_evidence_file": "data/output/evidence/psi_structure_evidence_v2.tsv"
+  },
+  "context_availability": {
+    "available_context_families": {
+      "PPI": 2,
+      "PSI": 2,
+      "RPI": 3
+    },
+    "expected_context_families": {
+      "PPI": 2,
+      "PSI": 2,
+      "RPI": 3
+    },
+    "context_file_stats": [
+      {
+        "file": "data/output/evidence/ppi_method_context_v2.tsv",
+        "interaction_type": "PPI",
+        "family": "method",
+        "status": "ok",
+        "rows_hit": 5000
+      },
+      {
+        "file": "data/output/evidence/ppi_function_context_v2.tsv",
+        "interaction_type": "PPI",
+        "family": "function",
+        "status": "ok",
+        "rows_hit": 5000
+      },
+      {
+        "file": "data/output/evidence/psi_activity_context_v2.tsv",
+        "interaction_type": "PSI",
+        "family": "activity",
+        "status": "ok",
+        "rows_hit": 0
+      },
+      {
+        "file": "data/output/evidence/psi_structure_evidence_v2.tsv",
+        "interaction_type": "PSI",
+        "family": "structure",
+        "status": "ok",
+        "rows_hit": 0
+      },
+      {
+        "file": "data/output/evidence/rpi_site_context_v2.tsv",
+        "interaction_type": "RPI",
+        "family": "site",
+        "status": "ok",
+        "rows_hit": 30438
+      },
+      {
+        "file": "data/output/evidence/rpi_domain_context_v2.tsv",
+        "interaction_type": "RPI",
+        "family": "domain",
+        "status": "ok",
+        "rows_hit": 9355
+      },
+      {
+        "file": "data/output/evidence/rpi_function_context_v2.tsv",
+        "interaction_type": "RPI",
+        "family": "function",
+        "status": "ok",
+        "rows_hit": 11952
+      }
+    ]
+  },
+  "lineage": {
+    "required_inputs": [
+      {
+        "name": "ppi_edges",
+        "path": "data/output/edges/edges_ppi_v1.tsv",
+        "sha256": "2c31fc4455d7b0d8da6bee56619946784dd44b89671a682eb72513d455d1f3ee"
+      },
+      {
+        "name": "ppi_evidence",
+        "path": "data/output/evidence/ppi_evidence_v1.tsv",
+        "sha256": "d781ac12b93c66abf85171200defed1693aca2476f24dd13c9f288a9901357a9"
+      },
+      {
+        "name": "psi_edges",
+        "path": "data/output/edges/drug_target_edges_v1.tsv",
+        "sha256": "0535e07c3f0d9140af375209d962313023325aafa0727dbade95a6ba5b5ac0f1"
+      },
+      {
+        "name": "psi_evidence",
+        "path": "data/output/evidence/drug_target_evidence_v1.tsv",
+        "sha256": "cf16051e37945ddcc3aff1a2fca37cbd22bc6e42fc2a9a979399bcf647d1897e"
+      },
+      {
+        "name": "psi_activity_context",
+        "path": "data/output/evidence/psi_activity_context_v2.tsv",
+        "sha256": "cfeff2f73139dc1f50773f38de13fb64e521d05f1acb970bdb7f8c0c54739dbd"
+      },
+      {
+        "name": "psi_structure_evidence",
+        "path": "data/output/evidence/psi_structure_evidence_v2.tsv",
+        "sha256": "0a2d45cd76ed2570595df1af1c61c0edfa7e54f4ce79fd5d7a4f19489eff59db"
+      },
+      {
+        "name": "rpi_edges",
+        "path": "data/output/edges/rna_protein_edges_v1.tsv",
+        "sha256": "5cf6704cc4df7613179aae009753c47954cce9425814f5c45b7aca8da04efdcd"
+      },
+      {
+        "name": "rpi_evidence",
+        "path": "data/output/evidence/rna_protein_evidence_v1.tsv",
+        "sha256": "e221a282c2d6563556b58db7adf71e3f1132fa3fca7ea62b4027fe61fc206674"
+      },
+      {
+        "name": "molecule_xref",
+        "path": "data/output/molecules/molecule_xref_core_v1.tsv",
+        "sha256": "d3ac4782397c4836924b98d94c123821006d8886aa7134b9ba6d33363aef1712"
+      }
+    ],
+    "optional_inputs": [
+      {
+        "name": "ppi_method_context",
+        "path": "data/output/evidence/ppi_method_context_v2.tsv",
+        "sha256": "8f79b417dfa5e89d082a589472283c70e649de1961413dfae3bb7dc00d2d53bf"
+      },
+      {
+        "name": "ppi_function_context",
+        "path": "data/output/evidence/ppi_function_context_v2.tsv",
+        "sha256": "c61613565444573ee950f05a84140f5ff0f499fe6ad6df4a3a7a43249e2a9c30"
+      },
+      {
+        "name": "rpi_site_context",
+        "path": "data/output/evidence/rpi_site_context_v2.tsv",
+        "sha256": "5dea6d071bccab70982178a3029f200d43c1f7c66ea5e54eb4130d5233b64bb4"
+      },
+      {
+        "name": "rpi_domain_context",
+        "path": "data/output/evidence/rpi_domain_context_v2.tsv",
+        "sha256": "90847a50832c2649cbd19c838521e2294a2c4d70775f53ad31c0856e552b34b9"
+      },
+      {
+        "name": "rpi_function_context",
+        "path": "data/output/evidence/rpi_function_context_v2.tsv",
+        "sha256": "b8cb92c0e0df64279d978ca80e109f07925bf3b59e29692d33b96ca2af633acc"
+      }
+    ]
+  },
+  "warnings": [],
+  "notes": [
+    "molecule xref loaded rows=14611, mapped_drugbank_ids=14619",
+    "PPI edges loaded=5000",
+    "PSI drug-target edges loaded=5000",
+    "RPI edges loaded=5000",
+    "PPI evidence rows=884555, mapped=5000",
+    "PSI DrugBank evidence rows=32963, mapped=5202",
+    "RPI evidence rows=100255, mapped=30438",
+    "PSI activity context rows=2360023, mapped=0",
+    "PSI structure context rows=1808985, mapped=0"
+  ],
+  "gates": {
+    "passed": true,
+    "checks": {
+      "all_three_interaction_types_present": true,
+      "aggregate_score_not_all_zero_or_one": true,
+      "aggregate_score_not_constant": true,
+      "cross_table_edge_join_rate_ge_0_99": true
+    }
+  }
+}

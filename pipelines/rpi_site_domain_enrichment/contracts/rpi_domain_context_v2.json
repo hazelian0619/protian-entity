@@ -1,0 +1,32 @@
+{
+  "name": "rpi_domain_context_v2",
+  "description": "RPI protein domain context (RRM/KH/CCCH/PFAM) linked by edge_id",
+  "required_columns": [
+    "context_id",
+    "edge_id",
+    "protein_id",
+    "domain_class",
+    "interpro_id",
+    "pfam_id",
+    "domain_name",
+    "domain_start",
+    "domain_end",
+    "source",
+    "source_version",
+    "fetch_date"
+  ],
+  "rules": [
+    {"id": "context_id_non_empty", "type": "non_empty_rate", "column": "context_id", "min_rate": 1.0},
+    {"id": "edge_id_non_empty", "type": "non_empty_rate", "column": "edge_id", "min_rate": 1.0},
+    {"id": "protein_id_non_empty", "type": "non_empty_rate", "column": "protein_id", "min_rate": 1.0},
+    {"id": "domain_class_non_empty", "type": "non_empty_rate", "column": "domain_class", "min_rate": 1.0},
+    {"id": "domain_class_allowed", "type": "allowed_values_rate", "column": "domain_class", "allowed": ["RRM", "KH", "CCCH", "PFAM"], "min_rate": 1.0},
+    {"id": "interpro_format_or_empty", "type": "regex_rate", "column": "interpro_id", "pattern": "^(|IPR[0-9]{6})$", "min_rate": 1.0},
+    {"id": "pfam_format_or_empty", "type": "regex_rate", "column": "pfam_id", "pattern": "^(|PF[0-9]{5})$", "min_rate": 1.0},
+    {"id": "domain_start_numeric_or_empty", "type": "regex_rate", "column": "domain_start", "pattern": "^(|[0-9]+)$", "min_rate": 1.0},
+    {"id": "domain_end_numeric_or_empty", "type": "regex_rate", "column": "domain_end", "pattern": "^(|[0-9]+)$", "min_rate": 1.0},
+    {"id": "source_non_empty", "type": "non_empty_rate", "column": "source", "min_rate": 1.0},
+    {"id": "source_version_non_empty", "type": "non_empty_rate", "column": "source_version", "min_rate": 1.0},
+    {"id": "fetch_date_iso", "type": "regex_rate", "column": "fetch_date", "pattern": "^\\d{4}-\\d{2}-\\d{2}$", "min_rate": 1.0}
+  ]
+}

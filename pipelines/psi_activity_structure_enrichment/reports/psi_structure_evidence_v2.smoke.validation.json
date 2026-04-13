@@ -1,0 +1,133 @@
+{
+  "table": "pipelines/psi_activity_structure_enrichment/reports/psi_structure_evidence_v2.smoke.tsv",
+  "contract": "psi_structure_evidence_v2",
+  "row_count": 38379,
+  "max_rows": null,
+  "sampled": false,
+  "columns": [
+    "edge_id",
+    "activity_id",
+    "compound_inchikey",
+    "target_uniprot_accession",
+    "target_chembl_id",
+    "pdb_id",
+    "pdb_experimental_method",
+    "pdb_resolution",
+    "pdb_release_date",
+    "pdb_ligand_count",
+    "structure_evidence_type",
+    "complex_match_level",
+    "standard_type",
+    "standard_relation",
+    "standard_value_nM",
+    "pchembl_value_eff",
+    "structure_affinity_score",
+    "source",
+    "source_version",
+    "fetch_date"
+  ],
+  "schema": {
+    "required_columns": [
+      "edge_id",
+      "activity_id",
+      "compound_inchikey",
+      "target_uniprot_accession",
+      "target_chembl_id",
+      "pdb_id",
+      "pdb_experimental_method",
+      "pdb_resolution",
+      "pdb_release_date",
+      "pdb_ligand_count",
+      "structure_evidence_type",
+      "complex_match_level",
+      "standard_type",
+      "standard_relation",
+      "standard_value_nM",
+      "pchembl_value_eff",
+      "structure_affinity_score",
+      "source",
+      "source_version",
+      "fetch_date"
+    ],
+    "missing_required": [],
+    "passed": true
+  },
+  "rules": [
+    {
+      "id": "edge_id_non_empty",
+      "type": "non_empty_rate",
+      "passed": true,
+      "checked": 38379,
+      "passed_count": 38379,
+      "rate": 1.0
+    },
+    {
+      "id": "edge_id_unique",
+      "type": "unique",
+      "passed": true,
+      "checked": 38379,
+      "passed_count": 38379,
+      "rate": 1.0,
+      "detail": {
+        "duplicates": 0
+      }
+    },
+    {
+      "id": "pdb_id_non_empty",
+      "type": "non_empty_rate",
+      "passed": true,
+      "checked": 38379,
+      "passed_count": 38379,
+      "rate": 1.0
+    },
+    {
+      "id": "structure_evidence_type_allowed",
+      "type": "allowed_values_rate",
+      "passed": true,
+      "checked": 38379,
+      "passed_count": 38379,
+      "rate": 1.0
+    },
+    {
+      "id": "complex_match_level_allowed",
+      "type": "allowed_values_rate",
+      "passed": true,
+      "checked": 38379,
+      "passed_count": 38379,
+      "rate": 1.0
+    },
+    {
+      "id": "standard_relation_allowed",
+      "type": "allowed_values_rate",
+      "passed": true,
+      "checked": 38379,
+      "passed_count": 38379,
+      "rate": 1.0
+    },
+    {
+      "id": "structure_affinity_score_format",
+      "type": "regex_rate",
+      "passed": true,
+      "checked": 38379,
+      "passed_count": 38379,
+      "rate": 1.0
+    },
+    {
+      "id": "source_version_non_empty",
+      "type": "non_empty_rate",
+      "passed": true,
+      "checked": 38379,
+      "passed_count": 38379,
+      "rate": 1.0
+    },
+    {
+      "id": "fetch_date_format",
+      "type": "regex_rate",
+      "passed": true,
+      "checked": 38379,
+      "passed_count": 38379,
+      "rate": 1.0
+    }
+  ],
+  "passed": true
+}

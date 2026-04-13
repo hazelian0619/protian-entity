@@ -1,0 +1,74 @@
+{
+  "name": "ppi_method_context_v2",
+  "description": "Per-edge PPI method/literature/score-split semantic context (STRING + IntAct + BioGRID)",
+  "required_columns": [
+    "edge_id",
+    "src_id",
+    "dst_id",
+    "method",
+    "method_raw",
+    "throughput",
+    "pmid",
+    "doi",
+    "experimental_score",
+    "text_mining_score",
+    "experimental_score_norm",
+    "text_mining_score_norm",
+    "source_databases",
+    "source_version",
+    "fetch_date"
+  ],
+  "rules": [
+    {
+      "id": "edge_id_non_empty",
+      "type": "non_empty_rate",
+      "column": "edge_id",
+      "min_rate": 1.0
+    },
+    {
+      "id": "edge_id_unique",
+      "type": "unique",
+      "column": "edge_id"
+    },
+    {
+      "id": "method_non_empty",
+      "type": "non_empty_rate",
+      "column": "method",
+      "min_rate": 0.95
+    },
+    {
+      "id": "throughput_enum",
+      "type": "allowed_values_rate",
+      "column": "throughput",
+      "allowed": ["HT", "LT", "UNK"],
+      "min_rate": 0.95
+    },
+    {
+      "id": "experimental_score_0_1000",
+      "type": "regex_rate",
+      "column": "experimental_score",
+      "pattern": "^\\d{1,4}$",
+      "min_rate": 1.0
+    },
+    {
+      "id": "text_mining_score_0_1000",
+      "type": "regex_rate",
+      "column": "text_mining_score",
+      "pattern": "^\\d{1,4}$",
+      "min_rate": 1.0
+    },
+    {
+      "id": "source_version_non_empty",
+      "type": "non_empty_rate",
+      "column": "source_version",
+      "min_rate": 1.0
+    },
+    {
+      "id": "fetch_date_format",
+      "type": "regex_rate",
+      "column": "fetch_date",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+      "min_rate": 1.0
+    }
+  ]
+}

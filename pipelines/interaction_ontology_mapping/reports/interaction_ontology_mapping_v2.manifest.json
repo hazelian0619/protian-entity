@@ -1,0 +1,13 @@
+{
+  "data_version": "kg-interaction-ontology-mapping-v2",
+  "created_at": "2026-04-13T01:39:59.777132+00:00",
+  "git_commit": "9abd73a0288baa6434e95192d059a85d7d81540b",
+  "artifacts": [
+    {
+      "path": "data/output/evidence/interaction_ontology_mapping_v2.tsv",
+      "size_bytes": 428980540,
+      "sha256": "7d77bd0b8bc17662906bfe38d6d146ee6d4cc38fa488d4c12bc6b7471e66d9bc",
+      "modified_time": "2026-04-13T01:39:23.138933+00:00"
+    }
+  ]
+}

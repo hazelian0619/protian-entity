@@ -1,0 +1,144 @@
+{
+  "pipeline": "rpi_site_domain_enrichment_v2",
+  "generated_at_utc": "2026-04-13T01:33:44.286653+00:00",
+  "input": {
+    "edges": "data/output/edges/rna_protein_edges_v1.tsv",
+    "evidence": "data/output/evidence/rna_protein_evidence_v1.tsv",
+    "protein_domains": "data/output/protein/protein_domains_interpro_v1.tsv",
+    "protein_master": "data/processed/protein_master_v6_clean.tsv",
+    "raw_rpi_dir": "data/raw/rpi"
+  },
+  "sample_mode": false,
+  "status": "completed",
+  "row_count": {
+    "target_edges": 16489,
+    "evidence_rows_scanned": 100255,
+    "site_rows": 100255,
+    "domain_rows": 30919,
+    "function_rows": 39254
+  },
+  "output": {
+    "site_context": "data/output/evidence/rpi_site_context_v2.tsv",
+    "domain_context": "data/output/evidence/rpi_domain_context_v2.tsv",
+    "function_context": "data/output/evidence/rpi_function_context_v2.tsv"
+  },
+  "coverage": {
+    "edge_id_join_rate": 1.0,
+    "site_join_rate": 1.0,
+    "domain_join_rate": 1.0,
+    "function_join_rate": 1.0,
+    "method_field_coverage": 1.0,
+    "site_edge_coverage": 0.0,
+    "domain_edge_coverage": 1.0,
+    "site_or_domain_coverage": 1.0
+  },
+  "distribution": {
+    "site_method_type": {
+      "CLIP": 100255
+    },
+    "domain_class": {
+      "KH": 1576,
+      "PFAM": 21344,
+      "RRM": 7999
+    },
+    "function_relation": {
+      "splicing_regulation": 14821,
+      "transcription_regulation": 13949,
+      "translation_regulation": 10484
+    }
+  },
+  "lineage": {
+    "raw_snapshots": [],
+    "matched_reference_count": 0,
+    "unmatched_reference_top20": [
+      {
+        "reference": "ACIN1:CH8906",
+        "count": 3
+      },
+      {
+        "reference": "AKAP1:CH1648",
+        "count": 2
+      },
+      {
+        "reference": "ALYREF:CH48914",
+        "count": 2
+      },
+      {
+        "reference": "ALKBH5:CH897",
+        "count": 2
+      },
+      {
+        "reference": "ALYREF:CH62869",
+        "count": 2
+      },
+      {
+        "reference": "ALYREF:CH62865",
+        "count": 2
+      },
+      {
+        "reference": "ALYREF:CH124987",
+        "count": 2
+      },
+      {
+        "reference": "ALYREF:CH52535",
+        "count": 2
+      },
+      {
+        "reference": "ALYREF:CH38450",
+        "count": 2
+      },
+      {
+        "reference": "ACIN1:CH7603",
+        "count": 2
+      },
+      {
+        "reference": "ACIN1:CH8870",
+        "count": 2
+      },
+      {
+        "reference": "AATF:CH333",
+        "count": 2
+      },
+      {
+        "reference": "ACIN1:CH13492",
+        "count": 2
+      },
+      {
+        "reference": "ALYREF:CH62866",
+        "count": 2
+      },
+      {
+        "reference": "AKAP1:CH1596",
+        "count": 2
+      },
+      {
+        "reference": "ACIN1:CH4002",
+        "count": 2
+      },
+      {
+        "reference": "ALYREF:CH103254",
+        "count": 2
+      },
+      {
+        "reference": "ALYREF:CH103256",
+        "count": 2
+      },
+      {
+        "reference": "AIFM1:CH119",
+        "count": 2
+      },
+      {
+        "reference": "ACIN1:CH2333",
+        "count": 2
+      }
+    ]
+  },
+  "gates": {
+    "passed": true,
+    "checks": {
+      "edge_id_join_rate_ge_0_99": true,
+      "method_field_coverage_ge_0_90": true,
+      "site_or_domain_coverage_ge_0_60": true
+    }
+  }
+}

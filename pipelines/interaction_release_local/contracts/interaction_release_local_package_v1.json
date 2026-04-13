@@ -1,0 +1,33 @@
+{
+  "name": "interaction_release_local_package_v1",
+  "required_top_level_keys": [
+    "pipeline",
+    "generated_at_utc",
+    "status",
+    "checks",
+    "table_stats",
+    "coverage_snapshot",
+    "qa_summary"
+  ],
+  "required_checks": [
+    "all_required_tables_exist",
+    "all_required_reports_exist",
+    "ppi_A_pass",
+    "psi_B_pass",
+    "cross_D_pass",
+    "rpi_C_pass",
+    "ontology_E_pass"
+  ],
+  "required_tables": [
+    "ppi_method_context_v2",
+    "ppi_function_context_v2",
+    "psi_activity_context_v2",
+    "psi_structure_evidence_v2",
+    "rpi_site_context_v2",
+    "rpi_domain_context_v2",
+    "rpi_function_context_v2",
+    "interaction_cross_validation_v2",
+    "interaction_aggregate_score_v2",
+    "interaction_ontology_mapping_v2"
+  ]
+}

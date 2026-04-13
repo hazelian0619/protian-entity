@@ -1,0 +1,103 @@
+{
+  "data_version": "kg-interaction-release-local-v1-2026-04-13",
+  "created_at": "2026-04-12T23:22:01.203327+00:00",
+  "git_commit": "9abd73a0288baa6434e95192d059a85d7d81540b",
+  "artifacts": [
+    {
+      "path": "data/output/evidence/ppi_method_context_v2.tsv",
+      "size_bytes": 157761176,
+      "sha256": "8f79b417dfa5e89d082a589472283c70e649de1961413dfae3bb7dc00d2d53bf",
+      "modified_time": "2026-04-12T13:28:05.700347+00:00"
+    },
+    {
+      "path": "data/output/evidence/ppi_function_context_v2.tsv",
+      "size_bytes": 173147986,
+      "sha256": "c61613565444573ee950f05a84140f5ff0f499fe6ad6df4a3a7a43249e2a9c30",
+      "modified_time": "2026-04-12T13:28:17.611063+00:00"
+    },
+    {
+      "path": "data/output/evidence/psi_activity_context_v2.tsv",
+      "size_bytes": 1979261136,
+      "sha256": "cfeff2f73139dc1f50773f38de13fb64e521d05f1acb970bdb7f8c0c54739dbd",
+      "modified_time": "2026-04-12T11:02:30.481382+00:00"
+    },
+    {
+      "path": "data/output/evidence/psi_structure_evidence_v2.tsv",
+      "size_bytes": 480163574,
+      "sha256": "0a2d45cd76ed2570595df1af1c61c0edfa7e54f4ce79fd5d7a4f19489eff59db",
+      "modified_time": "2026-04-12T11:02:30.481246+00:00"
+    },
+    {
+      "path": "data/output/evidence/rpi_site_context_v2.tsv",
+      "size_bytes": 23257998,
+      "sha256": "56032a049abc6a5c97cde26eb3d0743c162da7bc1572f9bed4815aa40ea1bfac",
+      "modified_time": "2026-04-12T10:39:30.854323+00:00"
+    },
+    {
+      "path": "data/output/evidence/rpi_domain_context_v2.tsv",
+      "size_bytes": 4698869,
+      "sha256": "081a3d7ce7ef3803e2dbb1d7a5f92752db8d59a96242c18bcc2f7eb1c102dcec",
+      "modified_time": "2026-04-12T10:39:31.110356+00:00"
+    },
+    {
+      "path": "data/output/evidence/rpi_function_context_v2.tsv",
+      "size_bytes": 9077271,
+      "sha256": "40e5fd8c66b7c08f8df0a28c6193064b3a83fefb8596176350404aa764a4a3b7",
+      "modified_time": "2026-04-12T10:39:31.492011+00:00"
+    },
+    {
+      "path": "data/output/evidence/interaction_cross_validation_v2.tsv",
+      "size_bytes": 797876609,
+      "sha256": "474c2dd63bd66056eb03c09eb289ae4bfc8485c2f9194828773fc42843da8227",
+      "modified_time": "2026-04-12T12:03:44.994983+00:00"
+    },
+    {
+      "path": "data/output/evidence/interaction_aggregate_score_v2.tsv",
+      "size_bytes": 455256335,
+      "sha256": "bac7644287ee5d97c58c10357ec2dd7a5b257325385fa34920f8ca8b88560daa",
+      "modified_time": "2026-04-12T12:03:44.995253+00:00"
+    },
+    {
+      "path": "data/output/evidence/interaction_ontology_mapping_v2.tsv",
+      "size_bytes": 438550035,
+      "sha256": "59bcb0e33f3d1a9f3feab69224193c8368820391d5332188ab354a0fd38dc74f",
+      "modified_time": "2026-04-12T11:34:43.454283+00:00"
+    },
+    {
+      "path": "pipelines/ppi_semantic_enrichment/reports/ppi_semantic_enrichment_v2.qa.json",
+      "size_bytes": 1858,
+      "sha256": "a735a2261e18d855f6b22873a0105e7a52bdd7c5ae1e4ae1ec704378eb3199d4",
+      "modified_time": "2026-04-12T13:28:59.391967+00:00"
+    },
+    {
+      "path": "pipelines/psi_activity_structure_enrichment/reports/psi_activity_structure_enrichment_v2.qa.json",
+      "size_bytes": 2213,
+      "sha256": "d6deaf7b82506d9b6e2238b50b66d02627ff5bc207ec92008b56f83189158d7b",
+      "modified_time": "2026-04-12T11:06:36.719971+00:00"
+    },
+    {
+      "path": "pipelines/interaction_cross_validation/reports/interaction_cross_validation_v2.qa.json",
+      "size_bytes": 2047,
+      "sha256": "00084cf0a6e5b60f8366b68eded9dfa4109cc12a4c087a695f58a261a96f4deb",
+      "modified_time": "2026-04-12T12:05:57.154342+00:00"
+    },
+    {
+      "path": "pipelines/interaction_release_local/reports/interaction_release_local_v1.package.json",
+      "size_bytes": 4888,
+      "sha256": "f04eac32794d1e7238e665d1c4e400f93a4cdcee18c04eff3a244ef4827e5247",
+      "modified_time": "2026-04-12T23:22:01.003032+00:00"
+    },
+    {
+      "path": "pipelines/interaction_release_local/reports/interaction_release_local_v1.gates.json",
+      "size_bytes": 528,
+      "sha256": "b2100f653705211902e6c5da98e27e9973e933e569a7bae9cb4b4fc5a861102e",
+      "modified_time": "2026-04-12T23:22:01.003300+00:00"
+    },
+    {
+      "path": "pipelines/interaction_release_local/reports/interaction_release_local_v1.validation.json",
+      "size_bytes": 4313,
+      "sha256": "c2d8f7aee85123aae83539b8cd16d3275c07fdb05fdae96d90fd02a2feaa7bff",
+      "modified_time": "2026-04-12T23:22:01.089876+00:00"
+    }
+  ]
+}

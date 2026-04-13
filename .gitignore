@@ -72,12 +72,28 @@ data/output/
 data/processed/rna/
 pipelines/**/reports/
 pipelines/**/.cache/
+pipelines/**/data/raw/
+pipelines/**/reports/*.smoke.tsv
 
 
 # Pipeline outputs (do not commit)
 data/output/
 data/processed/rna/
 pipelines/**/reports/
+
+# Allow JSON QA reports for interaction review pipelines
+!pipelines/ppi_semantic_enrichment/reports/
+!pipelines/ppi_semantic_enrichment/reports/*.json
+!pipelines/psi_activity_structure_enrichment/reports/
+!pipelines/psi_activity_structure_enrichment/reports/*.json
+!pipelines/rpi_site_domain_enrichment/reports/
+!pipelines/rpi_site_domain_enrichment/reports/*.json
+!pipelines/interaction_cross_validation/reports/
+!pipelines/interaction_cross_validation/reports/*.json
+!pipelines/interaction_ontology_mapping/reports/
+!pipelines/interaction_ontology_mapping/reports/*.json
+!pipelines/interaction_release_local/reports/
+!pipelines/interaction_release_local/reports/*.json
 
 # Local release packaging
 /dist/

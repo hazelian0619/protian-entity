@@ -1,0 +1,103 @@
+{
+  "table": "data/output/evidence/ppi_function_context_v2.tsv",
+  "contract": "ppi_function_context_v2",
+  "row_count": 884555,
+  "max_rows": null,
+  "sampled": false,
+  "columns": [
+    "edge_id",
+    "src_id",
+    "dst_id",
+    "shared_go_bp_count",
+    "shared_go_bp_ids",
+    "shared_go_mf_count",
+    "shared_go_mf_ids",
+    "shared_go_cc_count",
+    "shared_go_cc_ids",
+    "shared_reactome_count",
+    "shared_reactome_ids",
+    "shared_kegg_count",
+    "shared_kegg_ids",
+    "context_support_score",
+    "source",
+    "source_version",
+    "fetch_date"
+  ],
+  "schema": {
+    "required_columns": [
+      "edge_id",
+      "src_id",
+      "dst_id",
+      "shared_go_bp_count",
+      "shared_go_bp_ids",
+      "shared_go_mf_count",
+      "shared_go_mf_ids",
+      "shared_go_cc_count",
+      "shared_go_cc_ids",
+      "shared_reactome_count",
+      "shared_reactome_ids",
+      "shared_kegg_count",
+      "shared_kegg_ids",
+      "context_support_score",
+      "source",
+      "source_version",
+      "fetch_date"
+    ],
+    "missing_required": [],
+    "passed": true
+  },
+  "rules": [
+    {
+      "id": "edge_id_non_empty",
+      "type": "non_empty_rate",
+      "passed": true,
+      "checked": 884555,
+      "passed_count": 884555,
+      "rate": 1.0
+    },
+    {
+      "id": "edge_id_unique",
+      "type": "unique",
+      "passed": true,
+      "checked": 884555,
+      "passed_count": 884555,
+      "rate": 1.0,
+      "detail": {
+        "duplicates": 0
+      }
+    },
+    {
+      "id": "context_support_score_non_empty",
+      "type": "non_empty_rate",
+      "passed": true,
+      "checked": 884555,
+      "passed_count": 884555,
+      "rate": 1.0
+    },
+    {
+      "id": "source_non_empty",
+      "type": "non_empty_rate",
+      "passed": true,
+      "checked": 884555,
+      "passed_count": 884555,
+      "rate": 1.0
+    },
+    {
+      "id": "source_version_non_empty",
+      "type": "non_empty_rate",
+      "passed": true,
+      "checked": 884555,
+      "passed_count": 884555,
+      "rate": 1.0
+    },
+    {
+      "id": "fetch_date_format",
+      "type": "regex_rate",
+      "passed": true,
+      "checked": 884555,
+      "passed_count": 884555,
+      "rate": 1.0
+    }
+  ],
+  "passed": true
+}

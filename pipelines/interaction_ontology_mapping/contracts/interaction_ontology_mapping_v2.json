@@ -1,0 +1,35 @@
+{
+  "name": "interaction_ontology_mapping_v2",
+  "description": "Ontology normalization layer for methods (PSI-MI), GO terms, and standardized predicates",
+  "required_columns": [
+    "mapping_id",
+    "interaction_type",
+    "edge_id",
+    "mapping_scope",
+    "raw_term",
+    "standardized_predicate",
+    "ontology_namespace",
+    "ontology_id",
+    "ontology_label",
+    "ontology_uri",
+    "mapping_confidence",
+    "source",
+    "source_version",
+    "fetch_date"
+  ],
+  "rules": [
+    {"id": "mapping_id_non_empty", "type": "non_empty_rate", "column": "mapping_id", "min_rate": 1.0},
+    {"id": "mapping_id_unique", "type": "unique", "column": "mapping_id"},
+    {"id": "interaction_type_allowed", "type": "allowed_values_rate", "column": "interaction_type", "allowed": ["PPI", "PSI", "RPI"], "min_rate": 1.0},
+    {"id": "edge_id_non_empty", "type": "non_empty_rate", "column": "edge_id", "min_rate": 1.0},
+    {"id": "mapping_scope_allowed", "type": "allowed_values_rate", "column": "mapping_scope", "allowed": ["psi_mi_method", "source_support", "predicate_standardization", "go_term"], "min_rate": 1.0},
+    {"id": "standardized_predicate_allowed", "type": "allowed_values_rate", "column": "standardized_predicate", "allowed": ["detected_by", "supported_by", "participates_in", "standardized_as"], "min_rate": 1.0},
+    {"id": "ontology_id_non_empty_rate_ge_0_85", "type": "non_empty_rate", "column": "ontology_id", "min_rate": 0.85},
+    {"id": "ontology_uri_non_empty_rate_ge_0_99", "type": "non_empty_rate", "column": "ontology_uri", "min_rate": 0.99},
+    {"id": "ontology_uri_http", "type": "regex_rate", "column": "ontology_uri", "pattern": "^https?://", "min_rate": 0.99},
+    {"id": "mapping_confidence_0_1", "type": "regex_rate", "column": "mapping_confidence", "pattern": "^(0(\\.[0-9]+)?|1(\\.0+)?)$", "min_rate": 1.0},
+    {"id": "source_non_empty", "type": "non_empty_rate", "column": "source", "min_rate": 1.0},
+    {"id": "source_version_non_empty", "type": "non_empty_rate", "column": "source_version", "min_rate": 1.0},
+    {"id": "fetch_date_iso", "type": "regex_rate", "column": "fetch_date", "pattern": "^\\d{4}-\\d{2}-\\d{2}$", "min_rate": 1.0}
+  ]
+}

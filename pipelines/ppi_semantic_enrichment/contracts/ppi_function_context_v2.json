@@ -1,0 +1,61 @@
+{
+  "name": "ppi_function_context_v2",
+  "description": "Per-edge functional context mapped from GO/Reactome/KEGG overlap between endpoint proteins",
+  "required_columns": [
+    "edge_id",
+    "src_id",
+    "dst_id",
+    "shared_go_bp_count",
+    "shared_go_bp_ids",
+    "shared_go_mf_count",
+    "shared_go_mf_ids",
+    "shared_go_cc_count",
+    "shared_go_cc_ids",
+    "shared_reactome_count",
+    "shared_reactome_ids",
+    "shared_kegg_count",
+    "shared_kegg_ids",
+    "context_support_score",
+    "source",
+    "source_version",
+    "fetch_date"
+  ],
+  "rules": [
+    {
+      "id": "edge_id_non_empty",
+      "type": "non_empty_rate",
+      "column": "edge_id",
+      "min_rate": 1.0
+    },
+    {
+      "id": "edge_id_unique",
+      "type": "unique",
+      "column": "edge_id"
+    },
+    {
+      "id": "context_support_score_non_empty",
+      "type": "non_empty_rate",
+      "column": "context_support_score",
+      "min_rate": 1.0
+    },
+    {
+      "id": "source_non_empty",
+      "type": "non_empty_rate",
+      "column": "source",
+      "min_rate": 1.0
+    },
+    {
+      "id": "source_version_non_empty",
+      "type": "non_empty_rate",
+      "column": "source_version",
+      "min_rate": 1.0
+    },
+    {
+      "id": "fetch_date_format",
+      "type": "regex_rate",
+      "column": "fetch_date",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+      "min_rate": 1.0
+    }
+  ]
+}

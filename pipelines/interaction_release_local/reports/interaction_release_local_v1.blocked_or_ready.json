@@ -1,0 +1,41 @@
+{
+  "pipeline": "interaction_release_local",
+  "generated_at_utc": "2026-04-12T23:21:56.223027+00:00",
+  "status": "ready",
+  "source_root": "/Users/pluviophile/graph/protian-entity",
+  "copied_count": 6,
+  "skipped_count": 0,
+  "copied": [
+    {
+      "description": "RPI site context v2",
+      "src": "/Users/pluviophile/graph/protian-entity/data/output/evidence/rpi_site_context_v2.tsv",
+      "dst": "data/output/evidence/rpi_site_context_v2.tsv"
+    },
+    {
+      "description": "RPI domain context v2",
+      "src": "/Users/pluviophile/graph/protian-entity/data/output/evidence/rpi_domain_context_v2.tsv",
+      "dst": "data/output/evidence/rpi_domain_context_v2.tsv"
+    },
+    {
+      "description": "RPI function context v2",
+      "src": "/Users/pluviophile/graph/protian-entity/data/output/evidence/rpi_function_context_v2.tsv",
+      "dst": "data/output/evidence/rpi_function_context_v2.tsv"
+    },
+    {
+      "description": "Interaction ontology mapping v2",
+      "src": "/Users/pluviophile/graph/protian-entity/data/output/evidence/interaction_ontology_mapping_v2.tsv",
+      "dst": "data/output/evidence/interaction_ontology_mapping_v2.tsv"
+    },
+    {
+      "description": "Upstream RPI gates report",
+      "src": "/Users/pluviophile/graph/protian-entity/pipelines/rpi_site_domain_enrichment/reports/rpi_site_domain_enrichment_v2.gates.json",
+      "dst": "pipelines/interaction_release_local/reports/upstream_rpi_site_domain_enrichment_v2.gates.json"
+    },
+    {
+      "description": "Upstream ontology gates report",
+      "src": "/Users/pluviophile/graph/protian-entity/pipelines/interaction_ontology_mapping/reports/interaction_ontology_mapping_v2.gates.json",
+      "dst": "pipelines/interaction_release_local/reports/upstream_interaction_ontology_mapping_v2.gates.json"
+    }
+  ],
+  "skipped": []
+}

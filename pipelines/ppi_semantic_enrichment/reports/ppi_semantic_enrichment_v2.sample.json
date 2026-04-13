@@ -1,0 +1,50 @@
+{
+  "name": "ppi_semantic_enrichment_v2",
+  "created_at": "2026-04-12T13:24:17.415720+00:00",
+  "mode": "sample",
+  "sample_fast": true,
+  "inputs": {
+    "edges": "pipelines/edges_ppi/data/output/edges/edges_ppi_v1.tsv",
+    "protein_master": "data/processed/protein_master_v6_clean.tsv",
+    "reactome": "data/processed/pathway_members.tsv",
+    "kegg": "data/output/protein/protein_kegg_pathway_v1.tsv"
+  },
+  "outputs": {
+    "method_context": "/var/folders/2g/lkhdqhh14xddpty2_kj91t080000gn/T/ppi_method_context_v2.sample.XXXXXX.tsv.CDrFYAQf38",
+    "function_context": "/var/folders/2g/lkhdqhh14xddpty2_kj91t080000gn/T/ppi_function_context_v2.sample.XXXXXX.tsv.WJyQydib5H"
+  },
+  "external_sources": [
+    {
+      "name": "external_sources",
+      "status": "skipped_in_sample_fast"
+    }
+  ],
+  "external_parse_stats": {
+    "string_detailed": {
+      "rows_scanned": 0,
+      "rows_with_human_ids": 0,
+      "rows_edge_matched": 0
+    },
+    "intact": {
+      "rows_scanned": 0,
+      "rows_human": 0,
+      "rows_edge_matched": 0
+    },
+    "biogrid": {
+      "rows_scanned": 0,
+      "rows_human": 0,
+      "rows_edge_matched": 0
+    }
+  },
+  "metrics": {
+    "input_edges_rows": 5000,
+    "method_rows": 5000,
+    "function_rows": 5000,
+    "string_mapped_edges": 0,
+    "intact_mapped_edges": 0,
+    "biogrid_mapped_edges": 0,
+    "method_non_empty_rate": 1.0,
+    "pmid_or_doi_rate": 1.0,
+    "function_context_any_rate": 0.894
+  }
+}

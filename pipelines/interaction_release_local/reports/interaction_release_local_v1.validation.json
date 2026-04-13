@@ -1,0 +1,153 @@
+{
+  "name": "interaction_release_local_package_validation",
+  "passed": true,
+  "contract": "pipelines/interaction_release_local/contracts/interaction_release_local_package_v1.json",
+  "report": "pipelines/interaction_release_local/reports/interaction_release_local_v1.package.json",
+  "checks": [
+    {
+      "id": "top_level.pipeline",
+      "passed": true,
+      "detail": "required top-level key: pipeline"
+    },
+    {
+      "id": "top_level.generated_at_utc",
+      "passed": true,
+      "detail": "required top-level key: generated_at_utc"
+    },
+    {
+      "id": "top_level.status",
+      "passed": true,
+      "detail": "required top-level key: status"
+    },
+    {
+      "id": "top_level.checks",
+      "passed": true,
+      "detail": "required top-level key: checks"
+    },
+    {
+      "id": "top_level.table_stats",
+      "passed": true,
+      "detail": "required top-level key: table_stats"
+    },
+    {
+      "id": "top_level.coverage_snapshot",
+      "passed": true,
+      "detail": "required top-level key: coverage_snapshot"
+    },
+    {
+      "id": "top_level.qa_summary",
+      "passed": true,
+      "detail": "required top-level key: qa_summary"
+    },
+    {
+      "id": "checks.keys",
+      "passed": true,
+      "detail": "required checks present: ['all_required_reports_exist', 'all_required_tables_exist', 'cross_D_pass', 'ontology_E_pass', 'ppi_A_pass', 'psi_B_pass', 'rpi_C_pass']"
+    },
+    {
+      "id": "table_stats.keys",
+      "passed": true,
+      "detail": "required tables present: ['interaction_aggregate_score_v2', 'interaction_cross_validation_v2', 'interaction_ontology_mapping_v2', 'ppi_function_context_v2', 'ppi_method_context_v2', 'psi_activity_context_v2', 'psi_structure_evidence_v2', 'rpi_domain_context_v2', 'rpi_function_context_v2', 'rpi_site_context_v2']"
+    },
+    {
+      "id": "ppi_method_context_v2.path",
+      "passed": true,
+      "detail": "table stats contains path"
+    },
+    {
+      "id": "ppi_method_context_v2.rows",
+      "passed": true,
+      "detail": "table stats contains rows"
+    },
+    {
+      "id": "ppi_function_context_v2.path",
+      "passed": true,
+      "detail": "table stats contains path"
+    },
+    {
+      "id": "ppi_function_context_v2.rows",
+      "passed": true,
+      "detail": "table stats contains rows"
+    },
+    {
+      "id": "psi_activity_context_v2.path",
+      "passed": true,
+      "detail": "table stats contains path"
+    },
+    {
+      "id": "psi_activity_context_v2.rows",
+      "passed": true,
+      "detail": "table stats contains rows"
+    },
+    {
+      "id": "psi_structure_evidence_v2.path",
+      "passed": true,
+      "detail": "table stats contains path"
+    },
+    {
+      "id": "psi_structure_evidence_v2.rows",
+      "passed": true,
+      "detail": "table stats contains rows"
+    },
+    {
+      "id": "rpi_site_context_v2.path",
+      "passed": true,
+      "detail": "table stats contains path"
+    },
+    {
+      "id": "rpi_site_context_v2.rows",
+      "passed": true,
+      "detail": "table stats contains rows"
+    },
+    {
+      "id": "rpi_domain_context_v2.path",
+      "passed": true,
+      "detail": "table stats contains path"
+    },
+    {
+      "id": "rpi_domain_context_v2.rows",
+      "passed": true,
+      "detail": "table stats contains rows"
+    },
+    {
+      "id": "rpi_function_context_v2.path",
+      "passed": true,
+      "detail": "table stats contains path"
+    },
+    {
+      "id": "rpi_function_context_v2.rows",
+      "passed": true,
+      "detail": "table stats contains rows"
+    },
+    {
+      "id": "interaction_cross_validation_v2.path",
+      "passed": true,
+      "detail": "table stats contains path"
+    },
+    {
+      "id": "interaction_cross_validation_v2.rows",
+      "passed": true,
+      "detail": "table stats contains rows"
+    },
+    {
+      "id": "interaction_aggregate_score_v2.path",
+      "passed": true,
+      "detail": "table stats contains path"
+    },
+    {
+      "id": "interaction_aggregate_score_v2.rows",
+      "passed": true,
+      "detail": "table stats contains rows"
+    },
+    {
+      "id": "interaction_ontology_mapping_v2.path",
+      "passed": true,
+      "detail": "table stats contains path"
+    },
+    {
+      "id": "interaction_ontology_mapping_v2.rows",
+      "passed": true,
+      "detail": "table stats contains rows"
+    }
+  ]
+}

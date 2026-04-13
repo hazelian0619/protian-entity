@@ -1,0 +1,100 @@
+{
+  "table": "data/output/evidence/rpi_function_context_v2.tsv",
+  "contract": "rpi_function_context_v2",
+  "row_count": 39254,
+  "max_rows": null,
+  "sampled": false,
+  "columns": [
+    "context_id",
+    "edge_id",
+    "protein_id",
+    "function_relation",
+    "inference_basis",
+    "evidence_snippet",
+    "source",
+    "source_version",
+    "fetch_date"
+  ],
+  "schema": {
+    "required_columns": [
+      "context_id",
+      "edge_id",
+      "protein_id",
+      "function_relation",
+      "inference_basis",
+      "evidence_snippet",
+      "source",
+      "source_version",
+      "fetch_date"
+    ],
+    "missing_required": [],
+    "passed": true
+  },
+  "rules": [
+    {
+      "id": "context_id_non_empty",
+      "type": "non_empty_rate",
+      "passed": true,
+      "checked": 39254,
+      "passed_count": 39254,
+      "rate": 1.0
+    },
+    {
+      "id": "edge_id_non_empty",
+      "type": "non_empty_rate",
+      "passed": true,
+      "checked": 39254,
+      "passed_count": 39254,
+      "rate": 1.0
+    },
+    {
+      "id": "protein_id_non_empty",
+      "type": "non_empty_rate",
+      "passed": true,
+      "checked": 39254,
+      "passed_count": 39254,
+      "rate": 1.0
+    },
+    {
+      "id": "function_relation_non_empty",
+      "type": "non_empty_rate",
+      "passed": true,
+      "checked": 39254,
+      "passed_count": 39254,
+      "rate": 1.0
+    },
+    {
+      "id": "function_relation_allowed",
+      "type": "allowed_values_rate",
+      "passed": true,
+      "checked": 39254,
+      "passed_count": 39254,
+      "rate": 1.0
+    },
+    {
+      "id": "source_non_empty",
+      "type": "non_empty_rate",
+      "passed": true,
+      "checked": 39254,
+      "passed_count": 39254,
+      "rate": 1.0
+    },
+    {
+      "id": "source_version_non_empty",
+      "type": "non_empty_rate",
+      "passed": true,
+      "checked": 39254,
+      "passed_count": 39254,
+      "rate": 1.0
+    },
+    {
+      "id": "fetch_date_iso",
+      "type": "regex_rate",
+      "passed": true,
+      "checked": 39254,
+      "passed_count": 39254,
+      "rate": 1.0
+    }
+  ],
+  "passed": true
+}

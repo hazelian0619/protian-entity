@@ -1,0 +1,50 @@
+{
+  "pipeline": "interaction_ontology_mapping_v2",
+  "generated_at_utc": "2026-04-13T01:39:03.261834+00:00",
+  "sample_mode": true,
+  "input": {
+    "edges": {
+      "PPI": "data/output/edges/edges_ppi_v1.tsv",
+      "PSI": "data/output/edges/drug_target_edges_v1.tsv",
+      "RPI": "data/output/edges/rna_protein_edges_v1.tsv"
+    },
+    "rpi_function_context": "data/output/evidence/rpi_function_context_v2.tsv"
+  },
+  "status": "completed",
+  "output": "data/output/evidence/interaction_ontology_mapping_v2.sample.tsv",
+  "row_count": {
+    "total_mapping_rows": 16793,
+    "edge_rows_processed_by_type": {
+      "PPI": 2000,
+      "PSI": 2000,
+      "RPI": 2000
+    },
+    "scope_rows": {
+      "psi_mi_method": 6000,
+      "predicate_standardization": 6000,
+      "source_support": 3,
+      "go_term": 4790
+    },
+    "go_mapped_rows": 4790
+  },
+  "coverage": {
+    "mappable_record_ratio": 1.0,
+    "ontology_uri_valid_rate": 1.0
+  },
+  "distribution": {
+    "standardized_predicate": {
+      "detected_by": 6000,
+      "standardized_as": 6000,
+      "supported_by": 3,
+      "participates_in": 4790
+    }
+  },
+  "gates": {
+    "passed": true,
+    "checks": {
+      "mappable_record_ratio_ge_0_85": true,
+      "ontology_uri_valid_rate_ge_0_99": true,
+      "three_interaction_types_present": true
+    }
+  }
+}
