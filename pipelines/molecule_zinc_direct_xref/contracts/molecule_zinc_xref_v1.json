@@ -1,0 +1,74 @@
+{
+  "name": "molecule_zinc_xref_v1",
+  "description": "Direct ZINC mapping table from official catalogs info/source files (InChIKey <-> ZINC ID with optional SMILES)",
+  "required_columns": [
+    "inchikey",
+    "zinc_id",
+    "supplier_code",
+    "supplier_name",
+    "smiles",
+    "catalog_tier",
+    "catalog_tier_label",
+    "zinc_tranche",
+    "availability_tag",
+    "purchase_label",
+    "mapping_method",
+    "xref_version",
+    "source",
+    "source_version",
+    "fetch_date"
+  ],
+  "rules": [
+    {
+      "id": "inchikey_non_empty",
+      "type": "non_empty_rate",
+      "column": "inchikey",
+      "min_rate": 1.0
+    },
+    {
+      "id": "inchikey_format",
+      "type": "regex_rate",
+      "column": "inchikey",
+      "pattern": "^[A-Z]{14}-[A-Z]{10}-[A-Z]$",
+      "min_rate": 1.0
+    },
+    {
+      "id": "zinc_id_non_empty",
+      "type": "non_empty_rate",
+      "column": "zinc_id",
+      "min_rate": 1.0
+    },
+    {
+      "id": "zinc_id_format",
+      "type": "regex_rate",
+      "column": "zinc_id",
+      "pattern": "^ZINC\\d+$",
+      "min_rate": 1.0
+    },
+    {
+      "id": "source_non_empty",
+      "type": "non_empty_rate",
+      "column": "source",
+      "min_rate": 1.0
+    },
+    {
+      "id": "source_version_non_empty",
+      "type": "non_empty_rate",
+      "column": "source_version",
+      "min_rate": 1.0
+    },
+    {
+      "id": "fetch_date_format",
+      "type": "regex_rate",
+      "column": "fetch_date",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+      "min_rate": 1.0
+    },
+    {
+      "id": "mapping_method_non_empty",
+      "type": "non_empty_rate",
+      "column": "mapping_method",
+      "min_rate": 1.0
+    }
+  ]
+}

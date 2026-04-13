@@ -1,0 +1,109 @@
+{
+  "name": "molecule_3d_experimental_v1",
+  "description": "Experimental 3D evidence registry linking ligand InChIKey -> PDB -> UniProt target (RCSB/PDB)",
+  "required_columns": [
+    "inchikey",
+    "uniprot_id",
+    "pdb_id",
+    "ligand_ccd_id",
+    "pdb_entity_id",
+    "experimental_method",
+    "resolution",
+    "release_date",
+    "target_mapping_source",
+    "ligand_mapping_source",
+    "source_type",
+    "evidence_scope",
+    "xref_version",
+    "fetch_date",
+    "source_version"
+  ],
+  "rules": [
+    {
+      "id": "inchikey_non_empty",
+      "type": "non_empty_rate",
+      "column": "inchikey",
+      "min_rate": 1.0
+    },
+    {
+      "id": "inchikey_format",
+      "type": "regex_rate",
+      "column": "inchikey",
+      "pattern": "^[A-Z]{14}-[A-Z]{10}-[A-Z]$",
+      "min_rate": 1.0
+    },
+    {
+      "id": "uniprot_non_empty",
+      "type": "non_empty_rate",
+      "column": "uniprot_id",
+      "min_rate": 1.0
+    },
+    {
+      "id": "pdb_id_non_empty",
+      "type": "non_empty_rate",
+      "column": "pdb_id",
+      "min_rate": 1.0
+    },
+    {
+      "id": "pdb_id_format",
+      "type": "regex_rate",
+      "column": "pdb_id",
+      "pattern": "^[0-9A-Z]{4}$",
+      "min_rate": 1.0
+    },
+    {
+      "id": "experimental_method_non_empty",
+      "type": "non_empty_rate",
+      "column": "experimental_method",
+      "min_rate": 0.99
+    },
+    {
+      "id": "resolution_non_empty",
+      "type": "non_empty_rate",
+      "column": "resolution",
+      "min_rate": 0.99
+    },
+    {
+      "id": "source_type_allowed",
+      "type": "allowed_values_rate",
+      "column": "source_type",
+      "allowed": [
+        "experimental",
+        "computational"
+      ],
+      "min_rate": 1.0
+    },
+    {
+      "id": "source_type_experimental_only",
+      "type": "equals_value_rate",
+      "column": "source_type",
+      "value": "experimental",
+      "min_rate": 1.0
+    },
+    {
+      "id": "target_mapping_source_non_empty",
+      "type": "non_empty_rate",
+      "column": "target_mapping_source",
+      "min_rate": 1.0
+    },
+    {
+      "id": "ligand_mapping_source_non_empty",
+      "type": "non_empty_rate",
+      "column": "ligand_mapping_source",
+      "min_rate": 1.0
+    },
+    {
+      "id": "fetch_date_format",
+      "type": "regex_rate",
+      "column": "fetch_date",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+      "min_rate": 1.0
+    },
+    {
+      "id": "source_version_non_empty",
+      "type": "non_empty_rate",
+      "column": "source_version",
+      "min_rate": 1.0
+    }
+  ]
+}
