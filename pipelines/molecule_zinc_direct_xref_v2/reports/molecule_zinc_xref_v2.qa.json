@@ -1,0 +1,101 @@
+{
+  "name": "molecule_zinc_xref_v2.qa",
+  "created_at": "2026-04-13T22:08:16.536718+00:00",
+  "inputs": {
+    "zinc_v1": "data/output/molecules/molecule_zinc_xref_v1.tsv",
+    "table": "data/output/molecules/molecule_zinc_xref_v2.tsv",
+    "build_report": "pipelines/molecule_zinc_direct_xref_v2/reports/molecule_zinc_xref_v2.build.json",
+    "coverage_report": "pipelines/molecule_zinc_direct_xref_v2/reports/molecule_zinc_xref_v2.coverage.json",
+    "conflict_report": "pipelines/molecule_zinc_direct_xref_v2/reports/molecule_zinc_xref_v2.conflict_audit.json"
+  },
+  "metrics": {
+    "v1_rows": 102560,
+    "v2_rows": 102560,
+    "baseline_smiles_rate": 0.471948127925117,
+    "v2_smiles_rate": 0.9996489859594384,
+    "smiles_delta": 0.5277008580343214,
+    "smiles_delta_pp": 52.770085803432146,
+    "source_rate": 1.0,
+    "source_version_rate": 1.0,
+    "fetch_date_rate": 1.0,
+    "rows_backfilled": 54121
+  },
+  "gates": [
+    {
+      "id": "zinc_mapping_equivalent_to_v1",
+      "passed": true,
+      "detail": {
+        "allow_row_subset": false,
+        "v1_rows": 102560,
+        "v2_rows": 102560,
+        "v1_unique_keys": 102560,
+        "v2_unique_keys": 102560,
+        "missing_in_v1": 0,
+        "missing_in_v2": 0
+      }
+    },
+    {
+      "id": "format_integrity",
+      "passed": true,
+      "detail": {
+        "bad_inchikey_rows": 0,
+        "bad_zinc_id_rows": 0
+      }
+    },
+    {
+      "id": "smiles_non_empty_rate_improved_ge_15pp",
+      "passed": true,
+      "detail": {
+        "baseline_smiles_rate": 0.471948127925117,
+        "v2_smiles_rate": 0.9996489859594384,
+        "delta": 0.5277008580343214,
+        "delta_pp": 52.770085803432146,
+        "min_required_delta": 0.15,
+        "min_required_delta_pp": 15.0
+      }
+    },
+    {
+      "id": "provenance_non_empty_rate_100pct",
+      "passed": true,
+      "detail": {
+        "source_rate": 1.0,
+        "source_version_rate": 1.0,
+        "fetch_date_rate": 1.0
+      }
+    },
+    {
+      "id": "backfill_audit_integrity",
+      "passed": true,
+      "detail": {
+        "rows_backfilled": 54121,
+        "bad_backfilled_rows": 0,
+        "changed_nonempty_smiles_rows": 0
+      }
+    },
+    {
+      "id": "conflict_audit_preserved",
+      "passed": true,
+      "detail": {
+        "conflict_metrics": {
+          "rows": 102560,
+          "inchikey_with_multi_zinc": 0,
+          "inchikey_with_multi_vendor": 5627,
+          "zinc_with_multi_inchikey": 0
+        },
+        "has_structured_samples": true
+      }
+    },
+    {
+      "id": "report_consistency",
+      "passed": true,
+      "detail": {
+        "build_rows": 102560,
+        "actual_rows": 102560,
+        "build_smiles_delta": 0.5277008580343214,
+        "qa_smiles_delta": 0.5277008580343214,
+        "coverage_smiles_delta": 0.5277008580343214
+      }
+    }
+  ],
+  "passed": true
+}

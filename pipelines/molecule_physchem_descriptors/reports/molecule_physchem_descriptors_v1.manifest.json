@@ -1,0 +1,49 @@
+{
+  "data_version": "kg-data-local",
+  "created_at": "2026-04-13T22:04:01.718864+00:00",
+  "git_commit": "5631dd4b5ed55847263e079547795be80bf997e0",
+  "artifacts": [
+    {
+      "path": "data/output/molecules/molecule_physchem_descriptors_v1.tsv",
+      "size_bytes": 2659923,
+      "sha256": "9b88dc4a0b876659fd1d5281933faa055af89034bbfc87fccc4d6a2a0baeb661",
+      "modified_time": "2026-04-13T22:04:01.259555+00:00"
+    },
+    {
+      "path": "data/output/molecules/molecule_xref_core_v2.tsv",
+      "size_bytes": 5813727,
+      "sha256": "b6a4df2b34b0dea940d31b8d736927eb32dd1799e83f09b66000503f65a31170",
+      "modified_time": "2026-04-12T09:46:53.426698+00:00"
+    },
+    {
+      "path": "../12182/data/chembl_36/chembl_36.db",
+      "size_bytes": 29739835392,
+      "sha256": "cf8547cad7da721e3cfaa79b60d38f616e21e05df18059efa34428c794b16d2b",
+      "modified_time": "2025-12-19T15:59:39.398334+00:00"
+    },
+    {
+      "path": "pipelines/molecule_physchem_descriptors/contracts/molecule_physchem_descriptors_v1.json",
+      "size_bytes": 2493,
+      "sha256": "e19a0b0013e52cc7020149f436ef00847ad890676cabfd12c4a77dbe62b3b734",
+      "modified_time": "2026-04-13T21:47:03.614703+00:00"
+    },
+    {
+      "path": "pipelines/molecule_physchem_descriptors/reports/molecule_physchem_descriptors_v1.build.json",
+      "size_bytes": 3372,
+      "sha256": "211da91cac27cc17fbad2b4e8fb412432f6209bf01a11737613f5c5389149e5c",
+      "modified_time": "2026-04-13T22:04:01.262518+00:00"
+    },
+    {
+      "path": "pipelines/molecule_physchem_descriptors/reports/molecule_physchem_descriptors_v1.validation.json",
+      "size_bytes": 2974,
+      "sha256": "e6b26a3e433fb6b844dc06e142f80a67525fbe497b730283dfd58f492228c4d5",
+      "modified_time": "2026-04-13T22:04:01.458868+00:00"
+    },
+    {
+      "path": "pipelines/molecule_physchem_descriptors/reports/molecule_physchem_descriptors_v1.qa.json",
+      "size_bytes": 3773,
+      "sha256": "84c3f5811f0c61ab88412ebd6eaee6de2e493e2a5410b029e82fc9251a412805",
+      "modified_time": "2026-04-13T22:04:01.640991+00:00"
+    }
+  ]
+}

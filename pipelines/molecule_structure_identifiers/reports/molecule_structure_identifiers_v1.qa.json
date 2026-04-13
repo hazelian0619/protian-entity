@@ -1,0 +1,84 @@
+{
+  "name": "molecule_structure_identifiers_v1.qa",
+  "created_at": "2026-04-13T21:56:34.326410+00:00",
+  "inputs": {
+    "core_tsv": "data/output/molecules/molecule_xref_core_v2.tsv",
+    "table": "data/output/molecules/molecule_structure_identifiers_v1.tsv",
+    "build_report": "pipelines/molecule_structure_identifiers/reports/molecule_structure_identifiers_v1.build.json"
+  },
+  "metrics": {
+    "core_rows": 14775,
+    "table_rows": 14775,
+    "inchikey_backlink_rate": 1.0,
+    "inchi_non_empty_rate": 0.9840270727580372,
+    "inchi_non_empty_rate_mappable_subset": 0.9999116295510782,
+    "canonical_smiles_non_empty_rate": 0.9840947546531302,
+    "source_non_empty_rate": 1.0,
+    "source_version_non_empty_rate": 1.0,
+    "fetch_date_non_empty_rate": 1.0,
+    "mappable_subset_rows": 11316
+  },
+  "gates": [
+    {
+      "id": "row_count_and_inchikey_backlink",
+      "passed": true,
+      "detail": {
+        "core_rows": 14775,
+        "table_rows": 14775,
+        "allow_row_subset": false,
+        "backlink_rate": 1.0,
+        "table_keys_in_core": 14775,
+        "table_unique_keys": 14775
+      }
+    },
+    {
+      "id": "inchikey_unique_and_valid_format",
+      "passed": true,
+      "detail": {
+        "unique_inchikey_count": 14775,
+        "duplicate_inchikey_count": 0,
+        "inchikey_format_rate": 1.0
+      }
+    },
+    {
+      "id": "inchi_coverage_acceptance",
+      "passed": true,
+      "detail": {
+        "inchi_rate_all": 0.9840270727580372,
+        "min_inchi_rate_all": 0.7,
+        "mappable_subset_rows": 11316,
+        "inchi_rate_mappable_subset": 0.9999116295510782,
+        "min_inchi_rate_mappable_subset": 0.9,
+        "acceptance_logic": "all>=0.70 OR mappable_subset>=0.90"
+      }
+    },
+    {
+      "id": "canonical_smiles_coverage_acceptance",
+      "passed": true,
+      "detail": {
+        "canonical_smiles_rate": 0.9840947546531302,
+        "min_canonical_smiles_rate": 0.75
+      }
+    },
+    {
+      "id": "provenance_columns_non_empty",
+      "passed": true,
+      "detail": {
+        "source_non_empty_rate": 1.0,
+        "source_version_non_empty_rate": 1.0,
+        "fetch_date_non_empty_rate": 1.0
+      }
+    },
+    {
+      "id": "build_report_consistency",
+      "passed": true,
+      "detail": {
+        "qa_inchi_rate": 0.9840270727580372,
+        "build_inchi_rate": 0.9840270727580372,
+        "qa_smiles_rate": 0.9840947546531302,
+        "build_smiles_rate": 0.9840947546531302
+      }
+    }
+  ],
+  "passed": true
+}

@@ -1,0 +1,105 @@
+{
+  "name": "molecule_physchem_descriptors_v1",
+  "description": "Small-molecule physicochemical descriptors sourced from ChEMBL compound_properties with PubChem CID fallback.",
+  "required_columns": [
+    "inchikey",
+    "molecular_weight",
+    "logp",
+    "tpsa",
+    "hbd",
+    "hba",
+    "rotatable_bonds",
+    "unit_strategy",
+    "source",
+    "source_version",
+    "fetch_date"
+  ],
+  "rules": [
+    {
+      "id": "inchikey_non_empty",
+      "type": "non_empty_rate",
+      "column": "inchikey",
+      "min_rate": 1.0
+    },
+    {
+      "id": "inchikey_unique",
+      "type": "unique",
+      "column": "inchikey"
+    },
+    {
+      "id": "inchikey_format",
+      "type": "regex_rate",
+      "column": "inchikey",
+      "pattern": "^[A-Z]{14}-[A-Z]{10}-[A-Z]$",
+      "min_rate": 1.0
+    },
+    {
+      "id": "molecular_weight_numeric_or_empty",
+      "type": "regex_rate",
+      "column": "molecular_weight",
+      "pattern": "^$|^-?[0-9]+(\\.[0-9]+)?$",
+      "min_rate": 1.0
+    },
+    {
+      "id": "logp_numeric_or_empty",
+      "type": "regex_rate",
+      "column": "logp",
+      "pattern": "^$|^-?[0-9]+(\\.[0-9]+)?$",
+      "min_rate": 1.0
+    },
+    {
+      "id": "tpsa_numeric_or_empty",
+      "type": "regex_rate",
+      "column": "tpsa",
+      "pattern": "^$|^-?[0-9]+(\\.[0-9]+)?$",
+      "min_rate": 1.0
+    },
+    {
+      "id": "hbd_integer_or_empty",
+      "type": "regex_rate",
+      "column": "hbd",
+      "pattern": "^$|^-?[0-9]+$",
+      "min_rate": 1.0
+    },
+    {
+      "id": "hba_integer_or_empty",
+      "type": "regex_rate",
+      "column": "hba",
+      "pattern": "^$|^-?[0-9]+$",
+      "min_rate": 1.0
+    },
+    {
+      "id": "rotatable_bonds_integer_or_empty",
+      "type": "regex_rate",
+      "column": "rotatable_bonds",
+      "pattern": "^$|^-?[0-9]+$",
+      "min_rate": 1.0
+    },
+    {
+      "id": "unit_strategy_fixed",
+      "type": "equals_value_rate",
+      "column": "unit_strategy",
+      "value": "MW:Da|LogP:unitless|TPSA:Å²|HBD:count|HBA:count|RotatableBonds:count",
+      "min_rate": 1.0
+    },
+    {
+      "id": "source_non_empty",
+      "type": "non_empty_rate",
+      "column": "source",
+      "min_rate": 1.0
+    },
+    {
+      "id": "source_version_non_empty",
+      "type": "non_empty_rate",
+      "column": "source_version",
+      "min_rate": 1.0
+    },
+    {
+      "id": "fetch_date_iso",
+      "type": "regex_rate",
+      "column": "fetch_date",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$",
+      "min_rate": 1.0
+    }
+  ]
+}

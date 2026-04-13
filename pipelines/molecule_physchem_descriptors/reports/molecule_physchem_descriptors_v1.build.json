@@ -1,0 +1,105 @@
+{
+  "name": "molecule_physchem_descriptors_v1.build",
+  "created_at": "2026-04-13T22:04:01.260498+00:00",
+  "inputs": {
+    "xref": "data/output/molecules/molecule_xref_core_v2.tsv",
+    "chembl_db": "../12182/data/chembl_36/chembl_36.db",
+    "pubchem_enabled": true,
+    "pubchem_cache": "pipelines/molecule_physchem_descriptors/.cache/pubchem_properties_v1.jsonl",
+    "pubchem_inchikey_cache": "pipelines/molecule_physchem_descriptors/.cache/pubchem_inchikey_to_cid_v1.jsonl",
+    "pubchem_inchikey_fallback_enabled": false
+  },
+  "output": "data/output/molecules/molecule_physchem_descriptors_v1.tsv",
+  "unit_strategy": {
+    "molecular_weight": "Da",
+    "logp": "unitless",
+    "tpsa": "Å²",
+    "hbd": "count",
+    "hba": "count",
+    "rotatable_bonds": "count"
+  },
+  "sources": {
+    "chembl": "chembl_compound_properties",
+    "pubchem": "pubchem_pugrest_property",
+    "chembl_source_version": "ChEMBL:36:compound_properties",
+    "pubchem_source_version": "PubChem:PUGREST:compound/property:2026-04-13"
+  },
+  "metrics": {
+    "input_rows": 14775,
+    "rows_written": 14775,
+    "bad_inchikey_rows": 0,
+    "unique_chembl_ids_in_xref": 11316,
+    "unique_pubchem_cids_in_xref": 13046,
+    "chembl_ids_with_properties": 11316,
+    "mappable_subset_rows": 11316,
+    "rows_with_any_descriptor": 11316,
+    "rows_with_mw_logp_tpsa": 10886,
+    "core_triple_coverage_rate": 0.7367851099830796,
+    "descriptor_non_empty_counts": {
+      "molecular_weight": 11316,
+      "logp": 10930,
+      "tpsa": 10897,
+      "hbd": 9723,
+      "hba": 10896,
+      "rotatable_bonds": 10650
+    },
+    "descriptor_non_empty_rates_all_rows": {
+      "molecular_weight": 0.7658883248730964,
+      "logp": 0.7397631133671743,
+      "tpsa": 0.7375296108291032,
+      "hbd": 0.6580710659898478,
+      "hba": 0.7374619289340102,
+      "rotatable_bonds": 0.7208121827411168
+    },
+    "descriptor_non_empty_rates_mappable_subset": {
+      "molecular_weight": 1.0,
+      "logp": 0.9658890067161541,
+      "tpsa": 0.9629727819017321,
+      "hbd": 0.8592258748674443,
+      "hba": 0.9628844114528102,
+      "rotatable_bonds": 0.9411452810180275
+    },
+    "source_usage": {
+      "none": 3459,
+      "chembl_only": 10368,
+      "hybrid": 948
+    },
+    "pubchem_fetch": {
+      "requested_unique_cids": 13046,
+      "cache_hits": 13046,
+      "fetched_from_api": 0,
+      "api_batches": 0,
+      "api_success_cids_with_any_value": 0,
+      "api_error_count": 0,
+      "api_error_samples": []
+    },
+    "pubchem_inchikey_fallback": {
+      "candidate_inchikeys": 0,
+      "inchikey_to_cid": {
+        "requested_inchikeys": 0,
+        "cache_hits": 0,
+        "api_calls": 0,
+        "resolved_non_empty_cid_lists": 0,
+        "api_error_count": 0,
+        "api_error_samples": []
+      },
+      "resolved_unique_cids": 0,
+      "property_fetch_for_resolved_cids": {
+        "requested_unique_cids": 0,
+        "cache_hits": 0,
+        "fetched_from_api": 0,
+        "api_batches": 0,
+        "api_success_cids_with_any_value": 0,
+        "api_error_count": 0,
+        "api_error_samples": []
+      },
+      "rows_with_any_inchikey_fallback_value": 0
+    }
+  },
+  "acceptance_preview": {
+    "backlink_expected_rows_equal_input": true,
+    "core_triple_coverage_rate": 0.7367851099830796,
+    "target_core_triple_coverage_min": 0.7,
+    "target_mappable_non_empty_rate_min": 0.9
+  }
+}
