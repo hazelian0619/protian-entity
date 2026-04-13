@@ -1,0 +1,139 @@
+{
+  "data_version": "kg-interaction-cross-validation-v2-local",
+  "created_at": "2026-04-13T01:50:12.736436+00:00",
+  "git_commit": "9abd73a0288baa6434e95192d059a85d7d81540b",
+  "artifacts": [
+    {
+      "path": "data/output/evidence/interaction_cross_validation_v2.tsv",
+      "size_bytes": 797876609,
+      "sha256": "ca4b90fe516b39c8c016a540e334567472eb43120ea789c21aaf94944a74ddae",
+      "modified_time": "2026-04-13T01:47:57.841274+00:00"
+    },
+    {
+      "path": "data/output/evidence/interaction_aggregate_score_v2.tsv",
+      "size_bytes": 455131151,
+      "sha256": "b355a67be4b5efa736aafaed36c39c653c1f3d361474fde6fbe2d26cfddc7966",
+      "modified_time": "2026-04-13T01:47:57.841575+00:00"
+    },
+    {
+      "path": "pipelines/interaction_cross_validation/contracts/interaction_cross_validation_v2.json",
+      "size_bytes": 2493,
+      "sha256": "778eaa3a5c871ae6ee00c9a8365b122c5bdea3810a7a7aff1cc95b96e157cc2b",
+      "modified_time": "2026-04-12T11:44:28.906759+00:00"
+    },
+    {
+      "path": "pipelines/interaction_cross_validation/contracts/interaction_aggregate_score_v2.json",
+      "size_bytes": 3117,
+      "sha256": "b3f3b216a065486221e7a95f682f19b375c35852ac9e27033bd23e76890714a5",
+      "modified_time": "2026-04-12T11:45:46.002440+00:00"
+    },
+    {
+      "path": "pipelines/interaction_cross_validation/reports/interaction_cross_validation_v2.build.json",
+      "size_bytes": 7804,
+      "sha256": "bfb2ef97a9e064f6496da116dbe510d181de1cad953b2fda0b1106fdaa10a65c",
+      "modified_time": "2026-04-13T01:48:02.471360+00:00"
+    },
+    {
+      "path": "pipelines/interaction_cross_validation/reports/interaction_cross_validation_v2.validation.json",
+      "size_bytes": 3382,
+      "sha256": "c1eede54a55a0de792ae5d98ec5be987f4445ceb622b2bb99d09a573e1ce35de",
+      "modified_time": "2026-04-13T01:48:47.757012+00:00"
+    },
+    {
+      "path": "pipelines/interaction_cross_validation/reports/interaction_aggregate_score_v2.validation.json",
+      "size_bytes": 3935,
+      "sha256": "b64d578994fad9d5c466415a786022e370a774d04a7462a33fec81c7fcffc842",
+      "modified_time": "2026-04-13T01:49:43.374232+00:00"
+    },
+    {
+      "path": "pipelines/interaction_cross_validation/reports/interaction_cross_validation_v2.qa.json",
+      "size_bytes": 2060,
+      "sha256": "843ab20d41e5c0d53b985da479f4f377543e3a54ac9e8f87adfdb0bce339e7b6",
+      "modified_time": "2026-04-13T01:50:12.285229+00:00"
+    },
+    {
+      "path": "data/output/edges/edges_ppi_v1.tsv",
+      "size_bytes": 104400597,
+      "sha256": "2c31fc4455d7b0d8da6bee56619946784dd44b89671a682eb72513d455d1f3ee",
+      "modified_time": "2026-04-13T01:37:42.347292+00:00"
+    },
+    {
+      "path": "data/output/evidence/ppi_evidence_v1.tsv",
+      "size_bytes": 108823352,
+      "sha256": "d781ac12b93c66abf85171200defed1693aca2476f24dd13c9f288a9901357a9",
+      "modified_time": "2026-04-13T01:37:42.402413+00:00"
+    },
+    {
+      "path": "data/output/edges/drug_target_edges_v1.tsv",
+      "size_bytes": 4240207,
+      "sha256": "0535e07c3f0d9140af375209d962313023325aafa0727dbade95a6ba5b5ac0f1",
+      "modified_time": "2026-01-09T11:18:04.327689+00:00"
+    },
+    {
+      "path": "data/output/evidence/drug_target_evidence_v1.tsv",
+      "size_bytes": 5032572,
+      "sha256": "cf16051e37945ddcc3aff1a2fca37cbd22bc6e42fc2a9a979399bcf647d1897e",
+      "modified_time": "2026-01-09T11:18:04.327645+00:00"
+    },
+    {
+      "path": "data/output/evidence/psi_activity_context_v2.tsv",
+      "size_bytes": 1979261136,
+      "sha256": "cfeff2f73139dc1f50773f38de13fb64e521d05f1acb970bdb7f8c0c54739dbd",
+      "modified_time": "2026-04-12T11:02:30.481382+00:00"
+    },
+    {
+      "path": "data/output/evidence/psi_structure_evidence_v2.tsv",
+      "size_bytes": 480163574,
+      "sha256": "0a2d45cd76ed2570595df1af1c61c0edfa7e54f4ce79fd5d7a4f19489eff59db",
+      "modified_time": "2026-04-12T11:02:30.481246+00:00"
+    },
+    {
+      "path": "data/output/edges/rna_protein_edges_v1.tsv",
+      "size_bytes": 2770256,
+      "sha256": "5cf6704cc4df7613179aae009753c47954cce9425814f5c45b7aca8da04efdcd",
+      "modified_time": "2026-04-13T01:30:01.137672+00:00"
+    },
+    {
+      "path": "data/output/evidence/rna_protein_evidence_v1.tsv",
+      "size_bytes": 20119299,
+      "sha256": "e221a282c2d6563556b58db7adf71e3f1132fa3fca7ea62b4027fe61fc206674",
+      "modified_time": "2026-04-13T01:30:01.150724+00:00"
+    },
+    {
+      "path": "data/output/molecules/molecule_xref_core_v1.tsv",
+      "size_bytes": 3397087,
+      "sha256": "d3ac4782397c4836924b98d94c123821006d8886aa7134b9ba6d33363aef1712",
+      "modified_time": "2026-04-12T03:28:49.478903+00:00"
+    },
+    {
+      "path": "data/output/evidence/ppi_method_context_v2.tsv",
+      "size_bytes": 157761176,
+      "sha256": "8f79b417dfa5e89d082a589472283c70e649de1961413dfae3bb7dc00d2d53bf",
+      "modified_time": "2026-04-12T13:28:05.700347+00:00"
+    },
+    {
+      "path": "data/output/evidence/ppi_function_context_v2.tsv",
+      "size_bytes": 173147986,
+      "sha256": "c61613565444573ee950f05a84140f5ff0f499fe6ad6df4a3a7a43249e2a9c30",
+      "modified_time": "2026-04-12T13:28:17.611063+00:00"
+    },
+    {
+      "path": "data/output/evidence/rpi_site_context_v2.tsv",
+      "size_bytes": 18816070,
+      "sha256": "5dea6d071bccab70982178a3029f200d43c1f7c66ea5e54eb4130d5233b64bb4",
+      "modified_time": "2026-04-13T01:33:46.973448+00:00"
+    },
+    {
+      "path": "data/output/evidence/rpi_domain_context_v2.tsv",
+      "size_bytes": 4698869,
+      "sha256": "90847a50832c2649cbd19c838521e2294a2c4d70775f53ad31c0856e552b34b9",
+      "modified_time": "2026-04-13T01:33:47.111045+00:00"
+    },
+    {
+      "path": "data/output/evidence/rpi_function_context_v2.tsv",
+      "size_bytes": 9077271,
+      "sha256": "b8cb92c0e0df64279d978ca80e109f07925bf3b59e29692d33b96ca2af633acc",
+      "modified_time": "2026-04-13T01:33:47.313619+00:00"
+    }
+  ]
+}

@@ -1,0 +1,155 @@
+{
+  "table": "pipelines/interaction_cross_validation/.cache/interaction_cross_validation_v2.smoke.tsv",
+  "contract": "interaction_cross_validation_v2",
+  "row_count": 15000,
+  "max_rows": null,
+  "sampled": false,
+  "columns": [
+    "record_id",
+    "interaction_type",
+    "edge_id",
+    "entity_pair_key",
+    "consistent_across_n",
+    "source_list",
+    "evidence_count",
+    "distinct_methods_n",
+    "reference_count",
+    "predicate_set",
+    "direction_set",
+    "conflict_flag",
+    "conflict_reason",
+    "source_version_list",
+    "fetch_date"
+  ],
+  "schema": {
+    "required_columns": [
+      "record_id",
+      "interaction_type",
+      "edge_id",
+      "entity_pair_key",
+      "consistent_across_n",
+      "source_list",
+      "evidence_count",
+      "distinct_methods_n",
+      "reference_count",
+      "predicate_set",
+      "direction_set",
+      "conflict_flag",
+      "conflict_reason",
+      "source_version_list",
+      "fetch_date"
+    ],
+    "missing_required": [],
+    "passed": true
+  },
+  "rules": [
+    {
+      "id": "record_id_non_empty",
+      "type": "non_empty_rate",
+      "passed": true,
+      "checked": 15000,
+      "passed_count": 15000,
+      "rate": 1.0
+    },
+    {
+      "id": "record_id_unique",
+      "type": "unique",
+      "passed": true,
+      "checked": 15000,
+      "passed_count": 15000,
+      "rate": 1.0,
+      "detail": {
+        "duplicates": 0
+      }
+    },
+    {
+      "id": "interaction_type_allowed",
+      "type": "allowed_values_rate",
+      "passed": true,
+      "checked": 15000,
+      "passed_count": 15000,
+      "rate": 1.0
+    },
+    {
+      "id": "edge_id_non_empty",
+      "type": "non_empty_rate",
+      "passed": true,
+      "checked": 15000,
+      "passed_count": 15000,
+      "rate": 1.0
+    },
+    {
+      "id": "entity_pair_key_non_empty",
+      "type": "non_empty_rate",
+      "passed": true,
+      "checked": 15000,
+      "passed_count": 15000,
+      "rate": 1.0
+    },
+    {
+      "id": "consistent_across_n_integer",
+      "type": "regex_rate",
+      "passed": true,
+      "checked": 15000,
+      "passed_count": 15000,
+      "rate": 1.0
+    },
+    {
+      "id": "source_list_non_empty",
+      "type": "non_empty_rate",
+      "passed": true,
+      "checked": 15000,
+      "passed_count": 15000,
+      "rate": 1.0
+    },
+    {
+      "id": "evidence_count_integer",
+      "type": "regex_rate",
+      "passed": true,
+      "checked": 15000,
+      "passed_count": 15000,
+      "rate": 1.0
+    },
+    {
+      "id": "distinct_methods_n_integer",
+      "type": "regex_rate",
+      "passed": true,
+      "checked": 15000,
+      "passed_count": 15000,
+      "rate": 1.0
+    },
+    {
+      "id": "reference_count_integer",
+      "type": "regex_rate",
+      "passed": true,
+      "checked": 15000,
+      "passed_count": 15000,
+      "rate": 1.0
+    },
+    {
+      "id": "conflict_flag_bool",
+      "type": "regex_rate",
+      "passed": true,
+      "checked": 15000,
+      "passed_count": 15000,
+      "rate": 1.0
+    },
+    {
+      "id": "source_version_list_non_empty",
+      "type": "non_empty_rate",
+      "passed": true,
+      "checked": 15000,
+      "passed_count": 15000,
+      "rate": 1.0
+    },
+    {
+      "id": "fetch_date_iso",
+      "type": "regex_rate",
+      "passed": true,
+      "checked": 15000,
+      "passed_count": 15000,
+      "rate": 1.0
+    }
+  ],
+  "passed": true
+}

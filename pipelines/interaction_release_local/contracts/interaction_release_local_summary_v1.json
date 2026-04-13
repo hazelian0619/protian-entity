@@ -1,0 +1,18 @@
+{
+  "name": "interaction_release_local_summary_v1",
+  "required_top_level_keys": [
+    "pipeline",
+    "release_tag",
+    "generated_at_utc",
+    "status",
+    "checks",
+    "tables",
+    "qa_reports"
+  ],
+  "required_checks": [
+    "required_tables_present",
+    "all_qa_reports_present",
+    "all_qa_pass"
+  ],
+  "allowed_status": ["PASS", "FAIL"]
+}

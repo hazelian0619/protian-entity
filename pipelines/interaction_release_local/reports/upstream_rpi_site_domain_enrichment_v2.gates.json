@@ -1,0 +1,24 @@
+{
+  "pipeline": "rpi_site_domain_enrichment_v2",
+  "generated_at_utc": "2026-04-12T10:39:36.263478+00:00",
+  "status": "PASS",
+  "checks": {
+    "edge_id_join_rate_ge_0_99": true,
+    "method_field_coverage_ge_0_90": true,
+    "site_or_domain_coverage_ge_0_60": true,
+    "contract_validation_pass": true
+  },
+  "coverage": {
+    "edge_id_join_rate": 1.0,
+    "method_field_coverage": 1.0,
+    "site_edge_coverage": 1.0,
+    "domain_edge_coverage": 1.0,
+    "site_or_domain_coverage": 1.0
+  },
+  "contract_reports": {
+    "pipelines/rpi_site_domain_enrichment/reports/rpi_site_context_v2.validation.json": true,
+    "pipelines/rpi_site_domain_enrichment/reports/rpi_domain_context_v2.validation.json": true,
+    "pipelines/rpi_site_domain_enrichment/reports/rpi_function_context_v2.validation.json": true
+  },
+  "metrics_report": "pipelines/rpi_site_domain_enrichment/reports/rpi_site_domain_enrichment_v2.metrics.json"
+}

@@ -1,0 +1,73 @@
+{
+  "name": "interaction_release_local_summary_validation",
+  "passed": true,
+  "contract": "pipelines/interaction_release_local/contracts/interaction_release_local_summary_v1.json",
+  "summary": "pipelines/interaction_release_local/reports/interaction_release_local_2026-04-13.summary.json",
+  "checks": [
+    {
+      "id": "top.pipeline",
+      "passed": true,
+      "detail": "required key: pipeline"
+    },
+    {
+      "id": "top.release_tag",
+      "passed": true,
+      "detail": "required key: release_tag"
+    },
+    {
+      "id": "top.generated_at_utc",
+      "passed": true,
+      "detail": "required key: generated_at_utc"
+    },
+    {
+      "id": "top.status",
+      "passed": true,
+      "detail": "required key: status"
+    },
+    {
+      "id": "top.checks",
+      "passed": true,
+      "detail": "required key: checks"
+    },
+    {
+      "id": "top.tables",
+      "passed": true,
+      "detail": "required key: tables"
+    },
+    {
+      "id": "top.qa_reports",
+      "passed": true,
+      "detail": "required key: qa_reports"
+    },
+    {
+      "id": "status.allowed",
+      "passed": true,
+      "detail": "status=PASS"
+    },
+    {
+      "id": "checks.required_tables_present.exists",
+      "passed": true,
+      "detail": "check key: required_tables_present"
+    },
+    {
+      "id": "checks.all_qa_reports_present.exists",
+      "passed": true,
+      "detail": "check key: all_qa_reports_present"
+    },
+    {
+      "id": "checks.all_qa_pass.exists",
+      "passed": true,
+      "detail": "check key: all_qa_pass"
+    },
+    {
+      "id": "tables.non_empty",
+      "passed": true,
+      "detail": "tables must be non-empty dict"
+    },
+    {
+      "id": "qa_reports.non_empty",
+      "passed": true,
+      "detail": "qa_reports must be non-empty dict"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "data_version": "kg-data-local",
+  "created_at": "2026-04-12T13:28:59.637857+00:00",
+  "git_commit": "9abd73a0288baa6434e95192d059a85d7d81540b",
+  "artifacts": [
+    {
+      "path": "data/output/evidence/ppi_method_context_v2.tsv",
+      "size_bytes": 157761176,
+      "sha256": "8f79b417dfa5e89d082a589472283c70e649de1961413dfae3bb7dc00d2d53bf",
+      "modified_time": "2026-04-12T13:28:05.700347+00:00"
+    },
+    {
+      "path": "data/output/evidence/ppi_function_context_v2.tsv",
+      "size_bytes": 173147986,
+      "sha256": "c61613565444573ee950f05a84140f5ff0f499fe6ad6df4a3a7a43249e2a9c30",
+      "modified_time": "2026-04-12T13:28:17.611063+00:00"
+    },
+    {
+      "path": "pipelines/edges_ppi/data/output/edges/edges_ppi_v1.tsv",
+      "size_bytes": 104400597,
+      "sha256": "2c31fc4455d7b0d8da6bee56619946784dd44b89671a682eb72513d455d1f3ee",
+      "modified_time": "2025-12-24T12:42:21.789264+00:00"
+    },
+    {
+      "path": "data/processed/protein_master_v6_clean.tsv",
+      "size_bytes": 60795990,
+      "sha256": "731108e33253777850a66c671335e83c732518047d317c70451129c6a9140be7",
+      "modified_time": "2025-12-19T13:17:34.628992+00:00"
+    },
+    {
+      "path": "data/processed/pathway_members.tsv",
+      "size_bytes": 10959932,
+      "sha256": "6b1e7c00211efdd7268712b1f09458613521005dcc02c21a80dc697cb33111a1",
+      "modified_time": "2025-12-19T13:17:34.410730+00:00"
+    },
+    {
+      "path": "data/output/protein/protein_kegg_pathway_v1.tsv",
+      "size_bytes": 4465812,
+      "sha256": "c723224ac15c77bea5aca622cd99d3500d6919257532509df25269f9c6b485d5",
+      "modified_time": "2026-04-11T14:00:02.113809+00:00"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "pipeline": "interaction_release_local",
+  "generated_at_utc": "2026-04-12T23:22:01.003095+00:00",
+  "status": "PASS",
+  "checks": {
+    "all_required_tables_exist": true,
+    "all_required_reports_exist": true,
+    "ppi_A_pass": true,
+    "psi_B_pass": true,
+    "cross_D_pass": true,
+    "rpi_C_pass": true,
+    "ontology_E_pass": true
+  },
+  "coverage_snapshot": {
+    "ppi_method_rows": 884555,
+    "psi_activity_rows": 2360023,
+    "rpi_site_rows": 100255,
+    "cross_rows": 3293189,
+    "ontology_rows": 1905589
+  }
+}

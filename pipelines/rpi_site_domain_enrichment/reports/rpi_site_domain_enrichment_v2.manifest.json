@@ -1,0 +1,25 @@
+{
+  "data_version": "kg-rpi-site-domain-enrichment-v2",
+  "created_at": "2026-04-13T01:33:49.329817+00:00",
+  "git_commit": "9abd73a0288baa6434e95192d059a85d7d81540b",
+  "artifacts": [
+    {
+      "path": "data/output/evidence/rpi_site_context_v2.tsv",
+      "size_bytes": 18816070,
+      "sha256": "5dea6d071bccab70982178a3029f200d43c1f7c66ea5e54eb4130d5233b64bb4",
+      "modified_time": "2026-04-13T01:33:46.973448+00:00"
+    },
+    {
+      "path": "data/output/evidence/rpi_domain_context_v2.tsv",
+      "size_bytes": 4698869,
+      "sha256": "90847a50832c2649cbd19c838521e2294a2c4d70775f53ad31c0856e552b34b9",
+      "modified_time": "2026-04-13T01:33:47.111045+00:00"
+    },
+    {
+      "path": "data/output/evidence/rpi_function_context_v2.tsv",
+      "size_bytes": 9077271,
+      "sha256": "b8cb92c0e0df64279d978ca80e109f07925bf3b59e29692d33b96ca2af633acc",
+      "modified_time": "2026-04-13T01:33:47.313619+00:00"
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "name": "psi_structure_evidence_v2",
+  "description": "PSI per-edge structure evidence from PDB target-complex context with structure-associated affinity",
+  "required_columns": [
+    "edge_id",
+    "activity_id",
+    "compound_inchikey",
+    "target_uniprot_accession",
+    "target_chembl_id",
+    "pdb_id",
+    "pdb_experimental_method",
+    "pdb_resolution",
+    "pdb_release_date",
+    "pdb_ligand_count",
+    "structure_evidence_type",
+    "complex_match_level",
+    "standard_type",
+    "standard_relation",
+    "standard_value_nM",
+    "pchembl_value_eff",
+    "structure_affinity_score",
+    "source",
+    "source_version",
+    "fetch_date"
+  ],
+  "rules": [
+    {
+      "id": "edge_id_non_empty",
+      "type": "non_empty_rate",
+      "column": "edge_id",
+      "min_rate": 1.0
+    },
+    {
+      "id": "edge_id_unique",
+      "type": "unique",
+      "column": "edge_id"
+    },
+    {
+      "id": "pdb_id_non_empty",
+      "type": "non_empty_rate",
+      "column": "pdb_id",
+      "min_rate": 1.0
+    },
+    {
+      "id": "structure_evidence_type_allowed",
+      "type": "allowed_values_rate",
+      "column": "structure_evidence_type",
+      "allowed": ["pdb_target_complex_context"],
+      "min_rate": 1.0
+    },
+    {
+      "id": "complex_match_level_allowed",
+      "type": "allowed_values_rate",
+      "column": "complex_match_level",
+      "allowed": ["target_level"],
+      "min_rate": 1.0
+    },
+    {
+      "id": "standard_relation_allowed",
+      "type": "allowed_values_rate",
+      "column": "standard_relation",
+      "allowed": ["=", "<", ">", "<=", ">=", "~"],
+      "min_rate": 0.99
+    },
+    {
+      "id": "structure_affinity_score_format",
+      "type": "regex_rate",
+      "column": "structure_affinity_score",
+      "pattern": "^$|^(0(\\.\\d+)?|1(\\.0+)?)$",
+      "min_rate": 1.0
+    },
+    {
+      "id": "source_version_non_empty",
+      "type": "non_empty_rate",
+      "column": "source_version",
+      "min_rate": 1.0
+    },
+    {
+      "id": "fetch_date_format",
+      "type": "regex_rate",
+      "column": "fetch_date",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+      "min_rate": 1.0
+    }
+  ]
+}

@@ -1,0 +1,154 @@
+{
+  "pipeline": "interaction_release_local",
+  "generated_at_utc": "2026-04-12T23:22:01.002357+00:00",
+  "status": "PASS",
+  "checks": {
+    "all_required_tables_exist": true,
+    "all_required_reports_exist": true,
+    "ppi_A_pass": true,
+    "psi_B_pass": true,
+    "cross_D_pass": true,
+    "rpi_C_pass": true,
+    "ontology_E_pass": true
+  },
+  "table_stats": {
+    "ppi_method_context_v2": {
+      "path": "data/output/evidence/ppi_method_context_v2.tsv",
+      "rows": 884555,
+      "size_bytes": 157761176,
+      "modified_time_utc": "2026-04-12T13:28:05.700347+00:00"
+    },
+    "ppi_function_context_v2": {
+      "path": "data/output/evidence/ppi_function_context_v2.tsv",
+      "rows": 884555,
+      "size_bytes": 173147986,
+      "modified_time_utc": "2026-04-12T13:28:17.611063+00:00"
+    },
+    "psi_activity_context_v2": {
+      "path": "data/output/evidence/psi_activity_context_v2.tsv",
+      "rows": 2360023,
+      "size_bytes": 1979261136,
+      "modified_time_utc": "2026-04-12T11:02:30.481382+00:00"
+    },
+    "psi_structure_evidence_v2": {
+      "path": "data/output/evidence/psi_structure_evidence_v2.tsv",
+      "rows": 1808985,
+      "size_bytes": 480163574,
+      "modified_time_utc": "2026-04-12T11:02:30.481246+00:00"
+    },
+    "rpi_site_context_v2": {
+      "path": "data/output/evidence/rpi_site_context_v2.tsv",
+      "rows": 100255,
+      "size_bytes": 23257998,
+      "modified_time_utc": "2026-04-12T10:39:30.854323+00:00"
+    },
+    "rpi_domain_context_v2": {
+      "path": "data/output/evidence/rpi_domain_context_v2.tsv",
+      "rows": 30919,
+      "size_bytes": 4698869,
+      "modified_time_utc": "2026-04-12T10:39:31.110356+00:00"
+    },
+    "rpi_function_context_v2": {
+      "path": "data/output/evidence/rpi_function_context_v2.tsv",
+      "rows": 39254,
+      "size_bytes": 9077271,
+      "modified_time_utc": "2026-04-12T10:39:31.492011+00:00"
+    },
+    "interaction_cross_validation_v2": {
+      "path": "data/output/evidence/interaction_cross_validation_v2.tsv",
+      "rows": 3293189,
+      "size_bytes": 797876609,
+      "modified_time_utc": "2026-04-12T12:03:44.994983+00:00"
+    },
+    "interaction_aggregate_score_v2": {
+      "path": "data/output/evidence/interaction_aggregate_score_v2.tsv",
+      "rows": 3293189,
+      "size_bytes": 455256335,
+      "modified_time_utc": "2026-04-12T12:03:44.995253+00:00"
+    },
+    "interaction_ontology_mapping_v2": {
+      "path": "data/output/evidence/interaction_ontology_mapping_v2.tsv",
+      "rows": 1905589,
+      "size_bytes": 438550035,
+      "modified_time_utc": "2026-04-12T11:34:43.454283+00:00"
+    }
+  },
+  "coverage_snapshot": {
+    "ppi_method_rows": 884555,
+    "psi_activity_rows": 2360023,
+    "rpi_site_rows": 100255,
+    "cross_rows": 3293189,
+    "ontology_rows": 1905589
+  },
+  "qa_summary": {
+    "ppi_A": {
+      "edge_count": 884555,
+      "method_rows": 884555,
+      "function_rows": 884555,
+      "method_edge_mapping_rate": 1.0,
+      "function_edge_mapping_rate": 1.0,
+      "method_non_empty_rate": 1.0,
+      "pmid_or_doi_rate": 1.0,
+      "contract_pass": true
+    },
+    "psi_B": {
+      "psi_total_edges": 2360023,
+      "activity_rows": 2360023,
+      "structure_rows": 1808985,
+      "edge_id_join_rate_activity": 1.0,
+      "edge_id_join_rate_structure": 1.0,
+      "activity_type_coverage": 1.0,
+      "assay_field_coverage": 1.0,
+      "relation_symbol_coverage": 1.0,
+      "structure_edge_coverage": 0.7665115975564645,
+      "contracts_pass": true
+    },
+    "cross_D": {
+      "cross_rows": 3293189,
+      "aggregate_rows": 3293189,
+      "types_in_cross": [
+        "PPI",
+        "PSI",
+        "RPI"
+      ],
+      "cross_aggregate_join_rate": 1.0,
+      "aggregate_score": {
+        "min": 0.0,
+        "p10": 0.426792,
+        "p90": 0.632975,
+        "max": 0.905
+      },
+      "score_bucket": {
+        "high": 3435,
+        "medium": 2264289,
+        "low": 1025465
+      },
+      "build_summary": {
+        "min": 0.0,
+        "p10": 0.426792082755763,
+        "mean": 0.5354673494394397,
+        "p90": 0.6329747533144822,
+        "max": 0.905
+      },
+      "psi_b_update_integration": {
+        "psi_edges_with_activity_context": 2360023,
+        "psi_edges_with_structure_context": 1808985,
+        "psi_edges_with_both": 1808985,
+        "activity_context_file": "data/output/evidence/psi_activity_context_v2.tsv",
+        "structure_evidence_file": "data/output/evidence/psi_structure_evidence_v2.tsv"
+      }
+    },
+    "rpi_C_gates": {
+      "edge_id_join_rate_ge_0_99": true,
+      "method_field_coverage_ge_0_90": true,
+      "site_or_domain_coverage_ge_0_60": true,
+      "contract_validation_pass": true
+    },
+    "ontology_E_gates": {
+      "mappable_record_ratio_ge_0_85": true,
+      "ontology_uri_valid_rate_ge_0_99": true,
+      "three_interaction_types_present": true,
+      "contract_validation_pass": true
+    }
+  }
+}

@@ -1,0 +1,140 @@
+{
+  "table": "data/output/evidence/rpi_site_context_v2.tsv",
+  "contract": "rpi_site_context_v2",
+  "row_count": 100255,
+  "max_rows": null,
+  "sampled": false,
+  "columns": [
+    "context_id",
+    "edge_id",
+    "reference",
+    "method_type",
+    "method_subtype",
+    "site_type",
+    "chromosome",
+    "start",
+    "end",
+    "strand",
+    "transcript_id",
+    "gene_id",
+    "cell_context",
+    "support_count",
+    "source",
+    "source_version",
+    "fetch_date"
+  ],
+  "schema": {
+    "required_columns": [
+      "context_id",
+      "edge_id",
+      "reference",
+      "method_type",
+      "method_subtype",
+      "site_type",
+      "chromosome",
+      "start",
+      "end",
+      "strand",
+      "transcript_id",
+      "gene_id",
+      "cell_context",
+      "support_count",
+      "source",
+      "source_version",
+      "fetch_date"
+    ],
+    "missing_required": [],
+    "passed": true
+  },
+  "rules": [
+    {
+      "id": "context_id_non_empty",
+      "type": "non_empty_rate",
+      "passed": true,
+      "checked": 100255,
+      "passed_count": 100255,
+      "rate": 1.0
+    },
+    {
+      "id": "edge_id_non_empty",
+      "type": "non_empty_rate",
+      "passed": true,
+      "checked": 100255,
+      "passed_count": 100255,
+      "rate": 1.0
+    },
+    {
+      "id": "method_type_non_empty",
+      "type": "non_empty_rate",
+      "passed": true,
+      "checked": 100255,
+      "passed_count": 100255,
+      "rate": 1.0
+    },
+    {
+      "id": "method_type_allowed",
+      "type": "allowed_values_rate",
+      "passed": true,
+      "checked": 100255,
+      "passed_count": 100255,
+      "rate": 1.0
+    },
+    {
+      "id": "site_type_allowed",
+      "type": "allowed_values_rate",
+      "passed": true,
+      "checked": 100255,
+      "passed_count": 100255,
+      "rate": 1.0
+    },
+    {
+      "id": "start_numeric_or_empty",
+      "type": "regex_rate",
+      "passed": true,
+      "checked": 100255,
+      "passed_count": 100255,
+      "rate": 1.0
+    },
+    {
+      "id": "end_numeric_or_empty",
+      "type": "regex_rate",
+      "passed": true,
+      "checked": 100255,
+      "passed_count": 100255,
+      "rate": 1.0
+    },
+    {
+      "id": "support_count_numeric_or_empty",
+      "type": "regex_rate",
+      "passed": true,
+      "checked": 100255,
+      "passed_count": 100255,
+      "rate": 1.0
+    },
+    {
+      "id": "source_non_empty",
+      "type": "non_empty_rate",
+      "passed": true,
+      "checked": 100255,
+      "passed_count": 100255,
+      "rate": 1.0
+    },
+    {
+      "id": "source_version_non_empty",
+      "type": "non_empty_rate",
+      "passed": true,
+      "checked": 100255,
+      "passed_count": 100255,
+      "rate": 1.0
+    },
+    {
+      "id": "fetch_date_iso",
+      "type": "regex_rate",
+      "passed": true,
+      "checked": 100255,
+      "passed_count": 100255,
+      "rate": 1.0
+    }
+  ],
+  "passed": true
+}

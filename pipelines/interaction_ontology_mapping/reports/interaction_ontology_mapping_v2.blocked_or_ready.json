@@ -1,0 +1,18 @@
+{
+  "pipeline": "interaction_ontology_mapping_v2",
+  "generated_at_utc": "2026-04-13T01:39:03.220428+00:00",
+  "sample_mode": false,
+  "input": {
+    "edges": {
+      "PPI": "data/output/edges/edges_ppi_v1.tsv",
+      "PSI": "data/output/edges/drug_target_edges_v1.tsv",
+      "RPI": "data/output/edges/rna_protein_edges_v1.tsv"
+    },
+    "rpi_function_context": "data/output/evidence/rpi_function_context_v2.tsv"
+  },
+  "status": "inputs_ready",
+  "optional_inputs": {
+    "rpi_function_context_exists": true
+  },
+  "message": "输入检查通过。"
+}
