@@ -4,8 +4,10 @@
 
 ## 1) 我该下载什么？
 
-- GitHub Release（RNA L1 v1）：https://github.com/hazelian0619/protian-entity/releases/tag/rna-l1-v1
+- GitHub Release（RNA L1/L2 v2，推荐）：https://github.com/hazelian0619/protian-entity/releases/tag/rna-l1l2-v2
+- GitHub Release（RNA L1 v1，历史）：https://github.com/hazelian0619/protian-entity/releases/tag/rna-l1-v1
 - 如何使用/如何重跑：`pipelines/rna/README.md`
+- 发布清单与资产说明：`docs/rna/RNA_RELEASES.md`
 
 ## 2) 表结构长什么样？（字段与规则）
 

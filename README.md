@@ -4,7 +4,7 @@ Protian Entity is an industrial-grade data product: curated L1 entity tables (Pr
 
 Quick summary
 - Primary entity: human Protein L1 table — `data/processed/protein_master_v6_clean.tsv` (v6 snapshot)
-- RNA L1 artifacts are published as release assets (`rna-l1-v1`) with `manifest.json` and QA reports
+- RNA artifacts are published as release assets (`rna-l1l2-v2`) with `manifest.json` and QA reports
 - Validation tool: `tools/kg_validate_table.py`
 
 Badges
