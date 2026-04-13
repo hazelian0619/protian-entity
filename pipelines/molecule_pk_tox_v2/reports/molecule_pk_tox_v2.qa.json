@@ -1,0 +1,132 @@
+{
+  "name": "molecule_pk_tox_v2.qa",
+  "created_at": "2026-04-13T22:34:34.704735+00:00",
+  "inputs": {
+    "xref": "data/output/molecules/molecule_xref_core_v2.tsv",
+    "table": "data/output/molecules/molecule_pk_tox_v2.tsv",
+    "build_report": "pipelines/molecule_pk_tox_v2/reports/molecule_pk_tox_v2.build.json",
+    "validation_report": "pipelines/molecule_pk_tox_v2/reports/molecule_pk_tox_v2.validation.json",
+    "baseline_rows_with_any": 2370,
+    "min_normalized_legal_rate": 0.98
+  },
+  "metrics": {
+    "rows": 14775,
+    "xref_rows": 14775,
+    "rows_with_any_pk_tox": 4028,
+    "field_non_empty_counts": {
+      "bioavailability": 2967,
+      "clearance": 2575,
+      "half_life": 3275,
+      "volume_of_distribution": 1612,
+      "ld50": 1208,
+      "mutagenicity": 249
+    },
+    "backlink_rate": 1.0,
+    "source_non_empty_rate": 1.0,
+    "source_version_non_empty_rate": 1.0,
+    "fetch_date_non_empty_rate": 1.0,
+    "normalized_legal_rate": 0.9983869148336153,
+    "normalized_legal_rate_by_field": {
+      "bioavailability_pct": 1.0,
+      "clearance": 0.994585448392555,
+      "half_life": 0.9997969543147208,
+      "volume_distribution": 0.9974280879864637,
+      "ld50": 0.9985109983079526,
+      "mutagenicity": 1.0
+    },
+    "rows_with_second_source_contrib": 2312,
+    "anchor_violations": 0,
+    "evidence_violations": 0
+  },
+  "gates": [
+    {
+      "id": "inchikey_unique_and_valid",
+      "passed": true,
+      "detail": {
+        "bad_inchikey": 0,
+        "duplicate_inchikey": 0
+      }
+    },
+    {
+      "id": "xref_backlink_rate",
+      "passed": true,
+      "detail": {
+        "backlink_rate": 1.0,
+        "min_required": 0.999,
+        "missing_backlink_rows": 0
+      }
+    },
+    {
+      "id": "evidence_tier_domain",
+      "passed": true,
+      "detail": {
+        "violations": 0,
+        "allowed": [
+          "inferred/low",
+          "none",
+          "structured/high",
+          "text_mined/medium"
+        ]
+      }
+    },
+    {
+      "id": "value_requires_anchor",
+      "passed": true,
+      "detail": {
+        "anchor_violations": 0
+      }
+    },
+    {
+      "id": "validation_pass",
+      "passed": true,
+      "detail": {
+        "validation_passed": true
+      }
+    },
+    {
+      "id": "v2_non_degradation_rows_with_any",
+      "passed": true,
+      "detail": {
+        "rows_with_any_pk_tox": 4028,
+        "baseline_rows_with_any_pk_tox": 2370,
+        "operator": ">",
+        "build_report_rows_with_any": 4028
+      }
+    },
+    {
+      "id": "second_source_contribution_positive",
+      "passed": true,
+      "detail": {
+        "rows_with_second_source_contrib": 2312,
+        "operator": ">"
+      }
+    },
+    {
+      "id": "normalized_fields_legal_rate",
+      "passed": true,
+      "detail": {
+        "normalized_legal_rate": 0.9983869148336153,
+        "min_required": 0.98,
+        "by_field": {
+          "bioavailability_pct": 1.0,
+          "clearance": 0.994585448392555,
+          "half_life": 0.9997969543147208,
+          "volume_distribution": 0.9974280879864637,
+          "ld50": 0.9985109983079526,
+          "mutagenicity": 1.0
+        }
+      }
+    },
+    {
+      "id": "source_triplet_complete",
+      "passed": true,
+      "detail": {
+        "source_non_empty_rate": 1.0,
+        "source_version_non_empty_rate": 1.0,
+        "fetch_date_non_empty_rate": 1.0,
+        "required": 1.0
+      }
+    }
+  ],
+  "passed": true
+}

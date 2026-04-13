@@ -1,0 +1,29 @@
+{
+  "name": "molecule_zinc_xref_v2.conflict_audit",
+  "created_at": "2026-04-13T22:08:14.052381+00:00",
+  "comparison": {
+    "v1_metrics": {
+      "rows": 102560,
+      "inchikey_with_multi_zinc": 0,
+      "inchikey_with_multi_vendor": 5627,
+      "zinc_with_multi_inchikey": 0
+    },
+    "v2_metrics": {
+      "rows": 102560,
+      "inchikey_with_multi_zinc": 0,
+      "inchikey_with_multi_vendor": 5627,
+      "zinc_with_multi_inchikey": 0
+    },
+    "mapping_key_set_equal": true
+  },
+  "metrics": {
+    "rows": 102560,
+    "inchikey_with_multi_zinc": 0,
+    "inchikey_with_multi_vendor": 5627,
+    "zinc_with_multi_inchikey": 0
+  },
+  "samples": {
+    "inchikey_with_multi_zinc": [],
+    "zinc_with_multi_inchikey": []
+  }
+}

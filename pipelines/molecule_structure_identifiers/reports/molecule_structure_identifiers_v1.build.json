@@ -1,0 +1,57 @@
+{
+  "name": "molecule_structure_identifiers_v1.build",
+  "created_at": "2026-04-13T21:48:00.859070+00:00",
+  "inputs": {
+    "core_tsv": "data/output/molecules/molecule_xref_core_v2.tsv",
+    "chembl_db": "../1218/data/raw/molecules/chembl_36/chembl_36.db",
+    "cache_path": "pipelines/molecule_structure_identifiers/.cache/pubchem_structure_lookup_v1.jsonl",
+    "cache_preloaded_entries": 609
+  },
+  "output": "data/output/molecules/molecule_structure_identifiers_v1.tsv",
+  "metrics": {
+    "rows_input": 14775,
+    "rows_written": 14775,
+    "invalid_inchikey_rows": 0,
+    "unique_valid_inchikeys": 14775,
+    "chembl_matches": 11316,
+    "pubchem_lookup_rows": 3460,
+    "pubchem_hit_any_field": 3224,
+    "inchi_non_empty_rate": 0.9840270727580372,
+    "inchi_non_empty_rate_mappable_subset": 0.9999116295510782,
+    "canonical_smiles_non_empty_rate": 0.9840947546531302,
+    "source_non_empty_rate": 1.0,
+    "source_version_non_empty_rate": 1.0,
+    "fetch_date_non_empty_rate": 1.0,
+    "inchi_source_counts": {
+      "pubchem_pug_rest.inchi": 3224,
+      "chembl_compound_structures.standard_inchi": 11315,
+      "missing": 236
+    },
+    "canonical_smiles_source_counts": {
+      "pubchem_pug_rest.canonical_smiles": 3224,
+      "chembl_compound_structures.canonical_smiles": 11316,
+      "missing": 235
+    },
+    "top_row_source_counts": {
+      "chembl_compound_structures.canonical_smiles;chembl_compound_structures.standard_inchi": 11315,
+      "pubchem_pug_rest.canonical_smiles;pubchem_pug_rest.inchi": 3224,
+      "chembl_compound_structures;pubchem_pug_rest": 235,
+      "chembl_compound_structures.canonical_smiles": 1
+    },
+    "pubchem_client_stats": {
+      "cache_hit": 609,
+      "cache_miss": 2851,
+      "request_inchikey": 2851,
+      "http_success": 2659,
+      "http_503_retryable": 39,
+      "http_404_not_found": 192,
+      "http_error_retryable": 1
+    }
+  },
+  "source_version_tags": {
+    "chembl": "ChEMBL:chembl_36.db",
+    "pubchem": "PubChem:PUGREST:2026-04-13"
+  },
+  "sample_mode": false,
+  "max_rows": null
+}

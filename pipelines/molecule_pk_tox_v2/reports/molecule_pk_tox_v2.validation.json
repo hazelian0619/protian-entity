@@ -1,0 +1,265 @@
+{
+  "table": "data/output/molecules/molecule_pk_tox_v2.tsv",
+  "contract": "molecule_pk_tox_v2",
+  "row_count": 14775,
+  "columns": [
+    "inchikey",
+    "chembl_id",
+    "drugbank_id",
+    "pubchem_cid",
+    "bioavailability",
+    "bioavailability_pct",
+    "bioavailability_evidence",
+    "bioavailability_source",
+    "clearance",
+    "clearance_value",
+    "clearance_unit_std",
+    "clearance_evidence",
+    "clearance_source",
+    "half_life",
+    "half_life_value",
+    "half_life_unit_std",
+    "half_life_evidence",
+    "half_life_source",
+    "volume_of_distribution",
+    "volume_distribution_value",
+    "volume_distribution_unit_std",
+    "volume_of_distribution_evidence",
+    "volume_of_distribution_source",
+    "ld50",
+    "ld50_value",
+    "ld50_unit_std",
+    "ld50_evidence",
+    "ld50_source",
+    "mutagenicity",
+    "mutagenicity_label_std",
+    "mutagenicity_evidence",
+    "mutagenicity_source",
+    "source",
+    "source_version",
+    "fetch_date"
+  ],
+  "schema": {
+    "required_columns": [
+      "inchikey",
+      "chembl_id",
+      "drugbank_id",
+      "pubchem_cid",
+      "bioavailability",
+      "bioavailability_pct",
+      "bioavailability_evidence",
+      "bioavailability_source",
+      "clearance",
+      "clearance_value",
+      "clearance_unit_std",
+      "clearance_evidence",
+      "clearance_source",
+      "half_life",
+      "half_life_value",
+      "half_life_unit_std",
+      "half_life_evidence",
+      "half_life_source",
+      "volume_of_distribution",
+      "volume_distribution_value",
+      "volume_distribution_unit_std",
+      "volume_of_distribution_evidence",
+      "volume_of_distribution_source",
+      "ld50",
+      "ld50_value",
+      "ld50_unit_std",
+      "ld50_evidence",
+      "ld50_source",
+      "mutagenicity",
+      "mutagenicity_label_std",
+      "mutagenicity_evidence",
+      "mutagenicity_source",
+      "source",
+      "source_version",
+      "fetch_date"
+    ],
+    "missing_required": [],
+    "passed": true
+  },
+  "rules": [
+    {
+      "id": "inchikey_non_empty",
+      "type": "non_empty_rate",
+      "passed": true,
+      "checked": 14775,
+      "passed_count": 14775,
+      "rate": 1.0
+    },
+    {
+      "id": "inchikey_format",
+      "type": "regex_rate",
+      "passed": true,
+      "checked": 14775,
+      "passed_count": 14775,
+      "rate": 1.0
+    },
+    {
+      "id": "inchikey_unique",
+      "type": "unique",
+      "passed": true,
+      "checked": 14775,
+      "passed_count": 14775,
+      "rate": 1.0,
+      "detail": {
+        "duplicates": 0
+      }
+    },
+    {
+      "id": "bioavailability_evidence_allowed",
+      "type": "allowed_values_rate",
+      "passed": true,
+      "checked": 14775,
+      "passed_count": 14775,
+      "rate": 1.0
+    },
+    {
+      "id": "clearance_evidence_allowed",
+      "type": "allowed_values_rate",
+      "passed": true,
+      "checked": 14775,
+      "passed_count": 14775,
+      "rate": 1.0
+    },
+    {
+      "id": "half_life_evidence_allowed",
+      "type": "allowed_values_rate",
+      "passed": true,
+      "checked": 14775,
+      "passed_count": 14775,
+      "rate": 1.0
+    },
+    {
+      "id": "volume_of_distribution_evidence_allowed",
+      "type": "allowed_values_rate",
+      "passed": true,
+      "checked": 14775,
+      "passed_count": 14775,
+      "rate": 1.0
+    },
+    {
+      "id": "ld50_evidence_allowed",
+      "type": "allowed_values_rate",
+      "passed": true,
+      "checked": 14775,
+      "passed_count": 14775,
+      "rate": 1.0
+    },
+    {
+      "id": "mutagenicity_evidence_allowed",
+      "type": "allowed_values_rate",
+      "passed": true,
+      "checked": 14775,
+      "passed_count": 14775,
+      "rate": 1.0
+    },
+    {
+      "id": "bioavailability_pct_numeric_or_empty",
+      "type": "regex_rate",
+      "passed": true,
+      "checked": 14775,
+      "passed_count": 14775,
+      "rate": 1.0
+    },
+    {
+      "id": "clearance_value_numeric_or_empty",
+      "type": "regex_rate",
+      "passed": true,
+      "checked": 14775,
+      "passed_count": 14775,
+      "rate": 1.0
+    },
+    {
+      "id": "clearance_unit_allowed",
+      "type": "allowed_values_rate",
+      "passed": true,
+      "checked": 14775,
+      "passed_count": 14775,
+      "rate": 1.0
+    },
+    {
+      "id": "half_life_value_numeric_or_empty",
+      "type": "regex_rate",
+      "passed": true,
+      "checked": 14775,
+      "passed_count": 14775,
+      "rate": 1.0
+    },
+    {
+      "id": "half_life_unit_allowed",
+      "type": "allowed_values_rate",
+      "passed": true,
+      "checked": 14775,
+      "passed_count": 14775,
+      "rate": 1.0
+    },
+    {
+      "id": "volume_distribution_value_numeric_or_empty",
+      "type": "regex_rate",
+      "passed": true,
+      "checked": 14775,
+      "passed_count": 14775,
+      "rate": 1.0
+    },
+    {
+      "id": "volume_distribution_unit_allowed",
+      "type": "allowed_values_rate",
+      "passed": true,
+      "checked": 14775,
+      "passed_count": 14775,
+      "rate": 1.0
+    },
+    {
+      "id": "ld50_value_numeric_or_empty",
+      "type": "regex_rate",
+      "passed": true,
+      "checked": 14775,
+      "passed_count": 14775,
+      "rate": 1.0
+    },
+    {
+      "id": "ld50_unit_allowed",
+      "type": "allowed_values_rate",
+      "passed": true,
+      "checked": 14775,
+      "passed_count": 14775,
+      "rate": 1.0
+    },
+    {
+      "id": "mutagenicity_label_std_allowed",
+      "type": "allowed_values_rate",
+      "passed": true,
+      "checked": 14775,
+      "passed_count": 14775,
+      "rate": 1.0
+    },
+    {
+      "id": "source_non_empty",
+      "type": "non_empty_rate",
+      "passed": true,
+      "checked": 14775,
+      "passed_count": 14775,
+      "rate": 1.0
+    },
+    {
+      "id": "source_version_non_empty",
+      "type": "non_empty_rate",
+      "passed": true,
+      "checked": 14775,
+      "passed_count": 14775,
+      "rate": 1.0
+    },
+    {
+      "id": "fetch_date_format",
+      "type": "regex_rate",
+      "passed": true,
+      "checked": 14775,
+      "passed_count": 14775,
+      "rate": 1.0
+    }
+  ],
+  "passed": true
+}

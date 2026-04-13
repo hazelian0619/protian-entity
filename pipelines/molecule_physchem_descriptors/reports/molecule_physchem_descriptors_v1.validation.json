@@ -1,0 +1,145 @@
+{
+  "table": "data/output/molecules/molecule_physchem_descriptors_v1.tsv",
+  "contract": "molecule_physchem_descriptors_v1",
+  "row_count": 14775,
+  "columns": [
+    "inchikey",
+    "molecular_weight",
+    "logp",
+    "tpsa",
+    "hbd",
+    "hba",
+    "rotatable_bonds",
+    "unit_strategy",
+    "source",
+    "source_version",
+    "fetch_date"
+  ],
+  "schema": {
+    "required_columns": [
+      "inchikey",
+      "molecular_weight",
+      "logp",
+      "tpsa",
+      "hbd",
+      "hba",
+      "rotatable_bonds",
+      "unit_strategy",
+      "source",
+      "source_version",
+      "fetch_date"
+    ],
+    "missing_required": [],
+    "passed": true
+  },
+  "rules": [
+    {
+      "id": "inchikey_non_empty",
+      "type": "non_empty_rate",
+      "passed": true,
+      "checked": 14775,
+      "passed_count": 14775,
+      "rate": 1.0
+    },
+    {
+      "id": "inchikey_unique",
+      "type": "unique",
+      "passed": true,
+      "checked": 14775,
+      "passed_count": 14775,
+      "rate": 1.0,
+      "detail": {
+        "duplicates": 0
+      }
+    },
+    {
+      "id": "inchikey_format",
+      "type": "regex_rate",
+      "passed": true,
+      "checked": 14775,
+      "passed_count": 14775,
+      "rate": 1.0
+    },
+    {
+      "id": "molecular_weight_numeric_or_empty",
+      "type": "regex_rate",
+      "passed": true,
+      "checked": 14775,
+      "passed_count": 14775,
+      "rate": 1.0
+    },
+    {
+      "id": "logp_numeric_or_empty",
+      "type": "regex_rate",
+      "passed": true,
+      "checked": 14775,
+      "passed_count": 14775,
+      "rate": 1.0
+    },
+    {
+      "id": "tpsa_numeric_or_empty",
+      "type": "regex_rate",
+      "passed": true,
+      "checked": 14775,
+      "passed_count": 14775,
+      "rate": 1.0
+    },
+    {
+      "id": "hbd_integer_or_empty",
+      "type": "regex_rate",
+      "passed": true,
+      "checked": 14775,
+      "passed_count": 14775,
+      "rate": 1.0
+    },
+    {
+      "id": "hba_integer_or_empty",
+      "type": "regex_rate",
+      "passed": true,
+      "checked": 14775,
+      "passed_count": 14775,
+      "rate": 1.0
+    },
+    {
+      "id": "rotatable_bonds_integer_or_empty",
+      "type": "regex_rate",
+      "passed": true,
+      "checked": 14775,
+      "passed_count": 14775,
+      "rate": 1.0
+    },
+    {
+      "id": "unit_strategy_fixed",
+      "type": "equals_value_rate",
+      "passed": true,
+      "checked": 14775,
+      "passed_count": 14775,
+      "rate": 1.0
+    },
+    {
+      "id": "source_non_empty",
+      "type": "non_empty_rate",
+      "passed": true,
+      "checked": 14775,
+      "passed_count": 14775,
+      "rate": 1.0
+    },
+    {
+      "id": "source_version_non_empty",
+      "type": "non_empty_rate",
+      "passed": true,
+      "checked": 14775,
+      "passed_count": 14775,
+      "rate": 1.0
+    },
+    {
+      "id": "fetch_date_iso",
+      "type": "regex_rate",
+      "passed": true,
+      "checked": 14775,
+      "passed_count": 14775,
+      "rate": 1.0
+    }
+  ],
+  "passed": true
+}
