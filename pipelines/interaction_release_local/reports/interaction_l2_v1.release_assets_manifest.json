@@ -1,0 +1,327 @@
+{
+  "pipeline": "interaction_release_local",
+  "report": "interaction_l2_v1.release_assets_manifest",
+  "generated_at_utc": "2026-04-13T21:31:33Z",
+  "release": {
+    "tag": "interaction-l2-v1",
+    "url": "https://github.com/hazelian0619/protian-entity/releases/tag/interaction-l2-v1",
+    "is_draft": false,
+    "target_commit": "c9a4665dc3db680147904b5e57c7ac89f7019e45"
+  },
+  "items": [
+    {
+      "table": "PPI_edges_v1",
+      "raw_path": "data/output/edges/edges_ppi_v1.tsv",
+      "raw_rows": 884555,
+      "raw_sha256": "2c31fc4455d7b0d8da6bee56619946784dd44b89671a682eb72513d455d1f3ee",
+      "distribution_mode": "single",
+      "release_assets": [
+        {
+          "name": "edges_ppi_v1.tsv.zst",
+          "size_bytes": 9959851,
+          "sha256": "2b9a319e5c4a1ca74867f4d1a3d85fbc1a8a161695d04e0c3abd85cd70962899"
+        }
+      ],
+      "release_available": true
+    },
+    {
+      "table": "PPI_evidence_v1",
+      "raw_path": "data/output/evidence/ppi_evidence_v1.tsv",
+      "raw_rows": 884555,
+      "raw_sha256": "d781ac12b93c66abf85171200defed1693aca2476f24dd13c9f288a9901357a9",
+      "distribution_mode": "single",
+      "release_assets": [
+        {
+          "name": "ppi_evidence_v1.tsv.zst",
+          "size_bytes": 9671945,
+          "sha256": "2d343712e64c705864b05357def7b58aa69112af83893f112912fb87ef624ba0"
+        }
+      ],
+      "release_available": true
+    },
+    {
+      "table": "PPI_method_context_v2",
+      "raw_path": "data/output/evidence/ppi_method_context_v2.tsv",
+      "raw_rows": 884555,
+      "raw_sha256": "8f79b417dfa5e89d082a589472283c70e649de1961413dfae3bb7dc00d2d53bf",
+      "distribution_mode": "single",
+      "release_assets": [
+        {
+          "name": "ppi_method_context_v2.tsv.zst",
+          "size_bytes": 12951527,
+          "sha256": "352f9675eebd72bce14c781e1b9a8bef11ebe700d6c54b9ef197c93115f90f07"
+        }
+      ],
+      "release_available": true
+    },
+    {
+      "table": "PPI_function_context_v2",
+      "raw_path": "data/output/evidence/ppi_function_context_v2.tsv",
+      "raw_rows": 884555,
+      "raw_sha256": "c61613565444573ee950f05a84140f5ff0f499fe6ad6df4a3a7a43249e2a9c30",
+      "distribution_mode": "single",
+      "release_assets": [
+        {
+          "name": "ppi_function_context_v2.tsv.zst",
+          "size_bytes": 13008270,
+          "sha256": "00f2a1e052c0f5ebc4903cdc5dd4f0c486121c06f4ba8ef54dd26b6180f859d2"
+        }
+      ],
+      "release_available": true
+    },
+    {
+      "table": "PSI_edges_v1",
+      "raw_path": "data/output/edges/drug_target_edges_v1.tsv",
+      "raw_rows": 32122,
+      "raw_sha256": "0535e07c3f0d9140af375209d962313023325aafa0727dbade95a6ba5b5ac0f1",
+      "distribution_mode": "single",
+      "release_assets": [
+        {
+          "name": "drug_target_edges_v1.tsv.zst",
+          "size_bytes": 956111,
+          "sha256": "1b121d6129e2f96f389f48741fe7fa4c8e82707efcb3a7549613e754270b2070"
+        }
+      ],
+      "release_available": true
+    },
+    {
+      "table": "PSI_evidence_v1",
+      "raw_path": "data/output/evidence/drug_target_evidence_v1.tsv",
+      "raw_rows": 32963,
+      "raw_sha256": "cf16051e37945ddcc3aff1a2fca37cbd22bc6e42fc2a9a979399bcf647d1897e",
+      "distribution_mode": "single",
+      "release_assets": [
+        {
+          "name": "drug_target_evidence_v1.tsv.zst",
+          "size_bytes": 1222912,
+          "sha256": "e3fcc4a3d3bae14a91e8959df9cf8ad19ab452916f812cc02a6300eb9ad535e4"
+        }
+      ],
+      "release_available": true
+    },
+    {
+      "table": "PSI_activity_context_v2",
+      "raw_path": "data/output/evidence/psi_activity_context_v2.tsv",
+      "raw_rows": 2360023,
+      "raw_sha256": "cfeff2f73139dc1f50773f38de13fb64e521d05f1acb970bdb7f8c0c54739dbd",
+      "distribution_mode": "chunked",
+      "release_assets": [
+        {
+          "name": "psi_activity_context_v2.tsv.zst.part.000",
+          "size_bytes": 31457280,
+          "sha256": "254910b31ef687b95cf13c21738ad9190c2eafd9551a51edb8cf25c7b1bb1add"
+        },
+        {
+          "name": "psi_activity_context_v2.tsv.zst.part.001",
+          "size_bytes": 31457280,
+          "sha256": "49835b688870e4d1d7b1a1c7ea1b32e37fbb9c235ace4d9b92b080fbd0b700ff"
+        },
+        {
+          "name": "psi_activity_context_v2.tsv.zst.part.002",
+          "size_bytes": 31457280,
+          "sha256": "c84cf9e76d3208cf71b4edd50300f0fff3a9b92ddb5b90a5104e32b6c7ad425f"
+        },
+        {
+          "name": "psi_activity_context_v2.tsv.zst.part.003",
+          "size_bytes": 31457280,
+          "sha256": "386d5c36f8cb06525b6b17377336537e9ad72d4c93cd701e707509d19e6c5e9d"
+        },
+        {
+          "name": "psi_activity_context_v2.tsv.zst.part.004",
+          "size_bytes": 31457280,
+          "sha256": "29606b7180b729ed26631e6c0a78b5f72cf8d68ff8dfd55f299523238cc90ff3"
+        },
+        {
+          "name": "psi_activity_context_v2.tsv.zst.part.005",
+          "size_bytes": 31457280,
+          "sha256": "259edc110d535f334135111b0031366d4919f946da465f1d8d12de393982a0b5"
+        },
+        {
+          "name": "psi_activity_context_v2.tsv.zst.part.006",
+          "size_bytes": 31457280,
+          "sha256": "2b00d5cdc99499726ed5a064c3dd4328f9a94ca20e5b61e287b006334c7c0f89"
+        },
+        {
+          "name": "psi_activity_context_v2.tsv.zst.part.007",
+          "size_bytes": 31457280,
+          "sha256": "124386b26f737229e67d8d56c299e63b55300e8025438e81af54107f75398f20"
+        },
+        {
+          "name": "psi_activity_context_v2.tsv.zst.part.008",
+          "size_bytes": 31457280,
+          "sha256": "ed86702723178774eb027c2edbac650bbf25ecc9dde05c1e635f47e65bfb731d"
+        },
+        {
+          "name": "psi_activity_context_v2.tsv.zst.part.009",
+          "size_bytes": 6628703,
+          "sha256": "34ce3d7505c275fe2f7a8442766025aaca7ea0f9ec26b13a98f46f5f3b8d4f17"
+        }
+      ],
+      "release_available": true
+    },
+    {
+      "table": "PSI_structure_evidence_v2",
+      "raw_path": "data/output/evidence/psi_structure_evidence_v2.tsv",
+      "raw_rows": 1808985,
+      "raw_sha256": "0a2d45cd76ed2570595df1af1c61c0edfa7e54f4ce79fd5d7a4f19489eff59db",
+      "distribution_mode": "chunked",
+      "release_assets": [
+        {
+          "name": "psi_structure_evidence_v2.tsv.zst.part.000",
+          "size_bytes": 31457280,
+          "sha256": "922f1911dc03f876b338b3ca83627560c28d57f50936055d41f8613b12009425"
+        },
+        {
+          "name": "psi_structure_evidence_v2.tsv.zst.part.001",
+          "size_bytes": 31457280,
+          "sha256": "d59b28913377f975e936856e5eec33c19de6e71efe78c7874824fc4955dfe11d"
+        },
+        {
+          "name": "psi_structure_evidence_v2.tsv.zst.part.002",
+          "size_bytes": 30424985,
+          "sha256": "33d64daf8c06b8e0a060c4d5b377bfac167d835f130589be0a4ce25ebfec23c1"
+        }
+      ],
+      "release_available": true
+    },
+    {
+      "table": "RPI_edges_v1",
+      "raw_path": "data/output/edges/rna_protein_edges_v1.tsv",
+      "raw_rows": 16489,
+      "raw_sha256": "5cf6704cc4df7613179aae009753c47954cce9425814f5c45b7aca8da04efdcd",
+      "distribution_mode": "single",
+      "release_assets": [
+        {
+          "name": "rna_protein_edges_v1.tsv.zst",
+          "size_bytes": 263517,
+          "sha256": "39ef5ce538e9a8093c29a8f69a828ce091c6e9b002ad305b063819fe93a5487c"
+        }
+      ],
+      "release_available": true
+    },
+    {
+      "table": "RPI_evidence_v1",
+      "raw_path": "data/output/evidence/rna_protein_evidence_v1.tsv",
+      "raw_rows": 100255,
+      "raw_sha256": "e221a282c2d6563556b58db7adf71e3f1132fa3fca7ea62b4027fe61fc206674",
+      "distribution_mode": "single",
+      "release_assets": [
+        {
+          "name": "rna_protein_evidence_v1.tsv.zst",
+          "size_bytes": 2339876,
+          "sha256": "e424987f662c6e60d142671d5b47b3b9f048c1830d181b30f65d96df1e012be7"
+        }
+      ],
+      "release_available": true
+    },
+    {
+      "table": "RPI_site_context_v2",
+      "raw_path": "data/output/evidence/rpi_site_context_v2.tsv",
+      "raw_rows": 100255,
+      "raw_sha256": "5dea6d071bccab70982178a3029f200d43c1f7c66ea5e54eb4130d5233b64bb4",
+      "distribution_mode": "single",
+      "release_assets": [
+        {
+          "name": "rpi_site_context_v2.tsv.zst",
+          "size_bytes": 2071864,
+          "sha256": "167d2d61a89e6760bc2526ef90621b434b8b835deedcb9a9a14202fbc9fcf5d9"
+        }
+      ],
+      "release_available": true
+    },
+    {
+      "table": "RPI_domain_context_v2",
+      "raw_path": "data/output/evidence/rpi_domain_context_v2.tsv",
+      "raw_rows": 30919,
+      "raw_sha256": "90847a50832c2649cbd19c838521e2294a2c4d70775f53ad31c0856e552b34b9",
+      "distribution_mode": "single",
+      "release_assets": [
+        {
+          "name": "rpi_domain_context_v2.tsv.zst",
+          "size_bytes": 660881,
+          "sha256": "bc4cb95664dbfa5a2a58051489f5af2c57578be1a1582d1b274da8bfdfcd470e"
+        }
+      ],
+      "release_available": true
+    },
+    {
+      "table": "RPI_function_context_v2",
+      "raw_path": "data/output/evidence/rpi_function_context_v2.tsv",
+      "raw_rows": 39254,
+      "raw_sha256": "b8cb92c0e0df64279d978ca80e109f07925bf3b59e29692d33b96ca2af633acc",
+      "distribution_mode": "single",
+      "release_assets": [
+        {
+          "name": "rpi_function_context_v2.tsv.zst",
+          "size_bytes": 857172,
+          "sha256": "37772a8c1944c6f22ef9fb04101a86bbfcf5c736cab36f71ffc685914f30afd0"
+        }
+      ],
+      "release_available": true
+    },
+    {
+      "table": "interaction_cross_validation_v2",
+      "raw_path": "data/output/evidence/interaction_cross_validation_v2.tsv",
+      "raw_rows": 3293189,
+      "raw_sha256": "ca4b90fe516b39c8c016a540e334567472eb43120ea789c21aaf94944a74ddae",
+      "distribution_mode": "single",
+      "release_assets": [
+        {
+          "name": "interaction_cross_validation_v2.tsv.zst",
+          "size_bytes": 159563082,
+          "sha256": "c56517140c02919f13f4fc58a07e2d3a761ecf95e3978823ef82bd584e9f5d82"
+        }
+      ],
+      "release_available": true
+    },
+    {
+      "table": "interaction_aggregate_score_v2",
+      "raw_path": "data/output/evidence/interaction_aggregate_score_v2.tsv",
+      "raw_rows": 3293189,
+      "raw_sha256": "b355a67be4b5efa736aafaed36c39c653c1f3d361474fde6fbe2d26cfddc7966",
+      "distribution_mode": "chunked",
+      "release_assets": [
+        {
+          "name": "interaction_aggregate_score_v2.tsv.zst.part.000",
+          "size_bytes": 31457280,
+          "sha256": "fb7bfe6f82e671715713a096314795e0fa3a58c2109099c0c8611a1e758d4a7e"
+        },
+        {
+          "name": "interaction_aggregate_score_v2.tsv.zst.part.001",
+          "size_bytes": 31457280,
+          "sha256": "6907486fd9f17e8c94debdcbf808648898c0590ed811bc591f364e9d12e937c5"
+        },
+        {
+          "name": "interaction_aggregate_score_v2.tsv.zst.part.002",
+          "size_bytes": 31457280,
+          "sha256": "aa73839e73e54fe8c6196aa687128ba87192079deacdeefb74064e7a6011151b"
+        },
+        {
+          "name": "interaction_aggregate_score_v2.tsv.zst.part.003",
+          "size_bytes": 18496437,
+          "sha256": "4298e4d9ff446a9ccedbc2e76124cb852c3b3b13ff1cb3c42f775a9f63820fc2"
+        }
+      ],
+      "release_available": true
+    },
+    {
+      "table": "interaction_ontology_mapping_v2",
+      "raw_path": "data/output/evidence/interaction_ontology_mapping_v2.tsv",
+      "raw_rows": 1905589,
+      "raw_sha256": "7d77bd0b8bc17662906bfe38d6d146ee6d4cc38fa488d4c12bc6b7471e66d9bc",
+      "distribution_mode": "single",
+      "release_assets": [
+        {
+          "name": "interaction_ontology_mapping_v2.tsv.zst",
+          "size_bytes": 36735729,
+          "sha256": "1878d0791b98c4f8f20976db8ca4ad5e46128a8e7a04f60be6c74d6ca31fc0aa"
+        }
+      ],
+      "release_available": true
+    }
+  ],
+  "reconstruct_hint": {
+    "chunked_concat_example": "cat <asset>.part.000 <asset>.part.001 ... > <asset>",
+    "decompress_example": "zstd -d <asset> -o <raw_tsv_path>"
+  }
+}

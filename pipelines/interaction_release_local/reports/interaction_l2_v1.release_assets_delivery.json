@@ -1,0 +1,13 @@
+{
+  "pipeline": "interaction_release_local",
+  "report": "interaction_l2_v1.release_assets_delivery",
+  "generated_at_utc": "2026-04-13T21:31:33Z",
+  "release_tag": "interaction-l2-v1",
+  "release_url": "https://github.com/hazelian0619/protian-entity/releases/tag/interaction-l2-v1",
+  "is_draft": false,
+  "target_commit": "c9a4665dc3db680147904b5e57c7ac89f7019e45",
+  "total_expected_tables": 16,
+  "release_available_tables": 16,
+  "missing_tables": [],
+  "status": "PASS"
+}
