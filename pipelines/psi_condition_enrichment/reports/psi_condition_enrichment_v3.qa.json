@@ -1,0 +1,151 @@
+{
+  "name": "psi_condition_enrichment_v3.qa",
+  "created_at": "2026-04-13T23:00:51.074794+00:00",
+  "inputs": {
+    "v2": "data/output/evidence/psi_activity_context_v2.tsv",
+    "v3": "data/output/evidence/psi_activity_context_v3.tsv",
+    "v3_validation": "pipelines/psi_condition_enrichment/reports/psi_activity_context_v3.validation.json",
+    "audit_validation": "pipelines/psi_condition_enrichment/reports/psi_condition_parse_audit_v3.validation.json",
+    "build_report": "pipelines/psi_condition_enrichment/reports/psi_condition_enrichment_v3.build.json"
+  },
+  "metrics": {
+    "v2": {
+      "rows": 2360023,
+      "edge_id": 1.0,
+      "standard_type": 1.0,
+      "standard_relation_allowed": 1.0,
+      "assay_type": 1.0,
+      "condition_context": 0.4265627919727901,
+      "condition_pH": 0.15219851670937104,
+      "condition_temperature_c": 0.098441413494699
+    },
+    "v3": {
+      "rows": 2360023,
+      "edge_id": 1.0,
+      "standard_type": 1.0,
+      "standard_relation_allowed": 1.0,
+      "assay_type": 1.0,
+      "condition_context": 0.5969268096116013,
+      "condition_pH": 0.29702761371393416,
+      "condition_temperature_c": 0.29435814820448786
+    },
+    "delta": {
+      "edge_id": 0.0,
+      "standard_type": 0.0,
+      "standard_relation_allowed": 0.0,
+      "assay_type": 0.0,
+      "condition_context": 0.17036401763881115,
+      "condition_pH": 0.14482909700456312,
+      "condition_temperature_c": 0.19591673470978888
+    },
+    "conflict_rows": 199742,
+    "rule_hits": {
+      "ph_explicit_range": 54,
+      "ph_explicit_single": 1376,
+      "ph_inferred_buffer_default": 76232,
+      "ph_inferred_cell_culture": 264138,
+      "system_buffer": 407133,
+      "system_cell_line": 576899,
+      "temp_explicit_range": 2415,
+      "temp_explicit_single": 38558,
+      "temp_inferred_cell_culture": 251492,
+      "temp_on_ice": 2845,
+      "temp_room_temperature": 167058,
+      "v2_existing": 442339
+    }
+  },
+  "hard_gates": [
+    {
+      "id": "edge_id_coverage_keep_1_0",
+      "passed": true,
+      "detail": {
+        "v2": 1.0,
+        "v3": 1.0,
+        "required": 1.0
+      }
+    },
+    {
+      "id": "standard_type_no_regression",
+      "passed": true,
+      "detail": {
+        "v2": 1.0,
+        "v3": 1.0
+      }
+    },
+    {
+      "id": "standard_relation_no_regression",
+      "passed": true,
+      "detail": {
+        "v2": 1.0,
+        "v3": 1.0
+      }
+    },
+    {
+      "id": "assay_type_no_regression",
+      "passed": true,
+      "detail": {
+        "v2": 1.0,
+        "v3": 1.0
+      }
+    },
+    {
+      "id": "condition_context_min_0_55",
+      "passed": true,
+      "detail": {
+        "v3": 0.5969268096116013,
+        "threshold": 0.55
+      }
+    },
+    {
+      "id": "condition_pH_min_0_22",
+      "passed": true,
+      "detail": {
+        "v3": 0.29702761371393416,
+        "threshold": 0.22
+      }
+    },
+    {
+      "id": "condition_temperature_min_0_15",
+      "passed": true,
+      "detail": {
+        "v3": 0.29435814820448786,
+        "threshold": 0.15
+      }
+    },
+    {
+      "id": "contracts_validation_pass",
+      "passed": true,
+      "detail": {
+        "psi_activity_context_v3_contract_pass": true,
+        "psi_condition_parse_audit_v3_contract_pass": true
+      }
+    }
+  ],
+  "target_gates": [
+    {
+      "id": "target_condition_context_0_65",
+      "passed": false,
+      "detail": {
+        "v3": 0.5969268096116013,
+        "target": 0.65
+      }
+    },
+    {
+      "id": "target_condition_pH_0_30",
+      "passed": false,
+      "detail": {
+        "v3": 0.29702761371393416,
+        "target": 0.3
+      }
+    },
+    {
+      "id": "target_condition_temperature_0_22",
+      "passed": true,
+      "detail": {
+        "v3": 0.29435814820448786,
+        "target": 0.22
+      }
+    }
+  ],
+  "passed": true
+}

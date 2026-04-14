@@ -1,0 +1,82 @@
+{
+  "name": "psi_condition_enrichment_v3.build",
+  "created_at": "2026-04-13T22:59:23.243115+00:00",
+  "inputs": {
+    "psi_activity_context_v2": "data/output/evidence/psi_activity_context_v2.tsv",
+    "max_rows": 0
+  },
+  "outputs": {
+    "psi_activity_context_v3": "data/output/evidence/psi_activity_context_v3.tsv",
+    "psi_condition_parse_audit_v3": "data/output/evidence/psi_condition_parse_audit_v3.tsv"
+  },
+  "counts": {
+    "rows_total": 2360023,
+    "v2_edge_id_non_empty": 2360023,
+    "v2_standard_type_non_empty": 2360023,
+    "v2_standard_relation_allowed": 2360023,
+    "v2_assay_type_non_empty": 2360023,
+    "v3_edge_id_non_empty": 2360023,
+    "v3_standard_type_non_empty": 2360023,
+    "v3_standard_relation_allowed": 2360023,
+    "v3_assay_type_non_empty": 2360023,
+    "v3_condition_context_non_empty": 1408761,
+    "v3_condition_context_json_non_empty": 1408761,
+    "v3_condition_extract_confidence_non_empty": 1408761,
+    "v3_condition_extract_source_field_non_empty": 1408761,
+    "v3_condition_temperature_non_empty": 694692,
+    "v2_condition_context_non_empty": 1006698,
+    "v2_condition_pH_non_empty": 359192,
+    "v2_condition_temperature_non_empty": 232324,
+    "v3_condition_pH_non_empty": 700992,
+    "conflict_rows": 199742
+  },
+  "coverage": {
+    "v2": {
+      "edge_id": 1.0,
+      "standard_type": 1.0,
+      "standard_relation_allowed": 1.0,
+      "assay_type": 1.0,
+      "condition_context": 0.4265627919727901,
+      "condition_pH": 0.15219851670937104,
+      "condition_temperature_c": 0.098441413494699
+    },
+    "v3": {
+      "edge_id": 1.0,
+      "standard_type": 1.0,
+      "standard_relation_allowed": 1.0,
+      "assay_type": 1.0,
+      "condition_context": 0.5969268096116013,
+      "condition_pH": 0.29702761371393416,
+      "condition_temperature_c": 0.29435814820448786,
+      "condition_context_json": 0.5969268096116013,
+      "condition_extract_confidence": 0.5969268096116013,
+      "condition_extract_source_field": 0.5969268096116013
+    }
+  },
+  "rule_hits": {
+    "ph_explicit_range": 54,
+    "ph_explicit_single": 1376,
+    "ph_inferred_buffer_default": 76232,
+    "ph_inferred_cell_culture": 264138,
+    "system_buffer": 407133,
+    "system_cell_line": 576899,
+    "temp_explicit_range": 2415,
+    "temp_explicit_single": 38558,
+    "temp_inferred_cell_culture": 251492,
+    "temp_on_ice": 2845,
+    "temp_room_temperature": 167058,
+    "v2_existing": 442339
+  },
+  "source_field_hits": {
+    "activity_comment": 2,
+    "assay_context": 1043871,
+    "assay_description": 1357300,
+    "condition_context": 40983,
+    "condition_pH": 359192,
+    "condition_temperature_c": 232324
+  },
+  "conflict_summary": {
+    "conflict_rows": 199742,
+    "conflict_rate": 0.08463561583933715
+  }
+}

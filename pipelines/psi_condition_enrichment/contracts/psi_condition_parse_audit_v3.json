@@ -1,0 +1,77 @@
+{
+  "name": "psi_condition_parse_audit_v3",
+  "description": "Conflict audit for PSI condition extraction v3; one row per activity_id with multi-source condition conflicts",
+  "required_columns": [
+    "audit_id",
+    "activity_id",
+    "edge_id",
+    "conflict_flag",
+    "conflict_fields",
+    "selected_condition_pH",
+    "selected_condition_temperature_c",
+    "selected_condition_context",
+    "condition_extract_source_field",
+    "condition_extract_confidence",
+    "resolution_strategy",
+    "raw_condition_candidates_json",
+    "raw_source_snapshot_json",
+    "fetch_date"
+  ],
+  "rules": [
+    {
+      "id": "audit_id_non_empty",
+      "type": "non_empty_rate",
+      "column": "audit_id",
+      "min_rate": 1.0
+    },
+    {
+      "id": "audit_id_unique",
+      "type": "unique",
+      "column": "audit_id"
+    },
+    {
+      "id": "activity_id_non_empty",
+      "type": "non_empty_rate",
+      "column": "activity_id",
+      "min_rate": 1.0
+    },
+    {
+      "id": "edge_id_non_empty",
+      "type": "non_empty_rate",
+      "column": "edge_id",
+      "min_rate": 1.0
+    },
+    {
+      "id": "conflict_flag_true",
+      "type": "equals_value_rate",
+      "column": "conflict_flag",
+      "value": "true",
+      "min_rate": 1.0
+    },
+    {
+      "id": "conflict_fields_non_empty",
+      "type": "non_empty_rate",
+      "column": "conflict_fields",
+      "min_rate": 1.0
+    },
+    {
+      "id": "selected_condition_context_non_empty",
+      "type": "non_empty_rate",
+      "column": "selected_condition_context",
+      "min_rate": 0.95
+    },
+    {
+      "id": "raw_condition_candidates_json_non_empty",
+      "type": "non_empty_rate",
+      "column": "raw_condition_candidates_json",
+      "min_rate": 1.0
+    },
+    {
+      "id": "fetch_date_format",
+      "type": "regex_rate",
+      "column": "fetch_date",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+      "min_rate": 1.0
+    }
+  ]
+}

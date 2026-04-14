@@ -1,0 +1,79 @@
+{
+  "data_version": "kg-psi-condition-v3-local",
+  "created_at": "2026-04-13T23:02:00.507180+00:00",
+  "git_commit": "a00f1938ccb8f6ac93ae10198ff020bf52cfdbe0",
+  "artifacts": [
+    {
+      "path": "data/output/evidence/psi_activity_context_v2.tsv",
+      "size_bytes": 2019924379,
+      "sha256": "9a1fdb3ce02b760b6b25de501b5e28f55d885f52fabeedbefb9b6a05f4ee69f4",
+      "modified_time": "2026-04-12T13:44:10.011433+00:00"
+    },
+    {
+      "path": "data/output/evidence/psi_activity_context_v3.tsv",
+      "size_bytes": 2421005529,
+      "sha256": "543205c62b0d52442a2c3111646c2afb082787ed32da1b68061a87eb127932e1",
+      "modified_time": "2026-04-13T22:59:23.240528+00:00"
+    },
+    {
+      "path": "data/output/evidence/psi_condition_parse_audit_v3.tsv",
+      "size_bytes": 345266306,
+      "sha256": "0ab22a47d81534b5764b7bfd496ff96454c66975acce6d933257f42f19ab4cb2",
+      "modified_time": "2026-04-13T22:59:23.237906+00:00"
+    },
+    {
+      "path": "pipelines/psi_condition_enrichment/contracts/psi_activity_context_v3.json",
+      "size_bytes": 2910,
+      "sha256": "afa9c1c55b4e3becd7dad4a076856883425e2d7bd1565ef47d43dd353e03d6e4",
+      "modified_time": "2026-04-13T22:50:12.774176+00:00"
+    },
+    {
+      "path": "pipelines/psi_condition_enrichment/contracts/psi_condition_parse_audit_v3.json",
+      "size_bytes": 1900,
+      "sha256": "6a5e467739454d450735330c777fdd821513b1c8fe1b608fff590d725d936df9",
+      "modified_time": "2026-04-13T22:50:25.761287+00:00"
+    },
+    {
+      "path": "pipelines/psi_condition_enrichment/reports/psi_condition_enrichment_v3.blocked_missing_inputs.json",
+      "size_bytes": 665,
+      "sha256": "12b7a4e7bf684df766c2d0e549675d4c09bc28ff5df003b06c9a56fd1a81c2e6",
+      "modified_time": "2026-04-13T22:52:11.109171+00:00"
+    },
+    {
+      "path": "pipelines/psi_condition_enrichment/reports/psi_condition_enrichment_v3.build.json",
+      "size_bytes": 2750,
+      "sha256": "96be6d957449f1f1c9744caf6315f35486b6c61e098904f14014e878477c480f",
+      "modified_time": "2026-04-13T22:59:23.243845+00:00"
+    },
+    {
+      "path": "pipelines/psi_condition_enrichment/reports/psi_activity_context_v3.validation.json",
+      "size_bytes": 4455,
+      "sha256": "deeee4a69de741ea9b95d32f4ef1e263df9031c1cefe013cc451458f76c7ddc3",
+      "modified_time": "2026-04-13T22:59:55.535066+00:00"
+    },
+    {
+      "path": "pipelines/psi_condition_enrichment/reports/psi_condition_parse_audit_v3.validation.json",
+      "size_bytes": 2742,
+      "sha256": "771eb9f6f86bf1ff0797a9beec0bb879cae9f7c172f5065b604b828cd39279df",
+      "modified_time": "2026-04-13T22:59:58.797522+00:00"
+    },
+    {
+      "path": "pipelines/psi_condition_enrichment/reports/psi_condition_enrichment_v3.qa.json",
+      "size_bytes": 3795,
+      "sha256": "c3775b46d6bb47c667c1ac21a5eac35a683d66e86b7fcef9979d0970e17d0a23",
+      "modified_time": "2026-04-13T23:00:51.076679+00:00"
+    },
+    {
+      "path": "pipelines/psi_condition_enrichment/reports/psi_condition_enrichment_v3.result_evidence.json",
+      "size_bytes": 2562,
+      "sha256": "8a81ef0e182e91e02af12d143c1ae4987174913dbb3ea016ed1b6ba197a9c436",
+      "modified_time": "2026-04-13T23:02:00.257922+00:00"
+    },
+    {
+      "path": "pipelines/psi_condition_enrichment/reports/psi_activity_context_v3.sample20.tsv",
+      "size_bytes": 17740,
+      "sha256": "27a2d7c0509464b7143c9dc1f6295721c2194613dd38a149b3d17b383fd06ecd",
+      "modified_time": "2026-04-13T23:01:24.111930+00:00"
+    }
+  ]
+}
