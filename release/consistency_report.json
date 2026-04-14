@@ -1,0 +1,41 @@
+{
+  "generated_at_utc": "2026-04-14T14:08:19Z",
+  "index": "release/index.json",
+  "summary": {
+    "products": 4,
+    "checks": 4,
+    "issues": 0,
+    "status": "PASS"
+  },
+  "checks": [
+    {
+      "product": "interaction",
+      "manifest": "pipelines/interaction_release_local/reports/interaction_l2_v1.release_assets_manifest.json",
+      "mode": "release_assets",
+      "assets_checked": 30,
+      "asset_issues": 0
+    },
+    {
+      "product": "molecule",
+      "manifest": "dist/molecule-l1l2-v2/manifest.json",
+      "mode": "release_assets",
+      "assets_checked": 23,
+      "asset_issues": 0
+    },
+    {
+      "product": "protein",
+      "manifest": "pipelines/protein/reports/protein_master_v6.manifest.json",
+      "mode": "strict_local",
+      "tables_checked": 1,
+      "table_issues": 0
+    },
+    {
+      "product": "rna",
+      "manifest": "build/releases/rna-l1l2-v2/manifest.json",
+      "mode": "strict_local",
+      "tables_checked": 16,
+      "table_issues": 0
+    }
+  ],
+  "issues": []
+}

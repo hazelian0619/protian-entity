@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bio-entity-kg-foundation/schemas/release-index.schema.json",
+  "title": "Unified Release Index",
+  "type": "object",
+  "required": ["schema_version", "generated_at_utc", "products"],
+  "properties": {
+    "schema_version": {"type": "string"},
+    "generated_at_utc": {"type": "string"},
+    "products": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["product", "latest"],
+        "properties": {
+          "product": {"type": "string"},
+          "display_name": {"type": "string"},
+          "status": {"type": "string"},
+          "current_path": {"type": "string"},
+          "latest": {
+            "type": "object",
+            "required": ["version", "distribution_mode"],
+            "properties": {
+              "version": {"type": "string"},
+              "distribution_mode": {"type": "string", "enum": ["github_release", "repository_snapshot"]},
+              "consistency_mode": {"type": ["string", "null"], "enum": ["strict_local", "release_assets", null]},
+              "release_tag": {"type": ["string", "null"]},
+              "release_url": {"type": ["string", "null"]},
+              "manifest_path": {"type": ["string", "null"]}
+            }
+          }
+        }
+      }
+    }
+  }
+}

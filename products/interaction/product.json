@@ -1,0 +1,8 @@
+{
+  "product": "interaction",
+  "domain": "relation",
+  "owner": "bio-kg-team",
+  "sla": "monthly-release",
+  "contract_roots": ["pipelines/ppi_*/contracts", "pipelines/psi_*/contracts", "pipelines/rpi_*/contracts", "pipelines/interaction_*/contracts"],
+  "description": "Cross-entity interaction L2 product (PPI/PSI/RPI)"
+}

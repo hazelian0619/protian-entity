@@ -1,0 +1,68 @@
+name: Release Metadata
+
+on:
+  pull_request:
+    paths:
+      - 'products/**'
+      - 'release/**'
+      - 'scripts/build_release_index.py'
+      - 'scripts/check_release_consistency.py'
+      - 'scripts/validate_release_index.py'
+      - 'scripts/download_dataset.py'
+      - 'tests/release/**'
+  push:
+    branches: [ main ]
+    paths:
+      - 'products/**'
+      - 'release/**'
+      - 'scripts/build_release_index.py'
+      - 'scripts/check_release_consistency.py'
+      - 'scripts/validate_release_index.py'
+      - 'scripts/download_dataset.py'
+      - 'tests/release/**'
+
+jobs:
+  index-and-consistency:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Build release index
+        run: |
+          python3 scripts/build_release_index.py --products-root products --out release/index.json
+
+      - name: Install validation/test dependencies
+        run: |
+          python3 -m pip install --upgrade pip
+          python3 -m pip install jsonschema pytest
+
+      - name: Validate release index schema and paths
+        run: |
+          python3 scripts/validate_release_index.py \
+            --index release/index.json \
+            --schema release/schema/index.schema.json \
+            --repo-root .
+
+      - name: Check release consistency (report mode)
+        run: |
+          python3 scripts/check_release_consistency.py \
+            --index release/index.json \
+            --out release/consistency_report.json \
+            --allow-issues
+
+      - name: Run release metadata tests
+        run: |
+          pytest -q tests/release
+
+      - name: Upload release metadata reports
+        uses: actions/upload-artifact@v4
+        with:
+          name: release-metadata
+          path: |
+            release/index.json
+            release/consistency_report.json
