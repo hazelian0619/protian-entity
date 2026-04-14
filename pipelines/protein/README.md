@@ -1,55 +1,52 @@
-# Protein L1（v6_clean）：工业化入口（QA + Manifest）
+# Protein 主表基线（`protein_master_v6_clean.tsv`）
 
-这条 pipeline 面向的不是“重建 protein 主表”，而是把现成产物标准化成可复现、可追溯的数据交付。
+本目录只负责对既有主表做 **Contract Validation + Manifest**，不重建主表、不改动主表内容。
 
-**输入（已存在）**：`data/processed/protein_master_v6_clean.tsv`
+- 输入：`data/processed/protein_master_v6_clean.tsv`
+- 输出：
+  - `pipelines/protein/reports/protein_master_v6.validation.json`
+  - `pipelines/protein/reports/protein_master_v6.manifest.json`
 
-**输出（小文件，可进 git）**：
-- `pipelines/protein/reports/protein_master_v6.validation.json`：质量门禁（PASS/FAIL + 指标）
-- `pipelines/protein/reports/protein_master_v6.manifest.json`：指纹与追溯（sha256/size/mtime/git commit）
+## 向后兼容声明
 
-> 目的：后续的 `gene_master`、`edges_ppi` 等下游任务能“用同一套方式”验证 Protein L1 是否合格、是否是同一份数据。
+- `protein_master_v6_clean.tsv` 仍是 Protein 线 canonical 主表（兼容既有下游）。
+- isoform 与 physchem 扩展均以**新增层**提供，不替换主表。
 
-## 最短复现（推荐）
+## 分层关系（Protein only）
 
-在仓库根目录运行：
+- **Canonical 主层**：`data/processed/protein_master_v6_clean.tsv`
+- **Isoform 层（新增）**：
+  - `data/output/protein/protein_isoform_v1.tsv`
+  - `data/output/protein/protein_isoform_map_v1.tsv`
+- **Physchem Core 层**：`data/output/protein/protein_physchem_v1.tsv`
+- **Physchem Extended 层（新增）**：`data/output/protein/protein_physchem_extended_v1.tsv`
+
+## 运行
+
+从仓库根目录执行：
 
 ```bash
-cd /Users/pluviophile/graph/1218
 bash pipelines/protein/run.sh
 ```
 
-成功标志：终端出现 `[PASS] protein_master_v6 ...`，并生成上述 `reports/*.json`。
+成功标志：`[PASS] protein_master_v6 ...`
 
-## Contract（数据承诺）是什么？
+## Contract 与门禁
 
-- Contract 文件：`pipelines/protein/contracts/protein_master_v6.json`
-- 执行工具：`python3 tools/kg_validate_table.py`
+- Contract：`pipelines/protein/contracts/protein_master_v6.json`
+- 校验工具：`python3 tools/kg_validate_table.py`
+- 失败定位：查看 `pipelines/protein/reports/protein_master_v6.validation.json` 中 `passed=false` 的规则
 
-Contract 的定位是“可执行的数据承诺”（schema + 质量门槛），用于防回归，而不是追求理论最严。
+## 常见误解
 
-## 常见卡点 / 隐藏点（先看这里）
+1. **“会不会生成新的 protein 主表？”**
+   - 不会。本 pipeline 只做 QA + manifest。
 
-1) **我以为会生成新的 protein 主表**：不会。
-   - 本 pipeline 不做 ETL，不会写 `data/output/`。
-   - 它只对现有 `data/processed/protein_master_v6_clean.tsv` 做 QA + manifest。
+2. **“source_version 在主表里吗？”**
+   - 主表合同保持不变；版本锚点维护在 `data/output/protein/protein_source_versions_v1.tsv`。
 
-2) **我跑了但找不到输出**：请确认你从 repo root 跑，且查看目录：
-   - `pipelines/protein/reports/`
-
-3) **FAIL 了怎么定位**：
-   - 先打开 `pipelines/protein/reports/protein_master_v6.validation.json`
-   - 找 `passed=false` 的 rule id；它就是失败原因。
-
-4) **为什么没有 `taxon_id`/`source_version` 之类字段**：
-   - 以当前主表的现实字段为准（contract 不强行要求不存在的列）。
-   - 溯源字段以 `source` + `fetch_date` 为主。
-
-5) **manifest 里 `git_commit` 为空**：
-   - 少数环境下可能无法读取 git commit（例如不在 git 仓库中运行）。
-   - 不影响 sha256/size/mtime 作为文件指纹的用途。
-
-## 进一步阅读（维护者/传承）
-
-- 复盘与决策记录：`pipelines/protein/POSTMORTEM_protein_master_v6.md`
-
+3. **“如何跑完整 Protein 层？”**
+   - 主表基线：`bash pipelines/protein/run.sh`
+   - isoform 层：`bash pipelines/protein_isoform/run.sh`
+   - physchem core：`bash pipelines/protein_physchem/run.sh`
+   - physchem extended：`bash pipelines/protein_physchem_extended/run.sh`

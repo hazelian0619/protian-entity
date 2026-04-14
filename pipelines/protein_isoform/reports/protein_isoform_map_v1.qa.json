@@ -1,0 +1,39 @@
+{
+  "pipeline": "protein_isoform_map_v1",
+  "generated_at_utc": "2026-04-14T09:56:49.951418+00:00",
+  "input": "data/processed/protein_master_v6_clean.tsv",
+  "output": "data/output/protein/protein_isoform_map_v1.tsv",
+  "row_count": 32462,
+  "distribution": {
+    "relation_type": {
+      "canonical_isoform": 21884,
+      "canonical_displayed": 10434,
+      "cross_accession_isoform": 111,
+      "cross_accession_displayed": 33
+    },
+    "mapping_scope": {
+      "self_accession": 32318,
+      "cross_accession": 144
+    },
+    "sequence_status_class": {
+      "variant_vsp": 21893,
+      "displayed": 10467,
+      "other": 102
+    }
+  },
+  "quality": {
+    "map_id_duplicates": 0,
+    "canonical_uniprot_non_empty_rate": 1.0,
+    "isoform_uniprot_non_empty_rate": 1.0,
+    "source_non_empty_rate": 1.0,
+    "source_version_non_empty_rate": 1.0,
+    "fetch_date_non_empty_rate": 1.0
+  },
+  "acceptance": {
+    "map_id_unique": true,
+    "canonical_uniprot_complete": true,
+    "isoform_uniprot_complete": true,
+    "provenance_complete": true
+  },
+  "passed": true
+}

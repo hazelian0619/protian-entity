@@ -1,0 +1,89 @@
+{
+  "pipeline": "protein_physchem_extended_v1",
+  "generated_at_utc": "2026-04-14T09:58:37.626944+00:00",
+  "input": "data/processed/protein_master_v6_clean.tsv",
+  "output": "data/output/protein/protein_physchem_extended_v1.tsv",
+  "calculation_definition": {
+    "extinction_coefficient": "Molar extinction coefficient at 280nm (M^-1 cm^-1), oxidized cystine form.",
+    "extinction_coefficient_reduced": "Molar extinction coefficient at 280nm (M^-1 cm^-1), reduced cysteine form.",
+    "aliphatic_index": "Ikai aliphatic index (unitless): X(Ala)+2.9*X(Val)+3.9*(X(Ile)+X(Leu)), X is mole percent.",
+    "instability_index": "Biopython ProteinAnalysis.instability_index (unitless).",
+    "gravy": "Biopython ProteinAnalysis.gravy (Kyte-Doolittle hydropathicity).",
+    "isoelectric_point": "Biopython ProteinAnalysis.isoelectric_point (pH)."
+  },
+  "unit": {
+    "extinction_coefficient": "M^-1 cm^-1",
+    "extinction_coefficient_reduced": "M^-1 cm^-1",
+    "aliphatic_index": "unitless",
+    "instability_index": "unitless",
+    "gravy": "unitless",
+    "isoelectric_point": "pH"
+  },
+  "row_count": {
+    "input": 19135,
+    "output": 19135
+  },
+  "coverage": {
+    "expected_uniprot_ids": 19135,
+    "covered_uniprot_ids": 19135,
+    "coverage_rate": 1.0,
+    "missing_uniprot_ids_top20": []
+  },
+  "numeric_parse_rates": {
+    "sequence_len": 1.0,
+    "mass_recalc": 1.0,
+    "isoelectric_point": 1.0,
+    "gravy": 1.0,
+    "aromaticity": 1.0,
+    "instability_index": 1.0,
+    "extinction_coefficient": 1.0,
+    "extinction_coefficient_reduced": 1.0,
+    "aliphatic_index": 1.0
+  },
+  "provenance_rates": {
+    "source_non_empty_rate": 1.0,
+    "source_version_non_empty_rate": 1.0,
+    "fetch_date_non_empty_rate": 1.0,
+    "fetch_date_format_rate": 1.0
+  },
+  "special_residue_substitution": {
+    "mapping": {
+      "U": "C",
+      "O": "K"
+    },
+    "counts": {
+      "U->C": 36
+    },
+    "note": "U/O are substituted before ProtParam calculations to keep 100% parseability."
+  },
+  "errors": {
+    "error_count": 0,
+    "samples_top20": []
+  },
+  "core_alignment": {
+    "available": true,
+    "core_path": "data/output/protein/protein_physchem_v1.tsv",
+    "joined_rows": 19135,
+    "mismatch_rows": 0,
+    "mismatch_count_by_column": {
+      "sequence_len": 0,
+      "mass_recalc": 0,
+      "isoelectric_point": 0,
+      "gravy": 0,
+      "aromaticity": 0,
+      "instability_index": 0
+    },
+    "samples_top20": []
+  },
+  "engine": {
+    "biopython_version": "1.87"
+  },
+  "acceptance": {
+    "uniprot_id_coverage_100": true,
+    "numeric_parse_100": true,
+    "provenance_complete": true,
+    "error_rows_zero": true,
+    "core_overlap_aligned": true
+  },
+  "passed": true
+}

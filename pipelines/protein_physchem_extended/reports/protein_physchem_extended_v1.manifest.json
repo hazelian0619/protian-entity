@@ -1,0 +1,31 @@
+{
+  "data_version": "kg-data-local",
+  "created_at": "2026-04-14T09:58:37.854030+00:00",
+  "git_commit": "a00f1938ccb8f6ac93ae10198ff020bf52cfdbe0",
+  "artifacts": [
+    {
+      "path": "data/output/protein/protein_physchem_extended_v1.tsv",
+      "size_bytes": 4428279,
+      "sha256": "841dbee364a0d46f2168b5d0303ad90eceda24d20a7521c3325b76ed5874ab00",
+      "modified_time": "2026-04-14T09:58:37.569557+00:00"
+    },
+    {
+      "path": "pipelines/protein_physchem_extended/contracts/protein_physchem_extended_v1.json",
+      "size_bytes": 3080,
+      "sha256": "d63295c5b10377a02af799f17f627e822bb00ce7625a7f733214717ae5e1bd9e",
+      "modified_time": "2026-04-14T09:58:15.308385+00:00"
+    },
+    {
+      "path": "pipelines/protein_physchem_extended/reports/protein_physchem_extended_v1.validation.json",
+      "size_bytes": 3690,
+      "sha256": "fbdaff4ce8a0dc04f7676f4b884ec5f14da9609ab7d5c9f5545d5527aaf772bc",
+      "modified_time": "2026-04-14T09:58:37.820067+00:00"
+    },
+    {
+      "path": "pipelines/protein_physchem_extended/reports/protein_physchem_extended_v1.qa.json",
+      "size_bytes": 2695,
+      "sha256": "ef9bbe493a2073b65967657000eac475907455247909ba88f4cabb3d2d8bae82",
+      "modified_time": "2026-04-14T09:58:37.627905+00:00"
+    }
+  ]
+}
