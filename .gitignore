@@ -94,6 +94,8 @@ pipelines/**/reports/
 !pipelines/interaction_ontology_mapping/reports/*.json
 !pipelines/interaction_release_local/reports/
 !pipelines/interaction_release_local/reports/*.json
+!pipelines/psi_condition_enrichment/reports/
+!pipelines/psi_condition_enrichment/reports/*.json
 
 # Local release packaging
 /dist/

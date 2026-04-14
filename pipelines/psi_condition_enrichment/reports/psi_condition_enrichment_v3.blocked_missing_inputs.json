@@ -1,0 +1,25 @@
+{
+  "name": "psi_condition_enrichment_v3.blocked_missing_inputs",
+  "required_inputs": {
+    "psi_activity_context_v2": {
+      "path": "data/output/evidence/psi_activity_context_v2.tsv",
+      "exists": true
+    }
+  },
+  "optional_inputs": {
+    "chembl_m3_db": {
+      "path": "/Users/pluviophile/graph/12182/out/m3/chembl_m3.sqlite",
+      "exists": true,
+      "size_bytes": 4067770368,
+      "used_by_pipeline": false
+    },
+    "bindingdb_condition_source": {
+      "path": "data/input/bindingdb/bindingdb_conditions.tsv",
+      "exists": false,
+      "size_bytes": 0,
+      "used_by_pipeline": false
+    }
+  },
+  "missing_required": [],
+  "blocked": false
+}
