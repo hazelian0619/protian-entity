@@ -1,0 +1,35 @@
+{
+  "name": "interaction_l2_readiness_report_v1",
+  "description": "Schema contract for interaction L2 local readiness JSON report",
+  "required_top_level_keys": [
+    "report_id",
+    "generated_at_utc",
+    "mode",
+    "dimensions_required",
+    "interactions",
+    "top10_gaps",
+    "preupload_gates",
+    "summary",
+    "overall_status"
+  ],
+  "required_interactions": ["PPI", "PSI", "RPI"],
+  "required_dimensions": [
+    "组件",
+    "属性字段",
+    "数据类型",
+    "获取方式",
+    "存储形式",
+    "示例",
+    "用途/指标",
+    "指标",
+    "层次结构",
+    "语义关系",
+    "数据来源",
+    "维护机构",
+    "更新频率",
+    "当前状态",
+    "证据路径"
+  ],
+  "allowed_status_values": ["已完成", "部分", "缺失", "PASS", "FAIL"],
+  "required_gate_keys": ["gate_id", "description", "passed", "evidence"]
+}

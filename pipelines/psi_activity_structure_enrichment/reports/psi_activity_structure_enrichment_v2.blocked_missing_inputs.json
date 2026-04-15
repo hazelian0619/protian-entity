@@ -1,0 +1,38 @@
+{
+  "name": "psi_activity_structure_enrichment_v2.blocked_missing_inputs",
+  "status": "blocked_missing_inputs",
+  "message": "optional external inputs missing; pipeline proceeds with ChEMBL+RCSB baseline",
+  "missing_required": [],
+  "missing_optional": [
+    "bindingdb",
+    "pdbbind",
+    "biolip"
+  ],
+  "resolved_inputs": {
+    "chembl_m3_db": "../1218/data/output/molecules/chembl_m3.sqlite",
+    "protein_pdb": "data/output/protein/pdb_structures_v1.tsv",
+    "bindingdb": "",
+    "pdbbind": "",
+    "biolip": ""
+  },
+  "download_checklist": [
+    {
+      "name": "BindingDB_All.tsv",
+      "url": "https://www.bindingdb.org/rwd/bind/chemsearch/marvin/BindingDB_all.tsv.zip",
+      "suggested_version": "latest monthly snapshot",
+      "sha256_cmd": "sha256sum data/raw/molecules/bindingdb/BindingDB_All.tsv"
+    },
+    {
+      "name": "PDBbind general set index",
+      "url": "http://www.pdbbind.org.cn/",
+      "suggested_version": "latest general set (requires license/login)",
+      "sha256_cmd": "sha256sum data/raw/molecules/pdbbind/PDBbind_general_PL_data.txt"
+    },
+    {
+      "name": "BioLiP annotations",
+      "url": "https://zhanggroup.org/BioLiP/download.html",
+      "suggested_version": "latest BioLiP release",
+      "sha256_cmd": "sha256sum data/raw/molecules/biolip/BioLiP.txt"
+    }
+  ]
+}
