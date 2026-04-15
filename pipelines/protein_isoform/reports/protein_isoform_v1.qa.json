@@ -1,0 +1,60 @@
+{
+  "pipeline": "protein_isoform_v1",
+  "generated_at_utc": "2026-04-14T09:56:49.940963+00:00",
+  "input": "data/processed/protein_master_v6_clean.tsv",
+  "output": "data/output/protein/protein_isoform_v1.tsv",
+  "scope": {
+    "canonical_definition": "Rows in protein_master_v6_clean.tsv keyed by uniprot_id (no '-' suffix).",
+    "isoform_definition": "IsoId tokens parsed from master.isoforms field; one row per canonical_uniprot_id x isoform_uniprot_id.",
+    "boundary_rule": "sequence_status_raw=Displayed -> boundary_class=canonical; other sequence_status -> boundary_class=isoform.",
+    "mapping_rule": "isoform_uniprot_id startswith canonical_uniprot_id + '-' => self_accession, else cross_accession.",
+    "missing_strategy": "Rows without IsoId (blank/placeholder) are not emitted; counts are disclosed in QA under missing_isoform_annotation."
+  },
+  "row_count": {
+    "canonical_input": 19135,
+    "canonical_with_isoid_input": 10434,
+    "isoform_output": 32462,
+    "isoform_map_output": 32462
+  },
+  "coverage": {
+    "canonical_with_isoid_output": 10434,
+    "coverage_rate": 1.0
+  },
+  "missing_isoform_annotation": {
+    "placeholder_rows": 8494,
+    "null_or_empty_rows": 207,
+    "total_without_isoid": 8701
+  },
+  "distribution": {
+    "boundary_class": {
+      "isoform": 21995,
+      "canonical": 10467
+    },
+    "relation_type": {
+      "canonical_isoform": 21884,
+      "canonical_displayed": 10434,
+      "cross_accession_isoform": 111,
+      "cross_accession_displayed": 33
+    },
+    "cross_accession_rows": 144,
+    "cross_accession_rate": 0.004435955886883125
+  },
+  "quality": {
+    "isoform_record_id_duplicates": 0,
+    "map_id_duplicates": 0,
+    "source_non_empty_rate": 1.0,
+    "source_version_non_empty_rate": 1.0,
+    "fetch_date_non_empty_rate": 1.0,
+    "declared_named_isoforms_mismatch_rows": 0,
+    "parse_issue_count": 0,
+    "parse_issue_samples_top20": []
+  },
+  "acceptance": {
+    "coverage_100_on_rows_with_isoid": true,
+    "isoform_record_id_unique": true,
+    "map_id_unique": true,
+    "provenance_complete": true,
+    "parse_issue_zero": true
+  },
+  "passed": true
+}

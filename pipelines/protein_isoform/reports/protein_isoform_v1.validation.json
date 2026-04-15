@@ -1,0 +1,160 @@
+{
+  "table": "data/output/protein/protein_isoform_v1.tsv",
+  "contract": "protein_isoform_v1",
+  "row_count": 32462,
+  "columns": [
+    "isoform_record_id",
+    "canonical_uniprot_id",
+    "isoform_uniprot_id",
+    "boundary_class",
+    "boundary_reason",
+    "mapping_scope",
+    "relation_type",
+    "event_types",
+    "named_isoforms_declared",
+    "isoform_name_token",
+    "isoform_synonyms",
+    "isoid_raw",
+    "sequence_status_raw",
+    "sequence_status_class",
+    "is_displayed_sequence",
+    "isoform_block_raw",
+    "source",
+    "source_version",
+    "fetch_date"
+  ],
+  "schema": {
+    "required_columns": [
+      "isoform_record_id",
+      "canonical_uniprot_id",
+      "isoform_uniprot_id",
+      "boundary_class",
+      "mapping_scope",
+      "relation_type",
+      "sequence_status_class",
+      "source",
+      "source_version",
+      "fetch_date"
+    ],
+    "missing_required": [],
+    "passed": true
+  },
+  "rules": [
+    {
+      "id": "isoform_record_id_non_empty",
+      "type": "non_empty_rate",
+      "passed": true,
+      "checked": 32462,
+      "passed_count": 32462,
+      "rate": 1.0
+    },
+    {
+      "id": "isoform_record_id_unique",
+      "type": "unique",
+      "passed": true,
+      "checked": 32462,
+      "passed_count": 32462,
+      "rate": 1.0,
+      "detail": {
+        "duplicates": 0
+      }
+    },
+    {
+      "id": "canonical_uniprot_id_non_empty",
+      "type": "non_empty_rate",
+      "passed": true,
+      "checked": 32462,
+      "passed_count": 32462,
+      "rate": 1.0
+    },
+    {
+      "id": "canonical_uniprot_id_format",
+      "type": "regex_rate",
+      "passed": true,
+      "checked": 32462,
+      "passed_count": 32462,
+      "rate": 1.0
+    },
+    {
+      "id": "isoform_uniprot_id_non_empty",
+      "type": "non_empty_rate",
+      "passed": true,
+      "checked": 32462,
+      "passed_count": 32462,
+      "rate": 1.0
+    },
+    {
+      "id": "isoform_uniprot_id_format",
+      "type": "regex_rate",
+      "passed": true,
+      "checked": 32462,
+      "passed_count": 32462,
+      "rate": 1.0
+    },
+    {
+      "id": "boundary_class_allowed",
+      "type": "allowed_values_rate",
+      "passed": true,
+      "checked": 32462,
+      "passed_count": 32462,
+      "rate": 1.0
+    },
+    {
+      "id": "mapping_scope_allowed",
+      "type": "allowed_values_rate",
+      "passed": true,
+      "checked": 32462,
+      "passed_count": 32462,
+      "rate": 1.0
+    },
+    {
+      "id": "relation_type_allowed",
+      "type": "allowed_values_rate",
+      "passed": true,
+      "checked": 32462,
+      "passed_count": 32462,
+      "rate": 1.0
+    },
+    {
+      "id": "sequence_status_class_allowed",
+      "type": "allowed_values_rate",
+      "passed": true,
+      "checked": 32462,
+      "passed_count": 32462,
+      "rate": 1.0
+    },
+    {
+      "id": "source_non_empty",
+      "type": "non_empty_rate",
+      "passed": true,
+      "checked": 32462,
+      "passed_count": 32462,
+      "rate": 1.0
+    },
+    {
+      "id": "source_version_non_empty",
+      "type": "non_empty_rate",
+      "passed": true,
+      "checked": 32462,
+      "passed_count": 32462,
+      "rate": 1.0
+    },
+    {
+      "id": "fetch_date_non_empty",
+      "type": "non_empty_rate",
+      "passed": true,
+      "checked": 32462,
+      "passed_count": 32462,
+      "rate": 1.0
+    },
+    {
+      "id": "fetch_date_format",
+      "type": "regex_rate",
+      "passed": true,
+      "checked": 32462,
+      "passed_count": 32462,
+      "rate": 1.0
+    }
+  ],
+  "passed": true
+}

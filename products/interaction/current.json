@@ -1,0 +1,19 @@
+{
+  "product": "interaction",
+  "display_name": "Cross-entity Interactions",
+  "status": "stable",
+  "latest": {
+    "version": "interaction-l2-v1",
+    "distribution_mode": "github_release",
+    "consistency_mode": "release_assets",
+    "release_tag": "interaction-l2-v1",
+    "release_url": "https://github.com/hazelian0619/protian-entity/releases/tag/interaction-l2-v1",
+    "manifest_path": "pipelines/interaction_release_local/reports/interaction_l2_v1.release_assets_manifest.json",
+    "delivery_report_path": "pipelines/interaction_release_local/reports/interaction_l2_v1.release_assets_delivery.json",
+    "quality_reports": [
+      "pipelines/interaction_release_local/reports/interaction_release_local_v1.gates.json",
+      "pipelines/interaction_cross_validation/reports/interaction_cross_validation_v2.qa.json",
+      "pipelines/interaction_ontology_mapping/reports/interaction_ontology_mapping_v2.gates.json"
+    ]
+  }
+}

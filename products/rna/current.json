@@ -1,0 +1,18 @@
+{
+  "product": "rna",
+  "display_name": "RNA Entity",
+  "status": "stable",
+  "latest": {
+    "version": "rna-l1l2-v2",
+    "distribution_mode": "github_release",
+    "release_tag": "rna-l1l2-v2",
+    "release_url": "https://github.com/hazelian0619/protian-entity/releases/tag/rna-l1l2-v2",
+    "manifest_path": "build/releases/rna-l1l2-v2/manifest.json",
+    "checksum_path": "build/releases/rna-l1l2-v2/SHA256SUMS.txt",
+    "quality_reports": [
+      "build/releases/rna-l1l2-v2/reports/rna_id_canonical_map_v1.validation.json",
+      "build/releases/rna-l1l2-v2/reports/rna_external_xref_v1.validation.json",
+      "build/releases/rna-l1l2-v2/reports/rna_protein_evidence_v1.validation.json"
+    ]
+  }
+}

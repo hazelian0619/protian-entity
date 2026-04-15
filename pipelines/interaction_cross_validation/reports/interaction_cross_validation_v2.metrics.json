@@ -1,0 +1,140 @@
+{
+  "pipeline": "interaction_cross_validation_v2",
+  "generated_at_utc": "2026-04-12T11:10:16.897869+00:00",
+  "sample_mode": false,
+  "input": {
+    "PPI": {
+      "edges": "data/output/edges/edges_ppi_v1.tsv",
+      "evidence": "data/output/evidence/ppi_evidence_v1.tsv"
+    },
+    "PSI": {
+      "edges": "data/output/edges/drug_target_edges_v1.tsv",
+      "evidence": "data/output/evidence/drug_target_evidence_v1.tsv"
+    },
+    "RPI": {
+      "edges": "data/output/edges/rna_protein_edges_v1.tsv",
+      "evidence": "data/output/evidence/rna_protein_evidence_v1.tsv"
+    }
+  },
+  "status": "completed",
+  "output": {
+    "cross_validation": "data/output/evidence/interaction_cross_validation_v2.tsv",
+    "aggregate_score": "data/output/evidence/interaction_aggregate_score_v2.tsv"
+  },
+  "row_count": {
+    "cross_validation": 933166,
+    "aggregate_score": 933166,
+    "edge_count_by_type": {
+      "PPI": 884555,
+      "PSI": 32122,
+      "RPI": 16489
+    }
+  },
+  "distribution": {
+    "consistent_across_n": {
+      "1": 933166
+    },
+    "conflict_flag": {
+      "true": 13,
+      "false": 933153
+    },
+    "aggregate_score": {
+      "min": 0.05091951528007366,
+      "p10": 0.21632594141035538,
+      "mean": 0.25669066869740265,
+      "p90": 0.31973855774954874,
+      "max": 0.5533333333333333
+    },
+    "aggregate_score_by_type": {
+      "PPI": {
+        "min": 0.212396261989466,
+        "mean": 0.2530633524246995,
+        "max": 0.3296661689181113
+      },
+      "PSI": {
+        "min": 0.05091951528007366,
+        "mean": 0.2557850641258157,
+        "max": 0.3359990045028893
+      },
+      "RPI": {
+        "min": 0.40966616891811136,
+        "mean": 0.4530428171387559,
+        "max": 0.5533333333333333
+      }
+    }
+  },
+  "lineage": {
+    "required_inputs": [
+      {
+        "interaction_type": "PPI",
+        "edges": "data/output/edges/edges_ppi_v1.tsv",
+        "edges_sha256": "28091d9d3fa7e2705f153f4c7f06866454c8c2f5a6cb703c227be90f65bed23c",
+        "evidence": "data/output/evidence/ppi_evidence_v1.tsv",
+        "evidence_sha256": "00b873cbd87aff6862875601fb7507b1f8a8ebe83a7afb1e38fa6123d7779084"
+      },
+      {
+        "interaction_type": "PSI",
+        "edges": "data/output/edges/drug_target_edges_v1.tsv",
+        "edges_sha256": "c9fabcefd638e30e3c1bb414a0ca4249a86a92e39f87d65a9eb0bc2fdfd521f7",
+        "evidence": "data/output/evidence/drug_target_evidence_v1.tsv",
+        "evidence_sha256": "0998854436fc0996e18ae445ae563f23ab6e690691cfe6f703076df6d78e8e95"
+      },
+      {
+        "interaction_type": "RPI",
+        "edges": "data/output/edges/rna_protein_edges_v1.tsv",
+        "edges_sha256": "5cf6704cc4df7613179aae009753c47954cce9425814f5c45b7aca8da04efdcd",
+        "evidence": "data/output/evidence/rna_protein_evidence_v1.tsv",
+        "evidence_sha256": "e221a282c2d6563556b58db7adf71e3f1132fa3fca7ea62b4027fe61fc206674"
+      }
+    ],
+    "context_files": [
+      {
+        "file": "data/output/evidence/ppi_method_context_v2.tsv",
+        "interaction_type": "PPI",
+        "status": "missing"
+      },
+      {
+        "file": "data/output/evidence/ppi_function_context_v2.tsv",
+        "interaction_type": "PPI",
+        "status": "missing"
+      },
+      {
+        "file": "data/output/evidence/psi_activity_context_v2.tsv",
+        "interaction_type": "PSI",
+        "status": "missing"
+      },
+      {
+        "file": "data/output/evidence/psi_structure_evidence_v2.tsv",
+        "interaction_type": "PSI",
+        "status": "missing"
+      },
+      {
+        "file": "data/output/evidence/rpi_site_context_v2.tsv",
+        "interaction_type": "RPI",
+        "status": "ok",
+        "rows_hit": 16489
+      },
+      {
+        "file": "data/output/evidence/rpi_domain_context_v2.tsv",
+        "interaction_type": "RPI",
+        "status": "ok",
+        "rows_hit": 16489
+      },
+      {
+        "file": "data/output/evidence/rpi_function_context_v2.tsv",
+        "interaction_type": "RPI",
+        "status": "ok",
+        "rows_hit": 16489
+      }
+    ]
+  },
+  "gates": {
+    "passed": true,
+    "checks": {
+      "all_three_interaction_types_present": true,
+      "aggregate_score_not_all_zero_or_one": true,
+      "aggregate_score_not_constant": true,
+      "cross_table_edge_join_rate_ge_0_99": true
+    }
+  }
+}

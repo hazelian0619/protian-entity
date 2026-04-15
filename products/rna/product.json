@@ -1,0 +1,8 @@
+{
+  "product": "rna",
+  "domain": "entity",
+  "owner": "bio-kg-team",
+  "sla": "monthly-release",
+  "contract_roots": ["pipelines/rna/contracts", "pipelines/rna_*/contracts"],
+  "description": "Human RNA L1/L2 entity product"
+}

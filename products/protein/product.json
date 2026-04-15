@@ -1,0 +1,8 @@
+{
+  "product": "protein",
+  "domain": "entity",
+  "owner": "bio-kg-team",
+  "sla": "monthly-release",
+  "contract_roots": ["pipelines/protein/contracts", "pipelines/protein_provenance/contracts"],
+  "description": "Human protein L1 entity product with provenance sidecar"
+}

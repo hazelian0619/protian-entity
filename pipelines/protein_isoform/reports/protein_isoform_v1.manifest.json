@@ -1,0 +1,31 @@
+{
+  "data_version": "kg-data-local",
+  "created_at": "2026-04-14T09:56:50.503915+00:00",
+  "git_commit": "a00f1938ccb8f6ac93ae10198ff020bf52cfdbe0",
+  "artifacts": [
+    {
+      "path": "data/output/protein/protein_isoform_v1.tsv",
+      "size_bytes": 11769798,
+      "sha256": "1542d5539164534f8a914a8a0d680a5e0a65b3347ccf2083fcb366fbf64a9428",
+      "modified_time": "2026-04-14T09:56:49.869240+00:00"
+    },
+    {
+      "path": "pipelines/protein_isoform/contracts/protein_isoform_v1.json",
+      "size_bytes": 2849,
+      "sha256": "78a089d8268e7ba28c5e8d449f5ea636005a946a31c6d06a740d1eb90b78a2d5",
+      "modified_time": "2026-04-14T09:46:17.853474+00:00"
+    },
+    {
+      "path": "pipelines/protein_isoform/reports/protein_isoform_v1.validation.json",
+      "size_bytes": 3501,
+      "sha256": "3c496a22afe0d5b5dc925ec35a48d4c3044990fd276ff364c81bae5f11f963c7",
+      "modified_time": "2026-04-14T09:56:50.256542+00:00"
+    },
+    {
+      "path": "pipelines/protein_isoform/reports/protein_isoform_v1.qa.json",
+      "size_bytes": 2125,
+      "sha256": "76ae459246bbb5c2e3bbdd00122391dd44012f9be0ef9551ff59a979cbbb9cdd",
+      "modified_time": "2026-04-14T09:56:49.966193+00:00"
+    }
+  ]
+}

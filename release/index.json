@@ -1,0 +1,156 @@
+{
+  "schema_version": "1.0.0",
+  "generated_at_utc": "2026-04-15T02:31:34Z",
+  "products": [
+    {
+      "product": "interaction",
+      "display_name": "Cross-entity Interactions",
+      "status": "stable",
+      "metadata": {
+        "product": "interaction",
+        "domain": "relation",
+        "owner": "bio-kg-team",
+        "sla": "monthly-release",
+        "contract_roots": [
+          "pipelines/ppi_*/contracts",
+          "pipelines/psi_*/contracts",
+          "pipelines/rpi_*/contracts",
+          "pipelines/interaction_*/contracts"
+        ],
+        "description": "Cross-entity interaction L2 product (PPI/PSI/RPI)"
+      },
+      "current_path": "products/interaction/current.json",
+      "latest": {
+        "version": "interaction-l2-v1",
+        "distribution_mode": "github_release",
+        "consistency_mode": "release_assets",
+        "release_tag": "interaction-l2-v1",
+        "release_url": "https://github.com/hazelian0619/protian-entity/releases/tag/interaction-l2-v1",
+        "manifest_path": "pipelines/interaction_release_local/reports/interaction_l2_v1.release_assets_manifest.json",
+        "delivery_report_path": "pipelines/interaction_release_local/reports/interaction_l2_v1.release_assets_delivery.json",
+        "quality_reports": [
+          "pipelines/interaction_release_local/reports/interaction_release_local_v1.gates.json",
+          "pipelines/interaction_cross_validation/reports/interaction_cross_validation_v2.qa.json",
+          "pipelines/interaction_ontology_mapping/reports/interaction_ontology_mapping_v2.gates.json"
+        ]
+      },
+      "checks": {
+        "manifest_exists": true,
+        "quality_report_count": 3
+      }
+    },
+    {
+      "product": "molecule",
+      "display_name": "Small Molecule Entity",
+      "status": "stable",
+      "metadata": {
+        "product": "molecule",
+        "domain": "entity",
+        "owner": "bio-kg-team",
+        "sla": "monthly-release",
+        "contract_roots": [
+          "pipelines/molecule*/contracts"
+        ],
+        "description": "Small-molecule L1/L2 entity product"
+      },
+      "current_path": "products/molecule/current.json",
+      "latest": {
+        "version": "molecule-l1l2-v2",
+        "distribution_mode": "github_release",
+        "consistency_mode": "release_assets",
+        "release_tag": "molecule-l1l2-v2",
+        "release_url": "https://github.com/hazelian0619/protian-entity/releases/tag/molecule-l1l2-v2",
+        "manifest_path": "dist/molecule-l1l2-v2/manifest.json",
+        "checksum_path": "dist/molecule-l1l2-v2/SHA256SUMS.txt",
+        "quality_reports": [
+          "pipelines/molecule_xref_enrichment_v2/reports/molecule_xref_core_v2.validation.json",
+          "pipelines/molecule_activity_fusion/reports/molecule_activity_fusion_v2.qa.json",
+          "pipelines/molecule_pk_tox_v2/reports/molecule_pk_tox_v2.qa.json"
+        ]
+      },
+      "checks": {
+        "manifest_exists": true,
+        "quality_report_count": 3
+      }
+    },
+    {
+      "product": "protein",
+      "display_name": "Protein Entity",
+      "status": "stable",
+      "metadata": {
+        "product": "protein",
+        "domain": "entity",
+        "owner": "bio-kg-team",
+        "sla": "monthly-release",
+        "contract_roots": [
+          "pipelines/protein/contracts",
+          "pipelines/protein_provenance/contracts"
+        ],
+        "description": "Human protein L1 entity product with provenance sidecar"
+      },
+      "current_path": "products/protein/current.json",
+      "latest": {
+        "version": "protein-v6",
+        "distribution_mode": "repository_snapshot",
+        "release_tag": null,
+        "release_url": null,
+        "manifest_path": "pipelines/protein/reports/protein_master_v6.manifest.json",
+        "artifacts": [
+          {
+            "name": "protein_master_v6_clean.tsv",
+            "path": "data/processed/protein_master_v6_clean.tsv",
+            "download_url": "https://raw.githubusercontent.com/hazelian0619/protian-entity/main/data/processed/protein_master_v6_clean.tsv"
+          },
+          {
+            "name": "protein_source_versions_v1.tsv",
+            "path": "data/output/protein/protein_source_versions_v1.tsv",
+            "download_url": "https://raw.githubusercontent.com/hazelian0619/protian-entity/main/data/output/protein/protein_source_versions_v1.tsv"
+          }
+        ],
+        "quality_reports": [
+          "pipelines/protein/reports/protein_master_v6.validation.json",
+          "pipelines/protein_provenance/reports/protein_source_versions_v1.validation.json",
+          "pipelines/protein_provenance/reports/protein_source_versions_v1.qa.json"
+        ]
+      },
+      "checks": {
+        "manifest_exists": true,
+        "quality_report_count": 3
+      }
+    },
+    {
+      "product": "rna",
+      "display_name": "RNA Entity",
+      "status": "stable",
+      "metadata": {
+        "product": "rna",
+        "domain": "entity",
+        "owner": "bio-kg-team",
+        "sla": "monthly-release",
+        "contract_roots": [
+          "pipelines/rna/contracts",
+          "pipelines/rna_*/contracts"
+        ],
+        "description": "Human RNA L1/L2 entity product"
+      },
+      "current_path": "products/rna/current.json",
+      "latest": {
+        "version": "rna-l1l2-v2",
+        "distribution_mode": "github_release",
+        "release_tag": "rna-l1l2-v2",
+        "release_url": "https://github.com/hazelian0619/protian-entity/releases/tag/rna-l1l2-v2",
+        "manifest_path": "build/releases/rna-l1l2-v2/manifest.json",
+        "checksum_path": "build/releases/rna-l1l2-v2/SHA256SUMS.txt",
+        "quality_reports": [
+          "build/releases/rna-l1l2-v2/reports/rna_id_canonical_map_v1.validation.json",
+          "build/releases/rna-l1l2-v2/reports/rna_external_xref_v1.validation.json",
+          "build/releases/rna-l1l2-v2/reports/rna_protein_evidence_v1.validation.json"
+        ]
+      },
+      "checks": {
+        "manifest_exists": true,
+        "quality_report_count": 3
+      }
+    }
+  ]
+}
