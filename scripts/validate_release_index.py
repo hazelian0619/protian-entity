@@ -49,7 +49,11 @@ def basic_structure_errors(index: Dict[str, Any]) -> List[str]:
     return errors
 
 
-def path_integrity_errors(index: Dict[str, Any], repo_root: Path) -> List[str]:
+def path_integrity_errors(
+    index: Dict[str, Any],
+    repo_root: Path,
+    strict_github_release_paths: bool = False,
+) -> List[str]:
     errors: List[str] = []
     for p in index.get("products", []):
         pname = p.get("product", "<unknown>")
@@ -59,10 +63,24 @@ def path_integrity_errors(index: Dict[str, Any], repo_root: Path) -> List[str]:
             errors.append(f"{pname}: current_path missing: {current_path}")
 
         latest = p.get("latest", {}) if isinstance(p.get("latest"), dict) else {}
+        dist_mode = latest.get("distribution_mode")
+        is_github_release = dist_mode == "github_release"
+
+        # For release-based products, local bundle files may not be checked into git.
+        # Enforce release metadata fields first; local file paths are optional unless strict mode is enabled.
+        if is_github_release:
+            if not latest.get("release_tag"):
+                errors.append(f"{pname}: missing release_tag for github_release")
+            if not latest.get("release_url"):
+                errors.append(f"{pname}: missing release_url for github_release")
 
         for key in ["manifest_path", "checksum_path", "delivery_report_path"]:
             rel = latest.get(key)
-            if rel and not (repo_root / rel).exists():
+            if not rel:
+                continue
+            if is_github_release and not strict_github_release_paths and key in {"manifest_path", "checksum_path"}:
+                continue
+            if not (repo_root / rel).exists():
                 errors.append(f"{pname}: {key} missing: {rel}")
 
         for art in latest.get("artifacts", []) if isinstance(latest.get("artifacts"), list) else []:
@@ -71,7 +89,11 @@ def path_integrity_errors(index: Dict[str, Any], repo_root: Path) -> List[str]:
                 errors.append(f"{pname}: artifact path missing: {rel}")
 
         for report in latest.get("quality_reports", []) if isinstance(latest.get("quality_reports"), list) else []:
-            if report and not (repo_root / report).exists():
+            if not report:
+                continue
+            if is_github_release and not strict_github_release_paths:
+                continue
+            if not (repo_root / report).exists():
                 errors.append(f"{pname}: quality report missing: {report}")
 
     return errors
@@ -107,6 +129,11 @@ def main() -> int:
     parser.add_argument("--schema", default="release/schema/index.schema.json", help="json schema path")
     parser.add_argument("--repo-root", default=".", help="repository root for path checks")
     parser.add_argument("--allow-missing-jsonschema", action="store_true", help="do not fail when jsonschema package is missing")
+    parser.add_argument(
+        "--strict-github-release-paths",
+        action="store_true",
+        help="require manifest/checksum/quality report local paths to exist even for github_release products",
+    )
     args = parser.parse_args()
 
     index_path = Path(args.index)
@@ -129,7 +156,13 @@ def main() -> int:
         if not (missing_pkg_only and args.allow_missing_jsonschema):
             errors.extend(schema_errs)
 
-    errors.extend(path_integrity_errors(index, repo_root))
+    errors.extend(
+        path_integrity_errors(
+            index,
+            repo_root,
+            strict_github_release_paths=args.strict_github_release_paths,
+        )
+    )
 
     if errors:
         print(f"[FAIL] release index validation errors: {len(errors)}")
