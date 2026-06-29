@@ -1,11 +1,13 @@
 # Bio-Entity KG Foundation
 
-A structured, public-facing dataset repository for 4 product lines:
+The development engine for 4 bio-entity product lines:
 
 - **Protein Entity**
 - **RNA Entity**
 - **Small Molecule Entity**
 - **Cross-Entity Interactions** (PPI / PSI / RPI)
+
+> **Looking for downloadable datasets?** Published data lives in [graph-rag](https://github.com/hazelian0619/graph-rag), the sole public-facing repository. This repo contains pipelines, raw data, and QA evidence used to produce those datasets.
 
 ---
 
