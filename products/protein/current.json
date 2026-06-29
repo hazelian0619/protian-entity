@@ -12,12 +12,12 @@
       {
         "name": "protein_master_v6_clean.tsv",
         "path": "data/processed/protein_master_v6_clean.tsv",
-        "download_url": "https://raw.githubusercontent.com/hazelian0619/protian-entity/main/data/processed/protein_master_v6_clean.tsv"
+        "download_url": "https://raw.githubusercontent.com/hazelian0619/graph-rag/main/protein/release/external/protein-v6/tables/sequence/protein_master_v6_clean.tsv"
       },
       {
         "name": "protein_source_versions_v1.tsv",
         "path": "data/output/protein/protein_source_versions_v1.tsv",
-        "download_url": "https://raw.githubusercontent.com/hazelian0619/protian-entity/main/data/output/protein/protein_source_versions_v1.tsv"
+        "download_url": "https://raw.githubusercontent.com/hazelian0619/graph-rag/main/protein/release/external/protein-v6/tables/provenance/protein_source_versions_v1.tsv"
       }
     ],
     "quality_reports": [
